@@ -604,7 +604,7 @@
 </richcontent>
 </node>
 </node>
-<node CREATED="1433784531820" ID="ID_222445130" MODIFIED="1433784884319" TEXT="2.5.1 Wrapper und Mediatoren">
+<node CREATED="1433784531820" ID="ID_222445130" MODIFIED="1433786316307" TEXT="2.5.1 Wrapper und Mediatoren">
 <node CREATED="1433784891467" ID="ID_806763322" MODIFIED="1433784935255" TEXT="Wrapper">
 <richcontent TYPE="NOTE"><html>
   <head>
@@ -623,8 +623,13 @@
   </body>
 </html>
 </richcontent>
+<node CREATED="1433786330887" ID="ID_844679891" MODIFIED="1433786352021" TEXT="einheitlicher Zugriff auf Quelle"/>
+<node CREATED="1433786316307" ID="ID_1974270380" MODIFIED="1433786391404" TEXT="Problem unstrukturierte Informationsquellen">
+<node CREATED="1433786416072" ID="ID_326363658" MODIFIED="1433786449092" TEXT="Identifikation von Daten"/>
+<node CREATED="1433786427567" ID="ID_1501486795" MODIFIED="1433786443244" TEXT="Extrahierung von Daten"/>
 </node>
-<node CREATED="1433784896026" ID="ID_1303703895" MODIFIED="1433785092832" TEXT="Mediatoren">
+</node>
+<node CREATED="1433784896026" ID="ID_1303703895" MODIFIED="1433786401246" TEXT="Mediatoren">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -653,6 +658,131 @@
 </richcontent>
 </node>
 </node>
+<node CREATED="1433786518278" ID="ID_938549826" MODIFIED="1433790923123" TEXT="2.5.2 Erfassen von Semantik &#xfc;ber die Struktur">
+<node CREATED="1433786574766" ID="ID_932906310" MODIFIED="1433786582115" TEXT="Beschreibung der Struktur"/>
+<node CREATED="1433790632401" ID="ID_1842696819" MODIFIED="1433790715125" TEXT="Konzeptionelle Modelle">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Sie strukturieren also die abzubildende Dom&#228;ne ohne Ber&#252;cksichtigung von situationsbezogenen und semantischen Unsch&#228;rfen bei der Modellierung von Realweltausschnitten. Dadurch erfolgt eine Reduktion auf pr&#228;zise, vollst&#228;ndig definierte Daten und Attribute, dies kann zu Informationsverlust bzw. ver&#228;nderung
+    </p>
+    <p>
+      f&#252;hren.
+    </p>
+  </body>
+</html>
+</richcontent>
+<node CREATED="1433790731265" ID="ID_432150171" MODIFIED="1433790756414" TEXT="Unterst&#xfc;tzung bei Zugriff"/>
+<node CREATED="1433790749040" ID="ID_790704011" MODIFIED="1433790771082" TEXT="Unterst&#xfc;tzung bei Validierung"/>
+</node>
+<node CREATED="1433790834504" ID="ID_24585796" MODIFIED="1433790987376" TEXT="Homogenisierung unterschiedlicher Konzepte">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Dies ist semantisch korrekt nur dann m&#246;glich, wenn allen zu integrierenden Datenquellen dasselbe semantische Modell
+    </p>
+    <p>
+      zugrunde liegt, sodass alle Elemente und Beziehungen des einen Konzepts ihre Entsprechungen im anderen finden. Abbildung 2.7 soll diesen
+    </p>
+    <p>
+      Sachverhalt veranschaulichen.
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node CREATED="1433790923124" ID="ID_167131368" MODIFIED="1433791054989" TEXT="2.5.2.1 Struktur-&#xc4;hnlichkeit">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Es wird ein logisches Modell erstellt und in eine Sprache kodiert, die automatisches, logisches Schlie&#223;en erm&#246;glicht. Das Modell stellt eine 1:1 Kopie der konzeptionellen Struktur der Datenbank dar. Die Integration erfolgt&#160;&#160;auf der Kopie dieses Modells und kann anschlie&#223;end leicht auf die Originaldaten zur&#252;ckgef&#252;hrt werden. Diese Methode ist etwa im
+    </p>
+    <ul>
+      <li>
+        SIMS-Mediator,
+      </li>
+      <li>
+        dem MOMIS System [13]
+      </li>
+      <li>
+        und im TSIMMIS System [14]
+      </li>
+    </ul>
+    <p>
+      implementiert.
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node CREATED="1433791061142" ID="ID_1230670225" MODIFIED="1433791126404" TEXT="2.5.2.2 Term Definition">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      BUSTER [15] stellt beispielsweise einen Ansatz dar, der ein Datenmodell zur Definition von Termen aus der Datenbank oder dem Datenbankschema verwendet, die nicht unmittelbar
+    </p>
+    <p>
+      mit deren Struktur korrespondieren, sondern lediglich mit den
+    </p>
+    <p>
+      entsprechenden Informationen verlinkt sind. Die Definition selbst kann sogar aus einer Reihe von Regeln bestehen, die den Term definieren. In den meisten F&#228;llen wird er jedoch von Konzeptdefinitionen beschrieben [11].
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node CREATED="1433791135414" ID="ID_32374732" MODIFIED="1433791174735" TEXT="2.5.2.3 Struktur Anreicherung">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Hier wird ein logisches Modell konstruiert, welches die Struktur der Informationsquelle abbildet und zus&#228;tzlich Definitionen von Konzepten enth&#228;lt. Es stellt momentan den verbreitetsten Ansatz dar [16] und verbindet die beiden oben genannten Ans&#228;tze.
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node CREATED="1433791178086" ID="ID_1516022408" MODIFIED="1433791255696" TEXT="2.5.2.4 Meta Annotation">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Dies ist ein relativ junger Ansatz, der den Gegebenheiten des Webs
+    </p>
+    <p>
+      Rechnung tr&#228;gt, wo semantische Informationen h&#228;ufig in Form von
+    </p>
+    <p>
+      Kommentaren bzw. Anmerkungen hinzugef&#252;gt werden.
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      Da Semantik nur bedingt aus der Struktur ableitbar ist, weil in der Regel kein konzeptionelles Modell zugrunde liegt, ist der Ansatz, sich der Semantik &#252;ber die Struktur der Datenquellen zu n&#228;hern, f&#252;r das Web oft ungeeignet
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node CREATED="1433791275317" ID="ID_1893672354" MODIFIED="1433791300754" TEXT="2.5.3 Zugang &#xfc;ber nat&#xfc;rlich-sprachliche Verarbeitung"/>
 </node>
 </node>
 </node>
