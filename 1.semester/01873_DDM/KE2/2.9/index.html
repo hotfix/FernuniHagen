@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<title> KE2 Selbsttestaufgabe 2.9</title>
+		<meta charset="utf-8" />
+		<style>
+		body { counter-reset :aufgabeCnt;}
+		p:before{
+			counter-increment: aufgabeCnt ;
+			content: "Aufgabe " counter(aufgabeCnt) " ";
+			font-weight: bold;
+			font-style: italic;
+		}
+		
+		h2{
+			display:run-in;
+			font-weight: bold;
+			/*
+			*/font-size: 100%;
+			
+		}
+		
+		</style>
+	</head>
+	<body>
+		<h2>H2 Überschrift</h2>
+		<DIV CLASS="Aufgabe">
+ 		   <P>«Der Text der Aufgabe»</P>
+	   </DIV>
+	   <DIV CLASS="Aufgabe">
+ 		  <P>«Der etwas längere,
+ 			 über mehrere Zeilen gehende
+ 			Text einer weiteren Aufgabe»
+		  </P>
+		</DIV>	
+	</body>
+</html>

@@ -1,0 +1,18 @@
+<katalog xmlns = "http://www.kurs1873.de/katalog" xmlns:xlink = "http://www.w3.org/1999/xlink"> 
+  <titel xlink:type = "simple" xlink:href = "http://www.kurs1873.de/katalog1.xml" xlink:actuate = "onRequest" xlink:show = "replace" xlink:title = "Weitere Informationen zum Katalog"> Dies ist der Titel des Katalogs </titel> 
+  <BUCH:buch xmlns:BUCH = "http://www.kurs1873.de/buch"> 
+    <BUCH:titel> Dies ist der Buchtitel </BUCH:titel> 
+    <BUCH:autor BUCH:name = "nachname" />
+    <BUCH:Inhalt xlink:type = "simple" xlink:href = "urn:isbn:0123456789" xlink:title ="Bestellung des Buchs"> 
+      <BUCH:Kapitel BUCH:Nummer = "1"> Titel des Kapitels </BUCH:Kapitel> 
+    </BUCH:Inhalt> 
+  </BUCH:buch>
+  
+  <buch xmlns = "http://www.kurs1873.de/buch"> 
+    <titel> Dies ist der zweite Buchtitel </titel> 
+    <autor name = ’nachname’ xlink:type = "simple" xlink:href = "http://www.kurs1873.de/autor1.jpg" xlink:actuate = "onLoad" xlink:show = "embed" /> 
+    <Inhalt xlink:type = "simple" xlink:href = "http://www.kurs1873.de/buchtext.html" xlink:actuate = "onRequest" xlink:show = "new" xlink:title = "Kompletter Buchtext" xlink:role = "http://www.kurs1873.de"> 
+      <Kapitel Nummer = "1"> Titel des Kapitels </Kapitel> 
+    </Inhalt> 
+  </buch> 
+</katalog>

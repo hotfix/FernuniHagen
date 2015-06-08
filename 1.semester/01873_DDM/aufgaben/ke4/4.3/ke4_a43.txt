@@ -1,0 +1,22 @@
+* 1. Fragen Sie die Lieferadresse der Beschreibung ab.
+for $x in doc("D:\SkyDrive\Studium\hagen\01873_DDM\aufgaben\ke4\4.3\ke4_a43.xml")/bestellung/lieferadresse
+return $x//text()
+
+
+* 2. Fragen Sie die Beschreibungen aller Waren mit einem Preis uber 500.00 ab.
+for $x in doc("D:\SkyDrive\Studium\hagen\01873_DDM\aufgaben\ke4\4.3\ke4_a43.xml")/bestellung/ware
+where $x/preis > 500
+return $x/beschreibung/text()
+
+
+* 3. Fragen Sie die Beschreibungen aller Waren mit einem Preis uber 5.00 ab und geben Sie die Ausgabe in umgekehrter alphabetischer Reihenfolge der Beschreibung aus.
+for $x in doc("D:\SkyDrive\Studium\hagen\01873_DDM\aufgaben\ke4\4.3\ke4_a43.xml")/bestellung/ware
+where $x/preis > 5
+order by $x/beschreibung descending 
+return $x/beschreibung/text()
+
+
+* 4. Fragen Sie alle bestellten Waren ab, zu denen es eine Bemerkung gibt.
+for $x in doc("D:\SkyDrive\Studium\hagen\01873_DDM\aufgaben\ke4\4.3\ke4_a43.xml")/bestellung/ware
+where $x/bemerkung 
+return $x/beschreibung/text()

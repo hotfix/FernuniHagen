@@ -1,0 +1,78 @@
+use case -> Seminar erfassen 
+actors -> Seminarkoordinator
+precondition -> -
+main flow -> Der Seminarkoordinator erfasst ein Seminar mit Bezeichnung, Kurzbeschreibung, Daten zur Seminardauer und Teilnahmegebühr.
+Die Aktion muss vom Benutzer bestätigt werden (include "Aktion bestätigen")
+postcondition -> Das Seminar ist erfasst.
+end -> Seminar erfassen
+----------------------------------------------
+
+use case -> Seminar bearbeiten
+actors -> Seminarkoordinator
+precondition -> Das Seminar ist vorhanden
+main flow -> Der Seminarkoordinator beareitet ein vorhandenes Seminar und kann Kurzbeschreibung und Seminardaten ändern. 
+Dazu kann ein Seminar aus der Menge ausgewählt werden (include "Seminar auswählen")
+Die Aktion muss vom Benutzer bestätigt werden (include "Aktion bestätigen")
+postcondition -> Das Seminar ist geändert.
+end -> Seminar bearbeiten
+----------------------------------------------
+
+use case -> Seminar löschen
+actors -> Seminarkoordinator
+precondition -> Das Seminar ist vorhanden
+main flow -> Der Seminarkoordinator löscht ein vorhandenes Seminar. 
+Dazu kann das Seminar aus der Menge ausgewählt werden (include "Seminar auswählen")
+Die Aktion muss vom Benutzer bestätigt werden (include "Aktion bestätigen")
+postcondition -> Das Seminar ist gelöscht.
+end -> Seminar löschen
+----------------------------------------------
+
+use case -> Berater erfassen
+actors -> Seminarkoordinator
+precondition -> -
+main flow -> Der Seminarkoordinator erfasst einen neuen Berater mit Name und Kontaktadresse.
+Die Aktion muss vom Benutzer bestätigt werden (include "Aktion bestätigen")
+postcondition -> Der Berater ist erfasst.
+end -> Berater erfassen
+----------------------------------------------
+
+use case -> Berater bearbeiten
+actors -> Seminarkoordinator
+precondition -> Der Berater ist vorhanden.
+main flow -> Der Seminarkoordinator beareitet einen vorhandenen Berater.
+Dazu kann der Berater aus der Menge ausgewählt werden (include "Berater auswählen")
+Die Aktion muss vom Benutzer bestätigt werden (include "Aktion bestätigen")
+postcondition -> Der Berater ist geändert.
+end -> Berater bearbeiten
+----------------------------------------------
+
+use case -> Berater löschen
+actors -> Seminarkoordinator
+precondition -> Der Berater ist vorhanden
+main flow -> Der Seminarkoordinator löscht einen vorhandenen Berater.
+Dazu kann der Berater aus der Menge ausgewählt werden (include "Berater auswählen")
+Die Aktion muss vom Benutzer bestätigt werden (include "Aktion bestätigen")
+exceptional flow -> Ist der Berater noch einem Seminar zugeordnet, so wird auf diesen Umstand hingewiesen und der Löschvorgang ist nochmals zu bestätigen (include "Löschung bestätigen")
+postcondition -> Der Berater ist gelöscht.
+end -> Berater löschen
+----------------------------------------------
+
+use case -> Zuordnung erfassen
+actors -> Seminarkoordinator
+precondition -> 
+main flow -> Der Seminarkoordinator ordnet ein Seminar einem bestimmten Berater zu.
+Dazu kann sowohl der Berater aus der Menge ausgewählt werden (include "Berater auswählen") als auch das Seminar aus der Menge ausgewählt werden (include "Seminar auswählen") 
+Die Aktion muss vom Benutzer bestätigt werden (include "Aktion bestätigen")
+exceptional flow -> Ist einer der beiden nicht vorhanden, so kann der Berater erfasst werden (include "Berater erfassen") oder Seminar erfasst werden (include "Seminar erfassen")  
+postcondition -> Die Seminarzurodnung ist erfasst.
+end -> Seminarzuordnung erfassen
+----------------------------------------------
+
+use case -> Zuordnung löschen
+actors -> Seminarkoordinator
+precondition -> Der Berater ist vorhanden; Das Seminar ist vorhanden.
+main flow -> Der Seminarkoordinator löscht eine Seminarzuordnung.
+Dazu kann sowohl der Berater aus der Menge ausgewählt werden (include "Berater auswählen") als auch das Seminar aus der Menge ausgewählt werden (include "Seminar auswählen") 
+Die Aktion muss vom Benutzer bestätigt werden (include "Aktion bestätigen")
+postcondition -> Die Seminarzurodnung ist gelöscht.
+end -> Seminarzuordnung löschen
