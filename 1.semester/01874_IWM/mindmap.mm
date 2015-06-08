@@ -782,7 +782,250 @@
 </richcontent>
 </node>
 </node>
-<node CREATED="1433791275317" ID="ID_1893672354" MODIFIED="1433791300754" TEXT="2.5.3 Zugang &#xfc;ber nat&#xfc;rlich-sprachliche Verarbeitung"/>
+<node CREATED="1433791275317" ID="ID_1893672354" MODIFIED="1433791300754" TEXT="2.5.3 Zugang &#xfc;ber nat&#xfc;rlich-sprachliche Verarbeitung">
+<node CREATED="1433792534301" ID="ID_275344097" MODIFIED="1433792594646" TEXT="Information Retrieval">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Unter dem Begriff des Information Retrieval ist gew&#246;hnlich die vage Suche auf Dokumentinhalte und deren unspezifische Bewertung zu verstehen
+    </p>
+  </body>
+</html>
+</richcontent>
+<node CREATED="1433792594636" ID="ID_1266045221" MODIFIED="1433792650860" TEXT="Diskribierung der Texte">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Die Deskribierung beschreibt die Transformation eines Textdokuments in eine Dokumentbeschreibung aufgrund von Metadaten und Schlagworten &#252;ber Stichworte aus dem Text, den so genannten indexierten Termen.
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node CREATED="1433792603499" ID="ID_1444370317" MODIFIED="1433792609000" TEXT="Recherche"/>
+<node CREATED="1433792609459" ID="ID_227814041" MODIFIED="1433792683389" TEXT="Bewertung der Ergebnisse">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Die Analyse des Textes anhand der vorkommenden Worte wird auch Indexierung genannt. Statistische, wortbasierte Verfahren sind dabei am gebr&#228;uchlichsten
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node CREATED="1433792766338" ID="ID_24988418" MODIFIED="1433792863973" TEXT="Disambiguierung">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Die Aufgabe, die beabsichtigte Bedeutung der Terme im jeweiligen
+    </p>
+    <p>
+      Zusammenhang zu ermitteln. (<b>vgl. Mehrdeutigkeitsproblem)</b>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node CREATED="1433792972609" ID="ID_980552810" MODIFIED="1433792985870" TEXT="sematisches Indexieren"/>
+<node CREATED="1433793672356" ID="ID_302957306" MODIFIED="1433793722519" TEXT="Boole&apos;sche Retrieval">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      gibt der Wert <i>true</i>&#160;an, dass die recherchierten Terme im Dokument vorkommen. Mehrere gefundene Dokumente haben ggf. dieselbe Relevanz
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node CREATED="1433793727915" ID="ID_1568851887" MODIFIED="1433793761709" TEXT="Vektorram Modell">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Im Vektorraum-Modell werden die Such- und Dokument-Terme jeweils als Vektoren im mehrdimensionalen Suchraum aufgefasst. Mit vorgegebenen &#196;hnlichkeitsma&#223;en k&#246;nnen auch Dokumente mit &#8222;benachbarten&#8220; Vektoren gefunden werden, falls die Such-Terme nicht direkt getroffen werden
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node CREATED="1433793792251" ID="ID_1051379235" MODIFIED="1433793843405" TEXT="Relevance Feedback">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Sortierung der Ergebnisse nach Ranking. ggf. kann der Nutzer beim Relevance Feedback bestimmte Dokumente entweder als irreleant oder als relevant markieren und so die Rankingsortierung hin zu relevanteren Dokumenten verschieben.
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node CREATED="1433793958442" ID="ID_770583315" MODIFIED="1433793973895" TEXT="2.5.4 Sematische Modelle">
+<node CREATED="1433794022929" ID="ID_418817704" MODIFIED="1433794028303" TEXT="Klassifizierung"/>
+<node CREATED="1433794052305" ID="ID_1934536428" MODIFIED="1433794062726" TEXT="Information sharing"/>
+</node>
+</node>
+<node CREATED="1433795522823" ID="ID_1273454668" MODIFIED="1433795548612" TEXT="2.6 Semantische Modelle darstellen und vergleichen">
+<node CREATED="1433795646686" ID="ID_1538509385" MODIFIED="1433795660475" TEXT="2.6.1 Namen und Bezeichner">
+<node CREATED="1433795719110" ID="ID_141306705" MODIFIED="1433795844769" TEXT="Verwendung von Mengen von Synonymen">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Mithilfe von &#196;hnlichkeitsma&#223;en, welche allen Mitgliedern der Synonyme-Sets zweier zu vergleichender Ausdr&#252;cke zugewiesen werden, k&#246;nnen Ausdr&#252;cke mit gleicher bzw. &#228;hnlicher Bedeutung gefunden werden, da ihre Synonyme- Sets einige Ausdr&#252;cke gemeinsam haben. Sie verhindern au&#223;erdem falsche &#220;bereinstimmungen zwischen Ausdr&#252;cken unterschiedlicher Bedeutung, da deren Synonyme-Sets ann&#228;hernd disjunkt w&#228;ren.
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node CREATED="1433795788165" ID="ID_211241700" MODIFIED="1433795796770" TEXT="2.6.2 Termnetzwerk">
+<node CREATED="1433795878236" ID="ID_691521810" MODIFIED="1433795910716" TEXT="Hypernym">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Den Oberbegriff eines Begriffes nennt man Hypernym
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node CREATED="1433795891148" ID="ID_1112284448" MODIFIED="1433795963288" TEXT="Hyponym">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Unter Hyponym versteht man den Unterbegriff eines Begriffs
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node CREATED="1433795963723" ID="ID_1247081430" MODIFIED="1433795989132" TEXT="Holonym">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Der Begriff der Holonymie bezeichnet das Wort einer &#8222;Teil-von-Beziehung&#8220; zwischen W&#246;rtern, das das andere mit beinhaltet
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node CREATED="1433795989124" ID="ID_1423728886" MODIFIED="1433796009548" TEXT="Meronym">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Die Umkehrung dieser Relation bezeichnet man als Meronymie.
+    </p>
+    <p>
+      So stellt der Begriff Finger ein Meronym von Hand dar und der Begriff Hand ist ein Holonym von dem Begriff Finger.
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node CREATED="1433796031619" ID="ID_280760292" MODIFIED="1433796055484" TEXT="Thesauri">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Die verbreitetste Form solcher Netzwerke sind <i>Thesauri</i>&#160;(Synonymw&#246;rterb&#252;cher), die haupts&#228;chlich Hyper- und Hyponym-Relationen verwenden, um Hierarchien von Ausdr&#252;cken zu bilden
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node CREATED="1433796063395" ID="ID_1528620" MODIFIED="1433796133293" TEXT="2.6.3 Konzepthierarchien ">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Das Problem von Term-Netzwerken ist, dass sie kein formales Prinzip zum Hierarchieaufbau anbieten. Daher k&#246;nnen immer noch verschiedene, m&#246;gliche Interpretationen eines Ausdrucks denselben Platz in einer Hierarchie teilen.
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node CREATED="1433796141026" ID="ID_1531153197" MODIFIED="1433796169267" TEXT="2.6.4 Ontologien">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      F&#252;gt man den Instanzen der Konzepte bestimmte Kennzeichen und Einschr&#228;nkungen hinzu (<i>features, constraints</i>), kann man deren Bedeutung noch n&#228;her und aussagekr&#228;ftiger bestimmen.
+    </p>
+  </body>
+</html>
+</richcontent>
+<node CREATED="1433796196434" ID="ID_926579291" MODIFIED="1433796289284" TEXT="RDF-S f&#xfc;r Beschreibung der Konzepte">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Ein RDF-Schema enth&#228;lt Definitionen von Klassen mit entsprechend
+    </p>
+    <p>
+      zugeh&#246;rigen Eigenschaften, die durch constraint-properties enger
+    </p>
+    <p>
+      gefasst werden. Default-Werte und Einschr&#228;nkungen des Wertebereichs sind jedoch immer noch von zu geringer Ausdrucksst&#228;rke. Die Definition von Klassen mittels logischer Formeln, Regelmengen oder komplexer Axiomsysteme in Logik erster Ordnung bietet weit m&#228;chtigere Repr&#228;sentationsm&#246;glichkeiten
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+</node>
+<node CREATED="1433796415416" ID="ID_1538100876" MODIFIED="1433796421686" TEXT="2.7 Zusammenfassung">
+<node CREATED="1433796435200" ID="ID_126858981" MODIFIED="1433796479700" TEXT="Erschlieesung und Nutzung der Informationesquellen im Web nur mit maschineller Unterst&#xfc;tzung"/>
+<node CREATED="1433796496272" ID="ID_850001544" MODIFIED="1433796512397" TEXT="Integration heterogener Informationen"/>
+<node CREATED="1433796514640" ID="ID_1030647843" MODIFIED="1433796536116" TEXT="Erschliessung der Semantik"/>
+<node CREATED="1433796544936" ID="ID_266960972" MODIFIED="1433796564061" TEXT="F&#xfc;r Erfassung ist eine geeignete Darstellungsform notwendig"/>
+<node CREATED="1433796585575" ID="ID_1469968471" MODIFIED="1433796628324" TEXT="XML und RDF erm&#xf6;glichen Zugang zur Semantik"/>
+<node CREATED="1433796646007" ID="ID_94175318" MODIFIED="1433796674483" TEXT="Informationaustausch erfolgt &#xfc;ber XML/RDF Sprachen"/>
+<node CREATED="1433796694070" ID="ID_1272597477" MODIFIED="1433796722667" TEXT="RDF-S stellt eine primitive Ontologie Sprache dar "/>
+<node CREATED="1433796744438" ID="ID_1810147910" MODIFIED="1433796772651" TEXT="Aufl&#xf6;sung der Konflikte auf syntaktischer, struktureller und semantischer Ebene notwendig"/>
 </node>
 </node>
 </node>
