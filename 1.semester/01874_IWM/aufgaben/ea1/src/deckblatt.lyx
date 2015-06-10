@@ -90,10 +90,14 @@ Hamburg, 07.06.2015
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
-filename "loesung.lyx"
+filename "ea1.lyx"
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
 
 \end_layout
 
