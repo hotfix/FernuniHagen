@@ -1,5 +1,5 @@
-# FernuniHagen
-Fernuni Hagen MSc in Praktischer Informatik related stuff
+# Fern-Uni Hagen
+Submitted assignments, snippets and other stuff of my MSc. study on the Distance University in Hagen.
 
 ## 1. Semester
 - 01793		Software Engineering I - Methodische Entwicklung objektorientierter Desktop-Applikationen
