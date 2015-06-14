@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="ke4_42.xsl"?>
+<!--<resources xmlns:xsi="http://w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ke4_42.xsd">-->
+<bestellung bestellnummer="123456">
+    <kunde>FernUniversität in Hagen</kunde>
+    <lieferadresse> <name>Monika Lücke</name>
+        <adresse>Universitätsstraße 1</adresse>
+        <stadt>58084 Hagen</stadt>
+        <land>Deutschland</land>
+    </lieferadresse>
+    <ware>
+        <beschreibung>Laserdrucker</beschreibung>
+        <bemerkung>Postscriptfähig</bemerkung>
+        <menge>1</menge>
+        <preis>810.90</preis>
+    </ware>
+    <ware>
+        <beschreibung>Tonerkartusche Schwarz</beschreibung>
+        <menge>1</menge>
+        <preis>200.49</preis>
+    </ware>
+</bestellung>

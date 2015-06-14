@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE buch SYSTEM "D:\project\studium\kurs01873\src\ke3\ke3_a1.dtd">
+<buch verlag="O'Reilly">
+    <kapitel type="na">
+        <ueberschrift>Vorwort</ueberschrift>
+        <absatz>...</absatz>
+    </kapitel>
+    <kapitel type="xml">
+        <ueberschrift>XML Terminologie</ueberschrift>
+        <absatz>...</absatz>
+    </kapitel>
+    <kapitel>
+        <ueberschrift>XML Terminologie</ueberschrift>
+        <absatz>...</absatz>
+    </kapitel>
+    <kapitel type="java">
+        <ueberschrift>Java Referenz</ueberschrift>
+        <absatz>...</absatz>
+    </kapitel>
+</buch>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nsA:Start xmlns:nsA="http://www.fernuni-hagen.de">
+    <element1>
+        <nsB:element2 xmlns:nsA="http://www.beispiel.org"
+                      xmlns:nsB="http://www.hagen.de">
+            <element3 nsA:attributY="1337"/>
+        </nsB:element2>
+    </element1>
+    <element4>
+        <element5 xmlns:nsC="http://www.freilichtmuseum-hagen.de/"
+                  xmlns:nsB="http://www.beispiel.org/gutesBeispiel">
+            <nsB:element6 nsC:attributX="Gurkensalat"
+                          xmlns:nsC="http://www.beispiel.org/besseresBeispiel"/>
+            <nsB:element7 xmlns:nsB="http://www.icann.org"/>
+        </element5>
+    </element4>
+</nsA:Start>

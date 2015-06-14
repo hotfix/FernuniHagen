@@ -1,0 +1,9 @@
+<person>
+    <firstName value="John" />
+    <lastName value="Smith" />
+    <age value="25" />
+    <address streetAddress="21 2nd Street" city="New York" state="NY" postalCode="10021" />
+    <phoneNumbers type="home" phoneNumber="212 555-1234" />
+    <phoneNumbers type="fax" phoneNumber="646 555-4567" />
+    <gender type="male" />
+</person>

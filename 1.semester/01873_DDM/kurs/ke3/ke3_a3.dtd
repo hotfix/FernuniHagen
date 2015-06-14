@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT track (COMPOSER,FOOTNOTE,IMAGE)>
+<!ELEMENT COMPOSER (#PCDATA)>
+<!ELEMENT FOOTNOTE (#PCDATA)>
+<!ELEMENT IMAGE EMPTY>
+<!ATTLIST COMPOSER
+        xmlns:xlink CDATA #FIXED 'http://www.w3.org/1999/xlink'
+        xlink:type CDATA #FIXED 'simple'
+        xlink:href CDATA #REQUIRED>
+<!ATTLIST FOOTNOTE
+        xmlns:xlink CDATA #FIXED 'http://www.w3.org/1999/xlink'
+        xlink:type CDATA #FIXED 'simple'
+        xlink:href CDATA #REQUIRED >
+<!ATTLIST IMAGE
+        xmlns:xlink CDATA #FIXED 'http://www.w3.org/1999/xlink'
+        xlink:type CDATA #FIXED 'simple'
+        xlink:href CDATA #REQUIRED
+        xlink:actuate CDATA #FIXED 'onLoad'
+        xlink:sho CDATA #FIXED 'embed'>
