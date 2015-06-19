@@ -1,0 +1,123 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 0
+\tocdepth 3
+\paragraph_separation skip
+\defskip smallskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Aufgabe 1
+\end_layout
+
+\begin_layout Standard
+Da die Erstellung einer Ontologie mit der Standartisierung der Terminologie
+ nur mit einem grossen Aufwand verbunden ist 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "MatthiasL.Hemmje"
+
+\end_inset
+
+, habe sich Ontologien entwickelt, um den langfristigen Einsatz der dieser
+ zu gewährleisten.
+ Diese sogenannten Top-Level-Ontologien Diese sogenannten Top-Level-Ontologien
+ sind unabhängig von Anwendungen und Aufgabenstellungen
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Haarmann2014"
+
+\end_inset
+
+ und beschreiben sehr generelle Konzepte unabhängig von einer bestimten
+ Domäne oder Problemstellung.
+ 
+\end_layout
+
+\begin_layout Standard
+Ein Beispiel der Top-Level Ontologien sind z.B.
+ EuroWordNet, Symo oder Cyc.
+\end_layout
+
+\begin_layout Section
+Aufgabe 2
+\end_layout
+
+\begin_layout Standard
+\start_of_appendix
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintAll"
+bibfiles "D:/SkyDrive/FernuniHagen/1.semester/literatur"
+options "bibtotoc,plain"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
