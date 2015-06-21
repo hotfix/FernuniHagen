@@ -107,6 +107,16 @@ Aufgabe 2
 \end_layout
 
 \begin_layout Standard
+Ontologie-Merging ist ein Vorgang bei dem zwei konzeptionell unterschiedliche
+ Ontologien zu einer Ontologie zusammengefasst werden (gemerged).
+\end_layout
+
+\begin_layout Standard
+Ontologie Aligning bleiben die Ursprünglichen Ontologien erhalten.
+ Es erfolgt ein Mapping der gegenseitigen Entitätet.
+\end_layout
+
+\begin_layout Standard
 \start_of_appendix
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
