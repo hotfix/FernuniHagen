@@ -457,7 +457,377 @@
   </body>
 </html>
 </richcontent>
+<node CREATED="1434916666006" ID="ID_323710312" MODIFIED="1434916670699" TEXT="OWL Lite"/>
+<node CREATED="1434916671070" ID="ID_1423023712" MODIFIED="1434916674266" TEXT="OWL DL"/>
+<node CREATED="1434916675301" ID="ID_1711525351" MODIFIED="1434916679178" TEXT="OWL Full"/>
 </node>
+</node>
+</node>
+<node CREATED="1434917544968" ID="ID_759758669" MODIFIED="1434999550674" TEXT="2.5 Anwendungsgebiete der Ontologie">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Die Vorteile von Ontologien liegen zum einen in dem einheitlichen Sprachgebrauch, der den Datenaustausch zwischen verschiedenen Akteuren unterst&#252;tzt. Zum anderen sind sie maschinenlesbar und verarbeitbar und erm&#246;glichen somit die Darstellung komplexer Beziehungen zwischen Objekten.
+    </p>
+  </body>
+</html>
+</richcontent>
+<node CREATED="1434917561735" ID="ID_1977288803" MODIFIED="1434999650011" TEXT="Kommunikation">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      - reduzieren die semantischen und terminologischen Begriffsverwirrungen
+    </p>
+    <p>
+      - erm&#246;glichen ein gemeinsames Verst&#228;ndnis und gemeinsame Kommunikation zwischen Menschen mit ihren verschiedenen Ansichten von Konzepten
+    </p>
+    <p>
+      - k&#246;nnen als ein normatives Modell eingesetzt werden
+    </p>
+    <p>
+      - k&#246;nnen Beziehungsnetzwerke herstellen, ein Beispiel ist die FOAF-Ontologie,
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node CREATED="1434917567879" ID="ID_1671509466" MODIFIED="1435000700147" TEXT="Technische Systementwicklung">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      - um die Kompatibilit&#228;t und Inter-operabilit&#228;t zwischen verschiedenen Systemen zu erreichen.
+    </p>
+    <p>
+      - Kompatibilit&#228;t der Daten f&#252;r Zwecke, die auf Vergleiche beruhen, wie es bei Klassifikationen etwa &#252;blich ist, notwendig, um Redundanzen und unn&#246;tig m&#252;hsame Arbeit zu reduzieren
+    </p>
+    <p>
+      - standardisiertes Grundvokabular definiert, welches sp&#228;ter als Basis f&#252;r die Anforderungsspezifikation und f&#252;r die Entwicklung von Software dient
+    </p>
+    <p>
+      - Wiederverwertbarkeit und Wartbarkeit unterst&#252;tzt dieses Verfahren auch die Dokumentation der Software
+    </p>
+    <p>
+      - Ziel vieler Top-Level-Ontologien, um so die Zuverl&#228;ssigkeit und Konsistenz zu erh&#246;hen.
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node CREATED="1434917577671" ID="ID_158189738" MODIFIED="1435000817995" TEXT="Interoperabilit&#xe4;t">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Zwei Applikationen sind interoperabel, wenn sie die terminologische Semantik in ihren korrespondierenden Konzepten gemeinsam nutzen und teilen.
+    </p>
+    <p>
+      - Das Knowledge-Interchange-Format (KIF) ist entwickelt worden, um den automatisierten Wissensaustausch zwischen verschiedenen wissensbasierten Systemen zu erm&#246;glichen
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node CREATED="1434917587679" ID="ID_1599779159" MODIFIED="1435000927728" TEXT="Information Retrieval">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Durch die Benutzung der eindeutig spezialisierten Begriffe einer Ontologie f&#252;r die Suchanfrage, etwa durch den Einsatz von linguistischen Ontologien wie EuroWordNet, wird das Ergebnis der Suche eindeutiger und nicht so diffus.
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+</node>
+<node CREATED="1434917608206" ID="ID_868072459" MODIFIED="1435001247844" POSITION="right" TEXT="3. Rollen der Ontologien bei der Informationintegration">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <ul>
+      <li>
+        Ontologien werden haupts&#228;chlich zur Repr&#228;sentation und Visualisierung von zum Teil unterschiedlich strukturierten Informationen eingesetzt.
+      </li>
+      <li>
+        Ontologien k&#246;nnen als ein Anfrage-Modell eingesetzt werden, das die Suche und das Browsing von Informationen vereinfacht, indem die Struktur der Ontologie selbst genutzt wird.
+      </li>
+      <li>
+        Ontologien werden auch als Verifikationsmodell genutzt, denn durch die Spezifikation wird die Softwareentwicklung mit Ontologien konsistent.
+      </li>
+    </ul>
+  </body>
+</html>
+</richcontent>
+<node CREATED="1435001057476" ID="ID_822303529" MODIFIED="1435001269523" TEXT="3.1 Repr&#xe4;sentationsarchitekturen">
+<node CREATED="1435001156797" ID="ID_1491189965" MODIFIED="1435089235641" TEXT="Single-Ontology Ansatz">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Der Single-Ontologie-Ansatz benutzt eine einzige globale Ontologie und stellt ein gemeinsam zu nutzendes Vokabular f&#252;r ein bestimmtes Fachgebiet bereit. Alle integrierten Informationsquellen in einem System m&#252;ssen ihre Informationen mit dem einheitlichen Vokabular der globalen Ontologie pr&#228;sentieren.
+    </p>
+    <p>
+      - gelingt nur, wenn die zu &#252;bersetzenden Informationen eine nahezu gleiche Sicht auf das zu pr&#228;sentierende Fachgebiet haben
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      - &#196;nderungen in der Informationsressource ziehen Korrekturen in der globalen Ontologie nach sich
+    </p>
+    <p>
+      =&gt; die Skalierbarkeit der Ontologie, also die Frage nach der einfachen Erweiterbarkeit des Integrationssystems mit neuen Informationsquellen, leidet.
+    </p>
+    <p>
+      - Die Wiederverwendung von Ontologien wird nicht unterst&#252;tzt.
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node CREATED="1435001166075" ID="ID_759280026" MODIFIED="1435090177175" TEXT="Multi-Ontology Ansatz">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      - Die Inflexibilit&#228;t bei Informations&#228;nderungen,
+    </p>
+    <p>
+      - die zu enge Kopplung
+    </p>
+    <p>
+      - und mangelnde Wiederverwendbarkeit
+    </p>
+    <p>
+      von Ontologien in Single-Ontology-Ans&#228;tzen haben zu der Entwicklung des mehrfachen-Ontologie-Ansatzes gef&#252;hrt,
+    </p>
+    <p>
+      =&gt; jede Ressource durch ihre eigene Ontologie repr&#228;sentiert wird.
+    </p>
+    <p>
+      OBSERVER (Ontology Based System Enhanced with Relationship for Vocabularity heterogeneity Resolution) ist ein Ansatz, der viele Informationsquellen &#252;ber ihre speziellen Ontologien verwaltet. Die Architektur basiert auf Wrappern, Ontologie-Servern und einem Inter-Ontologie-Relationship-Manager (IRM).
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node CREATED="1435001176036" ID="ID_896465016" MODIFIED="1435091172665" TEXT="Hybrid Ansatz">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      stellt eine Verbindung zwischen den beiden bereits vorgestellten Ans&#228;tzen.
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      Jedem Informationssystem wird seine eigene lokale Ontologie zugeordnet, wobei alle lokalen Ontologien auf einem <i>gemeinsamen globalen Vokabular</i>&#160;basieren.
+    </p>
+    <p>
+      Das Vokabular gibt die allgemeinen Begriffe systemweit vor, die dann f&#252;r die einzelnen lokalen Ontologien entsprechend den Konzeptualisierungen zu komplexen Begriffen kombiniert werden. Die Flexibilit&#228;t und Skalierbarkeit wird durch die lokalen Ontologien unterst&#252;tzt, w&#228;hrend das globale Vokabular als &#8222;<i>Lingua Franca</i>&#8220; die Vergleichbarkeit der Applikationsontologien gew&#228;hrleistet.
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node CREATED="1435001270539" ID="ID_1751532554" MODIFIED="1435091383298" TEXT="3.2 Query Modell">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Die Ontologiesprachen sind ausdrucksstark genug, um die Komplexit&#228;t von Abfragen in entscheidungsunterst&#252;tzenden Anwendungen zu verarbeiten. Suchanfragen werden an ein mediatorbasiertes Schema in Form einer Ontologie, die den Wissensbereich eines Systems beschreibt, gestellt.
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      Suchanfragen k&#246;nnen&#160;&#160;in einer &#8222;high-level&#8220;-Sprache wie etwa Loom oder einer SQL-&#228;hnlichen Sprache geschrieben werden
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node CREATED="1435001292323" ID="ID_1720908421" MODIFIED="1435092278437" TEXT="3.3 Verifikation">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Eine Ontologie kann Auskunft &#252;ber Ressourcen geben, wie oft und durch wen sie aktualisiert worden ist. Solche Informationen dienen der Zugriffs&#252;berpr&#252;fung und Zugriffssteuerung auf Instanzen von Ontologien.
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      Die Korrektheit und die &#220;berpr&#252;fung dieser Transformation ist selbst mit der ausdrucksst&#228;rksten Ontologiesprache problematisch [32], weil das Ergebnis des Mappings der unterschiedlichen Ontologien stark von der &#220;bereinstimmung der Konzepte abh&#228;ngt.
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      <b>Die Korrektheit einer Entscheidung bei der Suche einer &#220;bereinstimmung, etwa die Frage, ob das Ergebnis einer lokalen Suchanfrage eine Untermenge von dem Ergebnis einer globalen Suchanfrage entspricht, in diesem Fall spricht man vom sogenannten Problem des Query-Containments [33], ist die Aufgabe der Verifikation. </b>
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      Die Qualit&#228;t einer Verifikation h&#228;ngt in hohem Ma&#223;e von der Vollst&#228;ndigkeit des Vokabulars der beteiligten Ontologien und von ihrem Formalisierungsgrad ab.
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node CREATED="1435001299579" ID="ID_1912656662" MODIFIED="1435092340727" TEXT="3.4 Framework f&#xfc;r die Informationsnutzung">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Die meisten Architekturen basieren auf dem Hybridansatz, weil mit dem einheitlichen und standardisierten Vokabular die Suchanfragen, ihre Reformulierungen, die &#220;bersetzungen zwischen den Ontologien und die Verifikation wesentlich vereinfacht werden.
+    </p>
+    <p>
+      Diese Infrastruktur basiert auf drei Schichten:
+    </p>
+  </body>
+</html>
+</richcontent>
+<node CREATED="1435092524955" ID="ID_106130256" MODIFIED="1435092538624" TEXT="3 Schichten Architektur">
+<node CREATED="1435092348413" ID="ID_1126736283" MODIFIED="1435092550336" TEXT="unterste Schicht">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Die unterste Ebene h&#228;lt die Daten, Metadaten und Ressourcen bereit, die HTML, XML oder RDF enthalten k&#246;nnen.
+    </p>
+  </body>
+</html></richcontent>
+</node>
+<node CREATED="1435092362477" ID="ID_1399298345" MODIFIED="1435092551567" TEXT="Mittlere Schicht">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Die mittlere Ebene stellt die Middleware-Schicht, die bestimmte Dienste bereitstellt
+    </p>
+    <ul>
+      <li>
+        Mapping-Regeln zwischen XML und RDF und anderen Sprachen erm&#246;glichen,
+      </li>
+      <li>
+        die die Konformit&#228;t dieser Mappings &#252;berpr&#252;fen,
+      </li>
+      <li>
+        die Reformulierungen der Suchanfragesprachen f&#252;r die verschiedenen Informationsquellen bereitstellen und
+      </li>
+      <li>
+        diese Suchanfragen miteinander kombinieren.
+      </li>
+    </ul>
+  </body>
+</html>
+</richcontent>
+</node>
+<node CREATED="1435092370340" ID="ID_1586599260" MODIFIED="1435092551572" TEXT="oberste Schicht">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Die oberste Ebene stellt f&#252;r diese Dienste die wiederverwendbaren, standardisierten und stabilen Ontologien und das globale Vokabular zur Verf&#252;gung.
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node CREATED="1435092580715" ID="ID_674438387" MODIFIED="1435092590983" TEXT="Gewinnung der Information"/>
+<node CREATED="1435092592147" ID="ID_365886280" MODIFIED="1435092606472" TEXT="&#xdc;bersetzung der Konzeptualisierung"/>
+</node>
+<node CREATED="1435001324795" ID="ID_820252222" MODIFIED="1435003212265" TEXT="3.5 &#xdc;bersetzungsprozess und Ontologie Alignment">
+<node CREATED="1435093513372" ID="ID_392030798" MODIFIED="1435093722783" TEXT="Ontologie importieren">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Die in verschiedenen Sprachen spezifizierten Ontologien werden in das Mapping-Tool importiert, das dann das Mapping spezifiziert.
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node CREATED="1435093521916" ID="ID_389753309" MODIFIED="1435093813291" TEXT="&#xc4;hnlichkeiten finden">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Es werden Merkmale bzw. Attribute von Entit&#228;ten gesucht und der Suchraum kann eingeschr&#228;nkt werden, sodass nur sinnvolle Entit&#228;ten f&#252;r einen Vergleich zugelassen werden [38].
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node CREATED="1435093528420" ID="ID_1006922918" MODIFIED="1435093751923" TEXT="Mapping/Merge spezifizieren">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      PROMPT ist ein Tool f&#252;r den interaktiven Merging-Prozess, indem eine koh&#228;rente Ontologie erzeugt wird, die die Versionen der Ursprungsontologien enth&#228;lt. Meistens finden noch iterative R&#252;ckspr&#252;nge zur vorherigen Phase statt, weil ein Entit&#228;tenpaar normalerweise mehrere &#196;hnlichkeitswerte besitzt. Tools k&#246;nnen pr&#228;zisere &#196;hnlichkeitsmessungen durch eine simple Durchschnittsbildung oder durch komplexe Aggregierungsfunktionen mit Gewichten f&#252;r jede einzelne &#196;hnlichkeit durchf&#252;hren.
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node CREATED="1435093543844" ID="ID_1805936774" MODIFIED="1435093835999" TEXT="3.5.1 Ontologie-Aligning"/>
+<node CREATED="1435093553036" ID="ID_742279523" MODIFIED="1435094048005" TEXT="3.5.2 Ontologie-Engineering">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Ver&#228;ndert man die originalen Ontologien nicht, impliziert dies, dass nur ein Teil der Ontologie-Integration durchgef&#252;hrt werden kann, weil gro&#223;e Differenzen die Adaption der Ontologien erfordern. Wenn zwei Ontologien verbunden werden durch ein Ontologie-Aligning, dann bleiben die urspr&#252;nglichen Ontologien mit einer zus&#228;tzlichen Anzahl von Links erhalten, eine Sicht, die auch als bridge ontology bezeichnet wird und die eine gegenseitige Wiederverwendung der Informationen in den Ontologien erlaubt
+    </p>
+  </body>
+</html>
+</richcontent>
 </node>
 </node>
 </node>
