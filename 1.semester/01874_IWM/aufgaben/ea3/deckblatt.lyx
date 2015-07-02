@@ -5,16 +5,16 @@
 \textclass article
 \use_default_options true
 \maintain_unincluded_children false
-\language ngerman
+\language english
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman default
-\font_sans default
+\font_roman Arial
+\font_sans Times New Roman
 \font_typewriter default
 \font_math auto
 \font_default_family default
-\use_non_tex_fonts false
+\use_non_tex_fonts true
 \font_sc false
 \font_osf false
 \font_sf_scale 100
@@ -52,11 +52,11 @@
 \shortcut idx
 \color #008000
 \end_index
-\secnumdepth 0
+\secnumdepth 3
 \tocdepth 3
 \paragraph_separation skip
-\defskip smallskip
-\quotes_language german
+\defskip medskip
+\quotes_language english
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -69,63 +69,36 @@
 
 \begin_body
 
-\begin_layout Section
-Aufgabe 1
+\begin_layout Title
+01874 - Einsendeaufgaben 3
+\end_layout
+
+\begin_layout Author
+Alexander Albrant - 8950210
+\end_layout
+
+\begin_layout Date
+Hamburg, 01.07.2015
 \end_layout
 
 \begin_layout Standard
-Da die Erstellung einer Ontologie mit der Standardisierung der Terminologie
- nur mit einem großen Aufwand verbunden ist 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "MatthiasL.Hemmje"
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "ea3.lyx"
 
 \end_inset
 
-, haben sich Ontologien entwickelt, um den langfristigen Einsatz dieser
- zu gewährleisten.
- Diese sogenannten Top-Level-Ontologien Diese sogenannten Top-Level-Ontologien
- sind unabhängig von Anwendungen und Aufgabenstellungen
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Haarmann2014"
 
-\end_inset
-
- und beschreiben sehr generelle Konzepte unabhängig von einer bestimmten
- Domäne oder Problemstellung.
- 
 \end_layout
 
 \begin_layout Standard
-Ein Beispiel der Top-Level Ontologien sind z.B.
- EuroWordNet, Symo oder Cyc.
-\end_layout
-
-\begin_layout Section
-Aufgabe 2
-\end_layout
-
-\begin_layout Standard
-Ontologie-Merging ist ein Vorgang bei dem zwei konzeptionell unterschiedliche
- Ontologien zu einer Ontologie zusammengefasst werden (gemerged).
-\end_layout
-
-\begin_layout Standard
-Ontologie Aligning bleiben die Ursprünglichen Ontologien erhalten.
- Es erfolgt ein Mapping der gegenseitigen Entitätet.
-\end_layout
-
-\begin_layout Standard
-\start_of_appendix
-\begin_inset CommandInset bibtex
-LatexCommand bibtex
-btprint "btPrintAll"
-bibfiles "literatur"
-options "bibtotoc,plain"
-
-\end_inset
-
 
 \end_layout
 
