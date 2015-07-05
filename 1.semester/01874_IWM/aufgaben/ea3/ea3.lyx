@@ -92,9 +92,11 @@ name "sec:Gegeben-sind-drei"
 placement h
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="4">
 <features rotate="0" tabularvalignment="middle">
@@ -254,6 +256,8 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="4">
 <features rotate="0" tabularvalignment="middle">
@@ -433,15 +437,18 @@ reference "fig:Vektormodell-zu-Aufgabe"
 
 \begin_layout Standard
 \begin_inset Float figure
+placement h
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename a1.png
 	lyxscale 20
-	clip
+	scale 80
 	rotateOrigin center
 
 \end_inset
@@ -477,20 +484,281 @@ name "fig:Vektormodell-zu-Aufgabe"
 Teilaufgabe b
 \end_layout
 
+\begin_layout Standard
+Kosinus-Mass ist laut Wikipedia wie folgt definiert: 
+\begin_inset Quotes gld
+\end_inset
+
+Die Kosinus-Ähnlichkeit zweier Vektoren a und b ist der Kosinus des eingeschloss
+enen Winkels 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+theta$
+\end_layout
+
+\end_inset
+
+
+\begin_inset Quotes grd
+\end_inset
+
+ [Wiki.: 
+\begin_inset CommandInset href
+LatexCommand href
+name "Kosinus-Ähnlichkeit"
+target "https://de.wikipedia.org/wiki/Kosinus-%C3%84hnlichkeit"
+
+\end_inset
+
+ ]
+\end_layout
+
+\begin_layout Standard
+Um den Kosinus-Mass zu berechnen, kann folgende Formel angewendet werden.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+cos(
+\backslash
+theta) = {a 
+\backslash
+cdot b 
+\backslash
+over 
+\backslash
+|a
+\backslash
+| 
+\backslash
+|b
+\backslash
+|} = 
+\backslash
+frac{ 
+\backslash
+sum_{i=1}^{n}{a_i 
+\backslash
+cdot b_i} }{ 
+\backslash
+sqrt{
+\backslash
+sum_{i=1}^{n}{(a_i)^2}} 
+\backslash
+cdot 
+\backslash
+sqrt{
+\backslash
+sum_{i=1}^{n}{(b_i)^2}} }$
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Das Ergebniss der Formel für die Berechnung des Kosinus Masses für die Werte
+ aus der Aufgabe 1a Zeitg die Abbildung 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Berechnung-des-Kosinus-Mass"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename 1b.PNG
+	lyxscale 50
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Berechnung des Kosinus-Mass für die Werte aus der Aufgabe 1a
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Berechnung-des-Kosinus-Mass"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Aufgabe 2
 \end_layout
 
 \begin_layout Standard
-\start_of_appendix
-\begin_inset CommandInset bibtex
-LatexCommand bibtex
-btprint "btPrintAll"
-bibfiles "D:/SkyDrive/FernuniHagen/1.semester/literatur"
-options "plain"
+Da mir die Aufgabe nicht ganz klar gewesen ist von welchem Modell die Rede
+ ist und ob das Zitat und das Titel des Dokumentes für die Suche relevant
+ ist, habe ich für meine Lösungsansätze das Exact-Match Modell verwendet
+ und sowohl Zitat, als auch Dokument in die Suche mit einbezogen.
+\end_layout
 
+\begin_layout Standard
+Die Suchanfragen würden in dem Exact-Match Modell folgende Ergebnisse liefert:
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+a.
+ Computer AND Frankenpost 
+\end_layout
+
+\begin_layout Standard
+Die Lösung wäre 1 und 3, weil beide Suchwörter in dem Zitat und dem Dokumententi
+tel gefunden werden können.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+b.
+ NOT Computer: 
+\end_layout
+
+\begin_layout Standard
+Die Lösung wäre 2, weil das Suchwörter 
+\begin_inset Quotes gld
 \end_inset
 
+Computer
+\begin_inset Quotes grd
+\end_inset
+
+ nur in dem Zitat und dem Dokument nicht vorkommt.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+c.
+ Computer AND NOT schieben 
+\end_layout
+
+\begin_layout Standard
+Die Lösung wäre 1, 3 und 4, weil das Suchwörter 
+\begin_inset Quotes gld
+\end_inset
+
+Computer
+\begin_inset Quotes grd
+\end_inset
+
+ ohne das Suchwörter 
+\begin_inset Quotes gld
+\end_inset
+
+schieben
+\begin_inset Quotes grd
+\end_inset
+
+ nur unter den Ergebnissen ist.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+d.
+ NOT (CEO AND Computer) 
+\end_layout
+
+\begin_layout Standard
+Die Lösung wäre 2, weil nur hier beide Suchwörter nicht existieren.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+e.
+ CEO AND NOT Computer
+\end_layout
+
+\begin_layout Standard
+Es werden keine Ergebnisse gefunden, da das Suchwort 
+\begin_inset Quotes gld
+\end_inset
+
+CEO
+\begin_inset Quotes grd
+\end_inset
+
+ immer mit 
+\begin_inset Quotes gld
+\end_inset
+
+Computer
+\begin_inset Quotes grd
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
 
 \end_layout
 
