@@ -46,3 +46,20 @@
 
 -----
 
+## Kapitel 2.3
+
+- Was versteht man unter Dokumentwurzel ?
+- Wie sieht  die Verzeichnisstruktur einer Webanwendung aus?
+- Was wird für die Konfiguration einer WEbanwendung benötigt?
+
+
+## Kapitel 2.4
+
+- Was sind Servlets?
+- Welche Informationen können aus dem Log entnommen werden?
+
+## Kapitel 2.5
+
+- Was ist `JSP`?
+- Was ist der unterschied zu `Servlets`?
+- Was passiert beim Aufrum einer `JSP`-Seite?

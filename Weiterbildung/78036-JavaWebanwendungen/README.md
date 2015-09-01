@@ -12,6 +12,15 @@
 
 Hier findet man die Lösungen zu dem Aufgaben aus dem Kurs [*78036 Java-Webanwendungen*](http://www.isdb.fernuni-hagen.de/weiterbildung/index.php/informatik-kurse/java-webanwendungen) .
 
+Für die Bearbeitung des Kurses wurde folgende Software eingesetzt:
+
+- Apache Tomcat 8.0.24
+- myfaces 2.2.8
+- struts 2.3.24
+- Apache Ant 1.9.6
+- JDK 8
+
+
 Ausserdem befindet sich eine Zusammenfassung und von mir erstelltes Fragenkatalog für die Vorbereitung auf die Klausur.
 
 Du bist gerne Eingeladen hier mitzuarbeiten und deine Vroschläge und Verbesserungen einzubringen.
