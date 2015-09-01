@@ -10,9 +10,12 @@
 1. JavaServer Faces (JSF)
 1. Struts
 
-Hier findet man die Lösungen zu dem Aufgaben aus dem Kurs +78036 Java-Webanwendungen+.
+Hier findet man die Lösungen zu dem Aufgaben aus dem Kurs [*78036 Java-Webanwendungen*](http://www.isdb.fernuni-hagen.de/weiterbildung/index.php/informatik-kurse/java-webanwendungen) .
 
 Ausserdem befindet sich eine Zusammenfassung und von mir erstelltes Fragenkatalog für die Vorbereitung auf die Klausur.
 
 Du bist gerne Eingeladen hier mitzuarbeiten und deine Vroschläge und Verbesserungen einzubringen.
+
+
+[^1]: http://www.isdb.fernuni-hagen.de/weiterbildung/index.php/informatik-kurse/java-webanwendungen
 
