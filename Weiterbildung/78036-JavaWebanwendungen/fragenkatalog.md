@@ -16,6 +16,7 @@
 + Erkläre wie die Kommunikation zwischen Client und Server bei `HTTP` funktioniert
 + Wofür steht `URL`?
 + Wie ist `URL` aufgebaut
++ Wie nennt man die Anforderung einer Webseite vom Webserver und wie heißt das zurückgelieferte Ergebnis?
 + Woraus bestet ein HTTP-Request und HTTP-Response ?
 + Welche Informationen enhält der Header?
 + Wofür ist die HTTP-Methode in dem Header?
@@ -40,3 +41,8 @@
 - Welchen Vorteil hat XML`?
 - Wofür wird `XML` heute benutzt?
 - `Welche Eigenschaften haben XML`-Dokumente ?
+- Womit lassen sich Elemente einer HTML-Seite komfortabel und vielseitig formatieren? 
+
+
+-----
+

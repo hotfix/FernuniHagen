@@ -109,14 +109,11 @@ Eine HTML-Datei hat unter anderem die folgenden Eigenschaften
 -  `XML` wird heutzutage sehr intensiv zum Austausch von Daten verwendet
 -  `XML`-Dokumente haben die folgenden Eigenschaften:
 
-  - Es gibt genau ein Wurzelelement 
+  - Es gibt genau ein Wurzelelement
   - Jedes öffnende Element besitzt genau ein schließendes Element
-
-
-
-
-
-
+  - Es sollen keine Überkreuzverschachtelungen entstehen
+  - Groß- und Kleinschreibung wird berücksichtigt
+  - Tags können Attrubute enthalten
 
 
 
