@@ -1,0 +1,20 @@
+<?xml version="1.0" ?> 
+<dvds>
+  <dvd>
+    <title>Bevor es Nacht wird</title>
+    <abspieldauer>180</abspieldauer>
+    <erscheinungsjahr>2000</erscheinungsjahr >
+  </dvd>
+
+  <dvd>
+    <title>Alles steht Kopf</title>
+    <abspieldauer>125</abspieldauer>
+    <erscheinungsjahr>2015</erscheinungsjahr >
+  </dvd>
+  
+  <dvd>
+    <title>Kingsman: The Secret Service</title>
+    <abspieldauer>130</abspieldauer>
+    <erscheinungsjahr>2014</erscheinungsjahr >
+  </dvd>
+</dvds>
