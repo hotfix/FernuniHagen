@@ -45,13 +45,16 @@
 
 
 -----
+## Kapitel 2.2
+
+- Was ist Tomcat?
 
 ## Kapitel 2.3
 
 - Was versteht man unter Dokumentwurzel ?
 - Wie sieht  die Verzeichnisstruktur einer Webanwendung aus?
 - Was wird für die Konfiguration einer WEbanwendung benötigt?
-
+- Wie lautet die allgemeine Bezeichnung der `web.xml`? 
 
 ## Kapitel 2.4
 
@@ -63,3 +66,17 @@
 - Was ist `JSP`?
 - Was ist der unterschied zu `Servlets`?
 - Was passiert beim Aufrum einer `JSP`-Seite?
+
+## Kapitel 2.7
+
+- Was ist ein `WAR`-Archiv?
+- Was spricht für die Verwendung von `WAR`-Archiven ?
+
+
+## Kapitel 2.8
+
+- Wofür ist die Manager-Webanwendung da?
+- Was ist `Ant`?
+- Welche Vorteile hat die Trennung von Source- und Installationsdateien?
+- In welcher Datei werden Einstellungen für alle Webanwendungen festgelegt (Pfadangaben, Verhaltensweise der Anwendung bei Änderungen)?
+- Welche Datei konfiguriert die Arbeitsweise des Tomcat-Servers?

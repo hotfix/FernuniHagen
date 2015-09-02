@@ -10,12 +10,12 @@
         <welcome-file>index.htm</welcome-file>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
-    
+
     <error-page>
-      <error-code>404</error-code>
-      <location>/not-found.html</location>
+        <error-code>404</error-code>
+        <location>/not-found.html</location>
     </error-page>
-    
+
     <servlet>
         <servlet-name>Servlet1</servlet-name>
         <servlet-class>TestServlet</servlet-class>
@@ -33,5 +33,24 @@
         <servlet-name>Servlet2</servlet-name>
         <url-pattern>/Servlet2</url-pattern>
     </servlet-mapping>
-    
+
+    <security-constraint>
+        <web-resource-collection>
+           <web-resource-name>Java-Webanwendung</web-resource-name> 
+            <url-pattern>/*</url-pattern>
+        </web-resource-collection>
+
+        <auth-constraint>
+            <role-name>student</role-name>
+        </auth-constraint>
+
+    </security-constraint>
+
+    <login-config>
+        <auth-method>BASIC</auth-method>
+        <realm-name>Test einer Web-Anwendung</realm-name> 
+    </login-config>
+    <security-role>
+        <role-name>student</role-name>
+    </security-role>
 </web-app>
