@@ -1,0 +1,1372 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\fancyhf{}               % Clear fancy header/footer
+\fancyhead[L]{Alexander Albrant - 8950210}   % My name in Left footer
+\fancyhead[R]{\today}  % Page number in Right footer
+\makeatletter
+\let\ps@plain\ps@fancy   % Plain page style = fancy page style
+\makeatother
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language ngerman
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman Arial
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement h
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip medskip
+\quotes_language german
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Part*
+Aufgabe 1.1 Allgemeines System
+\end_layout
+
+\begin_layout Standard
+Systemkomponenten: 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$V_A = V_B = V_C = V_D = {gruen, gelb, rot, rot-gelb} $
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Systemstruktur 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$R^G$
+\end_layout
+
+\end_inset
+
+ = 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+{(V_A,V_B) , (V_A,V_C) , (V_A,V_D) , (V_B,V_C) , (V_B,V_D) , (V_C,V_D)
+\backslash
+}$
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Systemrelation 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$S^G$
+\end_layout
+
+\end_inset
+
+ = 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+subseteq V_A 
+\backslash
+times V_B 
+\backslash
+times V_C 
+\backslash
+times V_D$
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="8">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top" width="0pt">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$V_A$
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+gruen
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+rot
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+rot
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+rot
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+rot-gelb
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+rot
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+gelb
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$V_B$
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+rot
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+rot
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+gruen
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+rot-gelb
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+rot
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+gelb
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+rot
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$V_C$
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+gruen
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+rot
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+rot
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+rot
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+rot-gelb
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+rot
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+gelb
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$V_D$
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+rot
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+rot
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+gruen
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+rot-gelb
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+rot
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+gelb
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+rot
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Systemrelation 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$S^G$
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part*
+Aufgabe 1.2 Prozess
+\end_layout
+
+\begin_layout Standard
+Das Ergebnis der Identifikation der einzelnen Ereignisse und Aktionen des
+ Bestellprozesses sind der Tabelle 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Zuordnung-Ereignis"
+
+\end_inset
+
+ zu entnehmen.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="14" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="left" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\noun on
+Ereignis
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\noun on
+Aktion
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+e1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a1:= Bestellung zum festgelegtem Zeitpunkt
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+e2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a2:=Bestellung wegen niedrigem Lagerbestand
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+e3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a3 := Ermittlung des Lagerbestandes 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+e4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a4 := Ermittlung der zugeordneten Menge zu den Fertigungsaufträgen
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+e5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a5 := Bestellmenge anhand Soll-Bestandes
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+e6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a6 := Bestellmenge anhand Fertigungsaufträgel-Bestandes
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+e7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a7:= Ausführung der Bestellung
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+e8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a8:=Warten auf den Eingang der Ware 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+e9
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a9:=Warten auf Rechnung
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+e10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a10:= Erhöhung der Zugelieferten Teile auf Lager
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+e11
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a11:=Zuordnung zu Fertigungsaufträgen
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+e12
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a12:= Rechnung begleichen
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+e13
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a13:=Bestellung abschliessen
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Zuordnung Ereignis - Aktion
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Zuordnung-Ereignis"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Die Relation der kausalen Abhängigkeit:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$ e1 
+\backslash
+preceq e3, e1 
+\backslash
+preceq e4, e2 
+\backslash
+preceq e3, e2 
+\backslash
+preceq e4$ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$ e3 
+\backslash
+preceq e5, e4 
+\backslash
+preceq e6, e5 
+\backslash
+preceq e7, e6 
+\backslash
+preceq e7,e7 
+\backslash
+preceq e8, e7 
+\backslash
+preceq e9, e8 
+\backslash
+preceq e10, e8 
+\backslash
+preceq e11 $
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$ e9 
+\backslash
+preceq e12, e10 
+\backslash
+preceq e13, e11 
+\backslash
+preceq e13, e12 
+\backslash
+preceq e13 $
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Die Abbildung 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Prozessdarstellung-als-Graph"
+
+\end_inset
+
+ stellt die Ereignisse und Aktionen graphisch dar.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ea1.2.png
+	lyxscale 60
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Prozessdarstellung als Graph
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Prozessdarstellung-als-Graph"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part*
+Aufgabe 1.3 Aufbauorganisation
+\end_layout
+
+\begin_layout Standard
+Ein sinnvolle Gliederung und Ordnung der betrieblichen Handlungsprozesse
+ durch die Bildung und Verteilung von Aufgaben (Stellen) ist der Zweck einer
+ Aufbauorganisation.
+ Durch die Teilung der Gesamtaufgabe ergibt sich ein hierarchisches Gerüst,
+ in welchen die einzelnen Aufgaben, bzw.
+ Stellen in Beziehung zu einander stehen.
+ 
+\end_layout
+
+\begin_layout Standard
+So stellt die Abbildung 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Aufbauorganisation-einer-Beispie"
+
+\end_inset
+
+ einen möglichen Ausschnitt einer Aufbauorganisation einer kleinen Bank.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ea1.3.png
+	lyxscale 40
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Aufbauorganisation einer Beispiel Bank
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Aufbauorganisation-einer-Beispie"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part*
+Aufgabe 1.4 Informationssystem und Anwendungssystem
+\end_layout
+
+\begin_layout Standard
+In Bereich Wertpapierhandel einer Bank wird zur Übertrag und Umwandlung
+ der Informationen Computer verwendet.
+ Dadurch können Kundenaufträge zum Kauf/Verkauf der Wertpapiere automatisiert
+ werden.Wenn der Kunde eine Order schickt, so kann der Händler diese Order
+ in dem Anwendungssystem Annehmen, und Bearbeiten oder ablehnen.
+ Nimmt der Händler eine Order an, kann die Order bearbeitet oder weiter
+ an die Börse geroutet werden.
+ Der Händler muss in diesem Fall nicht selbst zur Börse laufen.
+ Zum Bearbeiten der Orders steht dem Händler Anwendungssysteme zur Verfügung.
+ So zum Beispiel das Order Management System.
+ Wird die Order abgeschlossen, wird sie automatisch abgeschlossen und wandert
+ in die Nachfolgenden Systeme.
+\end_layout
+
+\begin_layout Part*
+Aufgabe 1.5 Integrierte Informationssysteme
+\end_layout
+
+\begin_layout Standard
+Es werden folgende Arten der Integration von Informationssystem unterscheiden:
+\end_layout
+
+\begin_layout Itemize
+Datenintegration
+\end_layout
+
+\begin_layout Itemize
+Funktionsintegration
+\end_layout
+
+\begin_layout Itemize
+Prozessintegration
+\end_layout
+
+\begin_layout Itemize
+Methodenintegration
+\end_layout
+
+\begin_layout Itemize
+Programmintegration
+\end_layout
+
+\begin_layout Section*
+Datenintegration
+\end_layout
+
+\begin_layout Standard
+Wie in der Abbildung 1.5 der Kurseinheit 1 dargestellt wird, gibt es zwei
+ Formen der Datenintegration.
+ 
+\end_layout
+
+\begin_layout Standard
+Die Abbildung 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Datenintegration-mit-gemeinsamer"
+
+\end_inset
+
+ zeig ein Beispiel einer Datenintegration mit gemeinsamer Datenverwaltung.
+ Dies können drei Anwendungssystem in einer Bank sein, Order Management
+ System(OMS), Middleoffice System(MOS), und Abrechnungssystem(ABS).
+ Eine Order, die im OMS erfasst, ausgeführt und abgeschlossen wird, wird
+ in MOS weiterverarbeitet und in ABS dann abgerechnet.
+ Alle diese Anwendungen verwenden dann die selben Daten.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ea1.5_datenintegration1.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Datenintegration mit gemeinsamer Datenverwaltung
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Datenintegration-mit-gemeinsamer"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ein Beispiel einer Datenintegration mehrerer Anwendungssysteme mit jeweils
+ einer eigenen Datenverwaltung, zeigt die Abbildung 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Datenintegration-mit-separaten"
+
+\end_inset
+
+.
+ Dabei ist das Quellanwendungssystem ist das OMS in einer Bankanwendung
+ und das Zielanwendungssystem ist ein externer Provider mit direkten Anbindungen
+ an die unterschiedlichen Börsen.
+ Beide Systeme besitzen redundante Datenhaltung um die Kommunikation zwischen
+ den Anwendungssystemen gewährleisten zu können..
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ea1.5_datenintegration2.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Datenintegration mit separaten Datenverwaltung
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Datenintegration-mit-separaten"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Funktionsintegration
+\end_layout
+
+\begin_layout Standard
+Outlook bietet eine Funktionsintegration.
+ So werden in diesem System mehrere Funktionen bereit gestellt: Versendung
+ von Emails, Planung der Termine und der Aufgaben, Kontaktverwaltung.
+\end_layout
+
+\begin_layout Section*
+Prozessintegration
+\end_layout
+
+\begin_layout Standard
+Hier kann Integration der Prozesse der Abrechnung eines Wertpapiergeschäftes
+ mit der Ausstellung einer Kundenbestätigung und Meldung des Geschäftes
+ an BaFin oder andere Institutionen verstanden werden.
+\end_layout
+
+\begin_layout Section*
+Methodenintegration
+\end_layout
+
+\begin_layout Standard
+Im Algorithmic Trading werden Algorithmen entwickelt, die z.b.
+ Größere Orders in vielen kleineren Stücken auf den Märkten platzieren um
+ die Preismanipulation und Preisschwankungen zu verhindern.
+\end_layout
+
+\begin_layout Standard
+Dabei entscheiden diese, an welchem Markt zu welcher Uhrzeit wie viele Stücke
+ platziert werden um den besseren Kurs zu erhalten.
+\end_layout
+
+\begin_layout Section*
+Programmintegration
+\end_layout
+
+\begin_layout Standard
+Hier können die internen oder externen Programmschnittstellen erwähnt werden.
+ Z.B.
+ Eine Schnittstelle zwischen Order Management System und dem Post Trading
+ System.
+ Die gehandelten und abgeschlossenen Kundenorders werden über eine definierte
+ Programm Schnittstelle ins Post Trading System übertragen werden.
+ 
+\end_layout
+
+\end_body
+\end_document
