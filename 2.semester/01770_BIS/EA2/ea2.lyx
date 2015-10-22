@@ -183,13 +183,13 @@ reference "fig:Interaktion-und-Aufgaben-Ereigni"
 placement h
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
 \align center
 \begin_inset Graphics
-	filename D:/SkyDrive/FernuniHagen/2.semester/01770_BIS/EA2/ea2_21_1.png
+	filename D:/SkyDrive/FernuniHagen/2.semester/01770_BIS/EA2/img/ea2_21_1.png
 
 \end_inset
 
@@ -257,13 +257,13 @@ Auftrag freigeben
 placement h
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
 \align center
 \begin_inset Graphics
-	filename D:/SkyDrive/FernuniHagen/2.semester/01770_BIS/EA2/ea2_21_2.png
+	filename D:/SkyDrive/FernuniHagen/2.semester/01770_BIS/EA2/img/ea2_21_2.png
 
 \end_inset
 
@@ -325,13 +325,13 @@ reference "fig:Interaktion-und-Aufgaben-Ereigni-1"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
 \align center
 \begin_inset Graphics
-	filename ea2_21_3.png
+	filename img/ea2_21_3.png
 	lyxscale 80
 	scale 80
 	rotateAngle 90
@@ -371,6 +371,28 @@ name "fig:Interaktion-und-Aufgaben-Ereigni-1"
 
 \begin_layout Part*
 Aufgabe 2.2 (ARIS)
+\end_layout
+
+\begin_layout Standard
+s.
+ Anlage
+\end_layout
+
+\begin_layout Part*
+Aufgabe 2.3 (Modellierung mit ARIS)
+\end_layout
+
+\begin_layout Standard
+s.
+ Anlage
+\end_layout
+
+\begin_layout Part*
+Audgabe 2.4 (Server-/Handeler-Muster)
+\end_layout
+
+\begin_layout Part*
+Audgabe 2.5 (Asynchrones-Aufruf-Muster)
 \end_layout
 
 \end_body
