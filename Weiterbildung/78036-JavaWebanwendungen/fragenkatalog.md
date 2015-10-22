@@ -80,3 +80,16 @@
 - Welche Vorteile hat die Trennung von Source- und Installationsdateien?
 - In welcher Datei werden Einstellungen für alle Webanwendungen festgelegt (Pfadangaben, Verhaltensweise der Anwendung bei Änderungen)?
 - Welche Datei konfiguriert die Arbeitsweise des Tomcat-Servers?
+
+
+- - -
+
+
+
+## Kapitel 3.2
+
+- Was ist der Nachteil von Servlets?
+- Welche Arten von Fehler können bei der Verarbeitung der Anforderungen auftreten?
+
+
+## Kapitel 3.3
