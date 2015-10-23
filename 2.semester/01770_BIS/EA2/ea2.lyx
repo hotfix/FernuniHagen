@@ -391,8 +391,780 @@ s.
 Audgabe 2.4 (Server-/Handeler-Muster)
 \end_layout
 
+\begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "language=Java,numbers=left,numberstyle={\tiny},basicstyle={\tiny\sffamily},tabsize=4,caption={Klasse Server}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+import java.io.BufferedReader; 
+\end_layout
+
+\begin_layout Plain Layout
+
+import java.io.InputStreamReader;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+/**  
+\end_layout
+
+\begin_layout Plain Layout
+
+  * Kurs 1770 - Betriebliche Informationssysteme  
+\end_layout
+
+\begin_layout Plain Layout
+
+  * Implementierung des Server/Handler-Konzepts  
+\end_layout
+
+\begin_layout Plain Layout
+
+  * Erstellt :  05.08.2014  
+\end_layout
+
+\begin_layout Plain Layout
+
+  * Ersteller:  RenÃ© Ramacher
+\end_layout
+
+\begin_layout Plain Layout
+
+  */ 
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+  
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+public class Server {
+\end_layout
+
+\begin_layout Plain Layout
+
+    public Server() {         
+\end_layout
+
+\begin_layout Plain Layout
+
+    	Thread t = new Thread(new Runnable() {             
+\end_layout
+
+\begin_layout Plain Layout
+
+			@Override             
+\end_layout
+
+\begin_layout Plain Layout
+
+			public void run() { runServer(); }         
+\end_layout
+
+\begin_layout Plain Layout
+
+		});         
+\end_layout
+
+\begin_layout Plain Layout
+
+		t.start();     
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+	public void runServer() {         
+\end_layout
+
+\begin_layout Plain Layout
+
+		while( true ) {             
+\end_layout
+
+\begin_layout Plain Layout
+
+			try {                 
+\end_layout
+
+\begin_layout Plain Layout
+
+				System.out.println("Server > waiting for new task ...
+ ");                 
+\end_layout
+
+\begin_layout Plain Layout
+
+				InputStreamReader isr = new InputStreamReader(System.in);           
+      
+\end_layout
+
+\begin_layout Plain Layout
+
+				BufferedReader br = new BufferedReader(isr);
+\end_layout
+
+\begin_layout Plain Layout
+
+			                
+\end_layout
+
+\begin_layout Plain Layout
+
+				String test = br.readLine();                 
+\end_layout
+
+\begin_layout Plain Layout
+
+				System.out.println("Server > "+ test);                 
+\end_layout
+
+\begin_layout Plain Layout
+
+				System.out.println("Server > new handler started");                 
+\end_layout
+
+\begin_layout Plain Layout
+
+				Handler handler = new Handler(test);                 
+\end_layout
+
+\begin_layout Plain Layout
+
+				Thread.sleep(50);             
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+
+			} catch( Exception ignored) {
+\end_layout
+
+\begin_layout Plain Layout
+
+            
+\end_layout
+
+\begin_layout Plain Layout
+
+			}         
+\end_layout
+
+\begin_layout Plain Layout
+
+		}     
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+	public static void main(String[] args) {         
+\end_layout
+
+\begin_layout Plain Layout
+
+		new Server();     
+\end_layout
+
+\begin_layout Plain Layout
+
+	} 
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "language=Java,numbers=left,basicstyle={\tiny\sffamily},tabsize=4,caption={Klasse Handler}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+package de.shureg.fuh.m1770.ea24;
+\end_layout
+
+\begin_layout Plain Layout
+
+/**  
+\end_layout
+
+\begin_layout Plain Layout
+
+  * @author Alexander Albrant  
+\end_layout
+
+\begin_layout Plain Layout
+
+  * @date 18.10.2015  
+\end_layout
+
+\begin_layout Plain Layout
+
+  */ 
+\end_layout
+
+\begin_layout Plain Layout
+
+class Handler extends Thread {
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+
+    private String command;
+\end_layout
+
+\begin_layout Plain Layout
+
+    public Handler(String command) {         
+\end_layout
+
+\begin_layout Plain Layout
+
+		this.command = command;         
+\end_layout
+
+\begin_layout Plain Layout
+
+		this.start();     
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    @Override     
+\end_layout
+
+\begin_layout Plain Layout
+
+	public void run() {         
+\end_layout
+
+\begin_layout Plain Layout
+
+		System.out.println("Handler > starts work ...
+ " +this.command);         
+\end_layout
+
+\begin_layout Plain Layout
+
+		try {             
+\end_layout
+
+\begin_layout Plain Layout
+
+			Thread.sleep(10000);         
+\end_layout
+
+\begin_layout Plain Layout
+
+		} 
+\end_layout
+
+\begin_layout Plain Layout
+
+		catch (InterruptedException exc) {             
+\end_layout
+
+\begin_layout Plain Layout
+
+			exc.printStackTrace();         
+\end_layout
+
+\begin_layout Plain Layout
+
+		}         
+\end_layout
+
+\begin_layout Plain Layout
+
+		System.out.println("Handler > finished ..
+ " +this.command);     
+\end_layout
+
+\begin_layout Plain Layout
+
+	} 
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Part*
 Audgabe 2.5 (Asynchrones-Aufruf-Muster)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "language=Java,numbers=left,basicstyle={\tiny\sffamily},tabsize=4,caption={Klasse Client}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+package de.shureg.fuh.m1770.ea25;
+\end_layout
+
+\begin_layout Plain Layout
+
+/**  
+\end_layout
+
+\begin_layout Plain Layout
+
+  * Kurs 1770 - Betriebliche Informationssysteme  
+\end_layout
+
+\begin_layout Plain Layout
+
+  * Implementierung des Asynchronen Aufrufs  
+\end_layout
+
+\begin_layout Plain Layout
+
+  * Erstellt :  05.08.2014  
+\end_layout
+
+\begin_layout Plain Layout
+
+  * Ersteller:  RenÃ© Ramacher  
+\end_layout
+
+\begin_layout Plain Layout
+
+  */ 
+\end_layout
+
+\begin_layout Plain Layout
+
+public class Client {
+\end_layout
+
+\begin_layout Plain Layout
+
+    public Client() {         
+\end_layout
+
+\begin_layout Plain Layout
+
+		try {             
+\end_layout
+
+\begin_layout Plain Layout
+
+			Caller caller1 = new Caller(null);
+\end_layout
+
+\begin_layout Plain Layout
+
+		            
+\end_layout
+
+\begin_layout Plain Layout
+
+			while( !caller1.returned() ) {                 
+\end_layout
+
+\begin_layout Plain Layout
+
+				System.out.println("Client is waiting or doing some other work");    
+             
+\end_layout
+
+\begin_layout Plain Layout
+
+				Thread.sleep(500);             
+\end_layout
+
+\begin_layout Plain Layout
+
+			}             
+\end_layout
+
+\begin_layout Plain Layout
+
+			System.out.println("Results received from caller");
+\end_layout
+
+\begin_layout Plain Layout
+
+            
+\end_layout
+
+\begin_layout Plain Layout
+
+			Caller caller2 = new Caller(this);             
+\end_layout
+
+\begin_layout Plain Layout
+
+			System.out.println("Doing a lot of other work");
+\end_layout
+
+\begin_layout Plain Layout
+
+        } catch( Exception ignored) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        }     
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+    public void callBack() {         System.out.println("Results received
+ via callback");     }
+\end_layout
+
+\begin_layout Plain Layout
+
+    public static void main(String[] args) {         new Client();     }
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "language=Java,numbers=left,basicstyle={\tiny\sffamily},tabsize=4,caption={Klasse Caller}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+package de.shureg.fuh.m1770.ea25;
+\end_layout
+
+\begin_layout Plain Layout
+
+import java.io.IOException;
+\end_layout
+
+\begin_layout Plain Layout
+
+/**  
+\end_layout
+
+\begin_layout Plain Layout
+
+  * Caller Klasse  
+\end_layout
+
+\begin_layout Plain Layout
+
+  * @author Alexander  
+\end_layout
+
+\begin_layout Plain Layout
+
+  * @date  23.10.2015  
+\end_layout
+
+\begin_layout Plain Layout
+
+  */ 
+\end_layout
+
+\begin_layout Plain Layout
+
+public class Caller extends Thread{     
+\end_layout
+
+\begin_layout Plain Layout
+
+	private Client client;     
+\end_layout
+
+\begin_layout Plain Layout
+
+	private boolean isReturned = false;
+\end_layout
+
+\begin_layout Plain Layout
+
+	    public Caller(Client client) {       
+\end_layout
+
+\begin_layout Plain Layout
+
+		this.client = client;         
+\end_layout
+
+\begin_layout Plain Layout
+
+		this.start();     
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	@Override     
+\end_layout
+
+\begin_layout Plain Layout
+
+	public void run(){         
+\end_layout
+
+\begin_layout Plain Layout
+
+		System.out.println("Caller start ...");
+\end_layout
+
+\begin_layout Plain Layout
+
+	    try {             
+\end_layout
+
+\begin_layout Plain Layout
+
+			System.out.println("Caller do some job...
+ ");             
+\end_layout
+
+\begin_layout Plain Layout
+
+			System.in.read();         
+\end_layout
+
+\begin_layout Plain Layout
+
+		} catch (IOException e) {             
+\end_layout
+
+\begin_layout Plain Layout
+
+			e.printStackTrace();         
+\end_layout
+
+\begin_layout Plain Layout
+
+		}
+\end_layout
+
+\begin_layout Plain Layout
+
+	    
+\end_layout
+
+\begin_layout Plain Layout
+
+		if (this.client != null) {             
+\end_layout
+
+\begin_layout Plain Layout
+
+			this.client.callBack();         
+\end_layout
+
+\begin_layout Plain Layout
+
+		}         
+\end_layout
+
+\begin_layout Plain Layout
+
+		System.out.println("Caller finished job...
+ ");         
+\end_layout
+
+\begin_layout Plain Layout
+
+		this.isReturned = true;     
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	public boolean returned() {         
+\end_layout
+
+\begin_layout Plain Layout
+
+		return isReturned;     
+\end_layout
+
+\begin_layout Plain Layout
+
+	} 
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
