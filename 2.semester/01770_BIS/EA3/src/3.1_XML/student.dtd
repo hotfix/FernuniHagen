@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT Studenten (Student)*>
+<!ELEMENT Student (Name,Matrikelnummer,Anschrift,(Lieferanschrift)?,Kontodaten,Leistungsnachweise,SchriftlicheArbeiten,(Anmerkungen)?)>
+<!ELEMENT Name (Vorname,Nachname, Anrede)>
+<!ELEMENT Vorname (#PCDATA)>
+<!ELEMENT Nachname (#PCDATA)>
+<!ELEMENT Anrede (#PCDATA)>
+<!ELEMENT Matrikelnummer (#PCDATA)>
+<!ELEMENT Anschrift (#PCDATA)>
+<!ELEMENT Lieferanschrift (#PCDATA)>
+<!ELEMENT Kontodaten ((Kontoinhaber)?,Kontonummer,Bankleitzahl)>
+<!ELEMENT Kontoinhaber (#PCDATA)>
+<!ELEMENT Kontonummer (#PCDATA)>
+<!ELEMENT Bankleitzahl (#PCDATA)>
+<!ELEMENT Leistungsnachweise (Kurs)+>
+<!ELEMENT Kurs ((Note|ErreichtePunkte), Gesamtpunkte,Datum,(AnzahlVersuche)?)>
+<!ELEMENT Note (#PCDATA)>
+<!ELEMENT ErreichtePunkte (#PCDATA)>
+<!ELEMENT Gesamtpunkte (#PCDATA)>
+<!ELEMENT Datum (#PCDATA)>
+<!ELEMENT AnzahlVersuche (#PCDATA)>
+<!ELEMENT SchriftlicheArbeiten (Thema,Note,(Betreuer)*,Abgabedatum)>
+<!ELEMENT Thema (#PCDATA)>
+<!ELEMENT Betreuer (#PCDATA)>
+<!ELEMENT Abgabedatum (#PCDATA)>
+<!ELEMENT Anmerkungen (#PCDATA)>
+<!ATTLIST Kurs nummer CDATA #REQUIRED>
+<!ATTLIST SchriftlicheArbeiten art (Diplomarbeit|Seminararbeit|Bachelorarbeit|Masterarbeit|Dissertation) #REQUIRED>

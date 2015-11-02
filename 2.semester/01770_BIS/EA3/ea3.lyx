@@ -1,0 +1,1715 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\fancyhf{}               % Clear fancy header/footer
+\fancyhead[L]{Alexander Albrant - 8950210}   % My name in Left footer
+\fancyhead[R]{\today}  % Page number in Right footer
+\makeatletter
+\let\ps@plain\ps@fancy   % Plain page style = fancy page style
+\makeatother
+\pagenumbering{arabic}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language ngerman
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman Arial
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 10
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2.7cm
+\topmargin 4cm
+\rightmargin 2.7cm
+\bottommargin 4cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip medskip
+\quotes_language german
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Part*
+Aufgabe 3.1 (XML-Dokument und DTD)
+\end_layout
+
+\begin_layout Standard
+Das DTD aus Listing 1 wurde als eine externe Datei 
+\noun on
+student.dtd
+\noun default
+ implementiert und mit im 
+\noun on
+XML
+\noun default
+ Dokument, welches im Listing 2 aufgeführt ist, im 
+\noun on
+DOCTYPE
+\noun default
+ Deklaration eingebunden.
+ Alternativ könnte das DTD im XML File in der 
+\noun on
+DOCTYPE
+\noun default
+ Deklaration definiert werden.
+\end_layout
+
+\begin_layout Standard
+Die Leistungsnachweise können mehrere Kurse haben, welche ich in meiner
+ Implementierung durch das Attribut 
+\begin_inset Quotes gld
+\end_inset
+
+nummer
+\begin_inset Quotes grd
+\end_inset
+
+ zusätzlich identifiziere.
+ Für die Abbildung der Art der schriftlichen Arbeiten habe ich mich für
+ ein Attribut entschieden, weil in der Aufgabenstellung die möglichen Werte
+ aufgezählt wurden.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "language=XML,basicstyle={\scriptsize\sffamily},breaklines=true,tabsize=4,caption={Dokumententyp-Definition für Studenten}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+<?xml version="1.0" encoding="UTF-8"?> 
+\end_layout
+
+\begin_layout Plain Layout
+
+<!ELEMENT Studenten (Student)*> 
+\end_layout
+
+\begin_layout Plain Layout
+
+<!ELEMENT Student (Name,Matrikelnummer,Anschrift,(Lieferanschrift)?,Kontodaten,L
+eistungsnachweise,SchriftlicheArbeiten,(Anmerkungen)?)> 
+\end_layout
+
+\begin_layout Plain Layout
+
+<!ELEMENT Name (Vorname,Nachname, Anrede)> 
+\end_layout
+
+\begin_layout Plain Layout
+
+<!ELEMENT Vorname (#PCDATA)> 
+\end_layout
+
+\begin_layout Plain Layout
+
+<!ELEMENT Nachname (#PCDATA)> 
+\end_layout
+
+\begin_layout Plain Layout
+
+<!ELEMENT Anrede (#PCDATA)> 
+\end_layout
+
+\begin_layout Plain Layout
+
+<!ELEMENT Matrikelnummer (#PCDATA)> 
+\end_layout
+
+\begin_layout Plain Layout
+
+<!ELEMENT Anschrift (#PCDATA)> 
+\end_layout
+
+\begin_layout Plain Layout
+
+<!ELEMENT Lieferanschrift (#PCDATA)> 
+\end_layout
+
+\begin_layout Plain Layout
+
+<!ELEMENT Kontodaten ((Kontoinhaber)?,Kontonummer,Bankleitzahl)> 
+\end_layout
+
+\begin_layout Plain Layout
+
+<!ELEMENT Kontoinhaber (#PCDATA)> 
+\end_layout
+
+\begin_layout Plain Layout
+
+<!ELEMENT Kontonummer (#PCDATA)> 
+\end_layout
+
+\begin_layout Plain Layout
+
+<!ELEMENT Bankleitzahl (#PCDATA)> 
+\end_layout
+
+\begin_layout Plain Layout
+
+<!ELEMENT Leistungsnachweise (Kurs)+> 
+\end_layout
+
+\begin_layout Plain Layout
+
+<!ELEMENT Kurs ((Note|ErreichtePunkte), Gesamtpunkte,Datum,(AnzahlVersuche)?)>
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+<!ELEMENT Note (#PCDATA)> 
+\end_layout
+
+\begin_layout Plain Layout
+
+<!ELEMENT ErreichtePunkte (#PCDATA)> 
+\end_layout
+
+\begin_layout Plain Layout
+
+<!ELEMENT Gesamtpunkte (#PCDATA)> 
+\end_layout
+
+\begin_layout Plain Layout
+
+<!ELEMENT Datum (#PCDATA)> 
+\end_layout
+
+\begin_layout Plain Layout
+
+<!ELEMENT AnzahlVersuche (#PCDATA)> 
+\end_layout
+
+\begin_layout Plain Layout
+
+<!ELEMENT SchriftlicheArbeiten (Thema,Note,(Betreuer)*,Abgabedatum)> 
+\end_layout
+
+\begin_layout Plain Layout
+
+<!ELEMENT Thema (#PCDATA)> <!ELEMENT Betreuer (#PCDATA)> 
+\end_layout
+
+\begin_layout Plain Layout
+
+<!ELEMENT Abgabedatum (#PCDATA)> 
+\end_layout
+
+\begin_layout Plain Layout
+
+<!ELEMENT Anmerkungen (#PCDATA)> 
+\end_layout
+
+\begin_layout Plain Layout
+
+<!ATTLIST Kurs nummer CDATA #REQUIRED> 
+\end_layout
+
+\begin_layout Plain Layout
+
+<!ATTLIST SchriftlicheArbeiten art (Diplomarbeit|Seminararbeit|Bachelorarbeit|Ma
+sterarbeit|Dissertation) #REQUIRED>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "language=XML,basicstyle={\scriptsize},tabsize=4,caption={Beispiel XML Dokument }"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+<?xml version="1.0" encoding="UTF-8"?> 
+\end_layout
+
+\begin_layout Plain Layout
+
+<!DOCTYPE Studenten SYSTEM "student.dtd" > 
+\end_layout
+
+\begin_layout Plain Layout
+
+<Studenten>     
+\end_layout
+
+\begin_layout Plain Layout
+
+	<Student>         
+\end_layout
+
+\begin_layout Plain Layout
+
+		<Name>             
+\end_layout
+
+\begin_layout Plain Layout
+
+			<Vorname>Max</Vorname>             
+\end_layout
+
+\begin_layout Plain Layout
+
+			<Nachname>Mustermann</Nachname>             
+\end_layout
+
+\begin_layout Plain Layout
+
+			<Anrede>Herr</Anrede>         
+\end_layout
+
+\begin_layout Plain Layout
+
+		</Name>         
+\end_layout
+
+\begin_layout Plain Layout
+
+		<Matrikelnummer>123465789</Matrikelnummer>         
+\end_layout
+
+\begin_layout Plain Layout
+
+		<Anschrift>Hauptstrasse 105, 14199 Berlin</Anschrift>         
+\end_layout
+
+\begin_layout Plain Layout
+
+		<Lieferanschrift>Seitenstrasse 10, 10115 Berlin</Lieferanschrift>    
+     
+\end_layout
+
+\begin_layout Plain Layout
+
+		<Kontodaten>             
+\end_layout
+
+\begin_layout Plain Layout
+
+			<Kontoinhaber>Peter Mustermann</Kontoinhaber>             
+\end_layout
+
+\begin_layout Plain Layout
+
+			<Kontonummer>132465789</Kontonummer>             
+\end_layout
+
+\begin_layout Plain Layout
+
+			<Bankleitzahl>20000000</Bankleitzahl>         
+\end_layout
+
+\begin_layout Plain Layout
+
+		</Kontodaten>         
+\end_layout
+
+\begin_layout Plain Layout
+
+		<Leistungsnachweise>             
+\end_layout
+
+\begin_layout Plain Layout
+
+			<Kurs nummer="1770">                 
+\end_layout
+
+\begin_layout Plain Layout
+
+				<Note>2,3</Note>                 
+\end_layout
+
+\begin_layout Plain Layout
+
+				<Gesamtpunkte>120</Gesamtpunkte>                 
+\end_layout
+
+\begin_layout Plain Layout
+
+				<Datum>12.12.2014</Datum>                 
+\end_layout
+
+\begin_layout Plain Layout
+
+				<AnzahlVersuche>1</AnzahlVersuche>             
+\end_layout
+
+\begin_layout Plain Layout
+
+			</Kurs>             
+\end_layout
+
+\begin_layout Plain Layout
+
+			<Kurs nummer="1793">                 
+\end_layout
+
+\begin_layout Plain Layout
+
+				<ErreichtePunkte>50</ErreichtePunkte>                 
+\end_layout
+
+\begin_layout Plain Layout
+
+				<Gesamtpunkte>70</Gesamtpunkte>                 
+\end_layout
+
+\begin_layout Plain Layout
+
+				<Datum>01.09.2012</Datum>                 
+\end_layout
+
+\begin_layout Plain Layout
+
+				<AnzahlVersuche>2</AnzahlVersuche>             
+\end_layout
+
+\begin_layout Plain Layout
+
+			</Kurs>         
+\end_layout
+
+\begin_layout Plain Layout
+
+		</Leistungsnachweise>         
+\end_layout
+
+\begin_layout Plain Layout
+
+		<SchriftlicheArbeiten art="Bachelorarbeit">             
+\end_layout
+
+\begin_layout Plain Layout
+
+			<Thema>Hier kann ein Thema der Bachelorarbeit stehen</Thema>        
+     
+\end_layout
+
+\begin_layout Plain Layout
+
+			<Note>2,5</Note>             
+\end_layout
+
+\begin_layout Plain Layout
+
+			<Betreuer>Prof.
+ XYX</Betreuer>             
+\end_layout
+
+\begin_layout Plain Layout
+
+			<Betreuer>Prof.
+ ABC</Betreuer>             
+\end_layout
+
+\begin_layout Plain Layout
+
+			<Abgabedatum>31.12.2015</Abgabedatum>         
+\end_layout
+
+\begin_layout Plain Layout
+
+		</SchriftlicheArbeiten>         
+\end_layout
+
+\begin_layout Plain Layout
+
+		<Anmerkungen>Keine besonderen Anmerkungen</Anmerkungen>     
+\end_layout
+
+\begin_layout Plain Layout
+
+	</Student> 
+\end_layout
+
+\begin_layout Plain Layout
+
+</Studenten>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part*
+Aufgabe 3.2 (Entwurfsmuster)
+\end_layout
+
+\begin_layout Standard
+In der Abbildung 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Klassendiagramm-des-Zustandsmust"
+
+\end_inset
+
+ ist ein Zustandsmuster Klassendiagramm am Beispiel eines Auftrages mit
+ den zugehörigen Zuständen: Eingang, InPfüfung, InBearbeitung, Abgeschlossen
+ und Abgelehnt, dargestellt.
+ Die Methoden in den einzelnen Zustandsklassen machen deutlich in welchen
+ Zustand und aus welchem Zustand übergegangen werden kann.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename img/ea32_zustandsmuster.jpeg
+	lyxscale 70
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Klassendiagramm des Zustandsmuster
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Klassendiagramm-des-Zustandsmust"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Das Darsteller-Rolle-Muster am Beispiel eines Kunden in der Abbildung 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Klassendiagramm-des-Darsteller-R"
+
+\end_inset
+
+ zeigt einen Kunden mit 2 möglichen Rollen: Privatkunde und Geschäftskunde.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename img/ea32_darstellerRollenMuster.jpeg
+	lyxscale 70
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Klassendiagramm des Darsteller-Rollen-Musters
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Klassendiagramm-des-Darsteller-R"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part*
+Aufgabe 3.3 (Klassendiagramm)
+\end_layout
+
+\begin_layout Standard
+Die Abbildung 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:EA3.3-UML-Klassendiagramm"
+
+\end_inset
+
+ zeigt das UML-Klassendiagramm.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename img/ea33_klassendiagramm.jpeg
+	lyxscale 70
+	scale 50
+	scaleBeforeRotation
+	rotateAngle 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+EA3.3 UML-Klassendiagramm
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:EA3.3-UML-Klassendiagramm"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part*
+Aufgabe 3.4 (SAX-Parser)
+\end_layout
+
+\begin_layout Standard
+Das Listing 3 zeigt die Implementierung des XML-Parsers mit Hilfe von SAX-Parser.
+ In dieser Implemetierung war es wichtig den eigenen DefaultHandler zu implemeti
+eren.
+ In dieser Klasse mussten die Methoden startDocument, startElement, endElement,
+ characters, endDocument, die beimsequenzellen parsen der Datei vom SAX-Parser
+ aufgerufen werden, überschrieben werden.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "language=Java,basicstyle={\scriptsize\sffamily},tabsize=4,caption={XML Dokument  Parser mit SAX-Parser}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+package de.shureg.fuh.m1770.ea34;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+import javax.xml.parsers.*; 
+\end_layout
+
+\begin_layout Plain Layout
+
+import org.xml.sax.*; 
+\end_layout
+
+\begin_layout Plain Layout
+
+import org.xml.sax.helpers.*; 
+\end_layout
+
+\begin_layout Plain Layout
+
+import java.io.*;
+\end_layout
+
+\begin_layout Plain Layout
+
+/**  
+\end_layout
+
+\begin_layout Plain Layout
+
+  * XML Parser mit Hilfe  von SAX Parser  
+\end_layout
+
+\begin_layout Plain Layout
+
+  * @author Alexander  
+\end_layout
+
+\begin_layout Plain Layout
+
+  * @date   01.11.2015  
+\end_layout
+
+\begin_layout Plain Layout
+
+  */ 
+\end_layout
+
+\begin_layout Plain Layout
+
+public class MySAXParser {
+\end_layout
+
+\begin_layout Plain Layout
+
+    public static void main(String ...
+ args){
+\end_layout
+
+\begin_layout Plain Layout
+
+        final String FILE_PATH = "src/de/shureg/fuh/m1770/ea31/student.xml";
+\end_layout
+
+\begin_layout Plain Layout
+
+        try {
+\end_layout
+
+\begin_layout Plain Layout
+
+            SAXParserFactory factory = SAXParserFactory.newInstance();  
+           
+\end_layout
+
+\begin_layout Plain Layout
+
+			SAXParser saxParser = factory.newSAXParser();
+\end_layout
+
+\begin_layout Plain Layout
+
+            // eigenen Defaulthandler erzeugen und Methoden überschreiben
+             
+\end_layout
+
+\begin_layout Plain Layout
+
+			DefaultHandler handler = new DefaultHandler(){
+\end_layout
+
+\begin_layout Plain Layout
+
+                @Override                 
+\end_layout
+
+\begin_layout Plain Layout
+
+				public void startDocument() {                     
+\end_layout
+
+\begin_layout Plain Layout
+
+					System.out.println("Document starts.");                 
+\end_layout
+
+\begin_layout Plain Layout
+
+				}
+\end_layout
+
+\begin_layout Plain Layout
+
+                @Override                 
+\end_layout
+
+\begin_layout Plain Layout
+
+				public void startElement(String namespaceURI, String localName,    
+                                      
+\end_layout
+
+\begin_layout Plain Layout
+
+													String qName, Attributes atts) {                     
+\end_layout
+
+\begin_layout Plain Layout
+
+					System.out.println("qName Start: " + qName);                     
+\end_layout
+
+\begin_layout Plain Layout
+
+					for (int i = 0; i < atts.getLength(); i++)                         
+\end_layout
+
+\begin_layout Plain Layout
+
+						System.out.printf("Attribut no.
+ %d: %s = %s%n", i,                                 
+\end_layout
+
+\begin_layout Plain Layout
+
+											atts.getQName(i), atts.getValue(i));                 
+\end_layout
+
+\begin_layout Plain Layout
+
+				}
+\end_layout
+
+\begin_layout Plain Layout
+
+                @Override                 
+\end_layout
+
+\begin_layout Plain Layout
+
+				public void endElement(String namespaceURI, String localName, String
+ qName) {                     
+\end_layout
+
+\begin_layout Plain Layout
+
+					System.out.println("qName End: " + qName);                 
+\end_layout
+
+\begin_layout Plain Layout
+
+				}
+\end_layout
+
+\begin_layout Plain Layout
+
+                @Override                 
+\end_layout
+
+\begin_layout Plain Layout
+
+				public void characters(char[] ch, int start, int length) {         
+            
+\end_layout
+
+\begin_layout Plain Layout
+
+					System.out.println("Characters: " + new String(ch, start, length)); 
+                
+\end_layout
+
+\begin_layout Plain Layout
+
+				}
+\end_layout
+
+\begin_layout Plain Layout
+
+                @Override                 
+\end_layout
+
+\begin_layout Plain Layout
+
+				public void endDocument() {                     
+\end_layout
+
+\begin_layout Plain Layout
+
+					System.out.println("Document ends.");                 
+\end_layout
+
+\begin_layout Plain Layout
+
+				}             
+\end_layout
+
+\begin_layout Plain Layout
+
+			};             
+\end_layout
+
+\begin_layout Plain Layout
+
+			saxParser.parse( new File(FILE_PATH), handler );
+\end_layout
+
+\begin_layout Plain Layout
+
+        } catch (ParserConfigurationException | SAXException | IOException
+ e) { e.printStackTrace(); }     
+\end_layout
+
+\begin_layout Plain Layout
+
+	} 
+\end_layout
+
+\begin_layout Plain Layout
+
+} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part*
+Aufgabe 3.5 (DOM-Parser)
+\end_layout
+
+\begin_layout Standard
+Die Implementiuerung der Klasse 
+\emph on
+MyDOMParser
+\emph default
+ enthält vier Methoden:
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+printTree
+\emph default
+ - Rekursieves Durchlaufen des DOM Baumes und Ausgabe der Knoten, Attrubute
+ und der Werte.
+ Die Ausgabe wurde von den 
+\noun on
+#text 
+\noun default
+Werten bereinigt.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+addLeistungsnachweis
+\emph default
+ - in dieser Methode wir das DOM-Baum manipuliert und in dem Leistungsnachweis-E
+lement ein zusätzliches Kurs-Elemente mit seinem Attributt und Kind-Elementen
+ hinzugefügt.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+changeKonto
+\emph default
+ - In dieser Methode wir durch explizieten Zugriff auf die Kindelemente
+ des Kontodaten-Elementes zugegriefen und deren Wert geändert.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+writeXML2File
+\emph default
+ - Speichert das XML Dokument unter einem bestimmten Dateipfad.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "language=Java,basicstyle={\scriptsize\sffamily},tabsize=4,caption={XML Dokument  Parser mit DOM-Parser}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+package de.shureg.fuh.m1770.ea35; 
+\end_layout
+
+\begin_layout Plain Layout
+
+import org.w3c.dom.*; 
+\end_layout
+
+\begin_layout Plain Layout
+
+import org.xml.sax.SAXException; 
+\end_layout
+
+\begin_layout Plain Layout
+
+import javax.xml.parsers.*; 
+\end_layout
+
+\begin_layout Plain Layout
+
+import javax.xml.transform.*; 
+\end_layout
+
+\begin_layout Plain Layout
+
+import javax.xml.transform.dom.DOMSource; 
+\end_layout
+
+\begin_layout Plain Layout
+
+import javax.xml.transform.stream.StreamResult; 
+\end_layout
+
+\begin_layout Plain Layout
+
+import java.io.*;
+\end_layout
+
+\begin_layout Plain Layout
+
+/**  
+\end_layout
+
+\begin_layout Plain Layout
+
+* XML Parser mit Hilfe  von DOM Parser  
+\end_layout
+
+\begin_layout Plain Layout
+
+* @author Alexander  
+\end_layout
+
+\begin_layout Plain Layout
+
+* @date   01.11.2015  
+\end_layout
+
+\begin_layout Plain Layout
+
+*/ 
+\end_layout
+
+\begin_layout Plain Layout
+
+public class MyDOMParser {
+\end_layout
+
+\begin_layout Plain Layout
+
+    public static void main(String...args) {         
+\end_layout
+
+\begin_layout Plain Layout
+
+		final String FILE_PATH = "src/de/shureg/fuh//m1770/ea31/";         
+\end_layout
+
+\begin_layout Plain Layout
+
+		final String FILE_NAME = "student.xml";         
+\end_layout
+
+\begin_layout Plain Layout
+
+		try {             
+\end_layout
+
+\begin_layout Plain Layout
+
+			File fXmlFile = new File(FILE_PATH+""+FILE_NAME);             
+\end_layout
+
+\begin_layout Plain Layout
+
+			DocumentBuilderFactory dbFactory= DocumentBuilderFactory.newInstance();
+             
+\end_layout
+
+\begin_layout Plain Layout
+
+			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();           
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+			Document document = dBuilder.parse(fXmlFile);             
+\end_layout
+
+\begin_layout Plain Layout
+
+			// XML werte korrigieren             
+\end_layout
+
+\begin_layout Plain Layout
+
+			document.getDocumentElement().normalize();             
+\end_layout
+
+\begin_layout Plain Layout
+
+			printTree(document.getChildNodes().item(1));
+\end_layout
+
+\begin_layout Plain Layout
+
+			            
+\end_layout
+
+\begin_layout Plain Layout
+
+			// Add Node             
+\end_layout
+
+\begin_layout Plain Layout
+
+			Document doc = addLeistungsnachweis(document);             
+\end_layout
+
+\begin_layout Plain Layout
+
+			writeXML2File(doc,FILE_PATH+"newStudent1.xml");
+\end_layout
+
+\begin_layout Plain Layout
+
+			            
+\end_layout
+
+\begin_layout Plain Layout
+
+			doc = changeKonto(document);             
+\end_layout
+
+\begin_layout Plain Layout
+
+			writeXML2File(doc,FILE_PATH+"newStudent2.xml");         
+\end_layout
+
+\begin_layout Plain Layout
+
+		} catch (SAXException | IOException | ParserConfigurationException e)
+ {e.printStackTrace(); }
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+	...
+\end_layout
+
+\begin_layout Plain Layout
+
+} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "language=Java,basicstyle={\scriptsize\sffamily},tabsize=4,caption={Methode printTree }"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+public static void printTree(Node node) {                
+\end_layout
+
+\begin_layout Plain Layout
+
+	System.out.println("Element: " + node.getNodeName());         
+\end_layout
+
+\begin_layout Plain Layout
+
+	if (node.hasAttributes())             
+\end_layout
+
+\begin_layout Plain Layout
+
+		for (int j = 0; j < node.getAttributes().getLength(); j++)             
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+			System.out.println("Attribut: " + node.getAttributes().item(j));
+\end_layout
+
+\begin_layout Plain Layout
+
+	        
+\end_layout
+
+\begin_layout Plain Layout
+
+	NodeList nodeList = node.getChildNodes();         
+\end_layout
+
+\begin_layout Plain Layout
+
+	for (int i = 0; i < nodeList.getLength(); i++) {             
+\end_layout
+
+\begin_layout Plain Layout
+
+		Node currentNode = nodeList.item(i);             
+\end_layout
+
+\begin_layout Plain Layout
+
+		if (currentNode.getNodeType() == Node.ELEMENT_NODE || currentNode.hasChildNodes()
+) {                                 
+\end_layout
+
+\begin_layout Plain Layout
+
+			printTree(currentNode);
+\end_layout
+
+\begin_layout Plain Layout
+
+		} else if (currentNode.getNodeType() == Node.TEXT_NODE && !currentNode.getNodeVal
+ue().contains("
+\backslash
+n")){                   
+\end_layout
+
+\begin_layout Plain Layout
+
+			System.out.println("Value: " + currentNode.getNodeValue().replaceAll("
+\backslash
+
+\backslash
+s+","") );             
+\end_layout
+
+\begin_layout Plain Layout
+
+		}         
+\end_layout
+
+\begin_layout Plain Layout
+
+	}     
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "language=Java,basicstyle={\scriptsize\sffamily},tabsize=4,caption={Methode addLeistungsnachweis }"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+public static Document addLeistungsnachweis(Document document){        
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	Node leistungsnachweis = document.getElementsByTagName("Leistungsnachweise").item
+(0);         
+\end_layout
+
+\begin_layout Plain Layout
+
+	Element kursElement = document.createElement("Kurs");         
+\end_layout
+
+\begin_layout Plain Layout
+
+	kursElement.setAttribute("nummer","1873");         
+\end_layout
+
+\begin_layout Plain Layout
+
+	Element note = document.createElement("Note");         
+\end_layout
+
+\begin_layout Plain Layout
+
+	note.appendChild(document.createTextNode("3,3"));         
+\end_layout
+
+\begin_layout Plain Layout
+
+	Element gesamtpunkte = document.createElement("Gesamtpunkte");         
+\end_layout
+
+\begin_layout Plain Layout
+
+	gesamtpunkte.appendChild(document.createTextNode("100"));         
+\end_layout
+
+\begin_layout Plain Layout
+
+	Element datum = document.createElement("Datum");         
+\end_layout
+
+\begin_layout Plain Layout
+
+	datum.appendChild(document.createTextNode("01.03.2015"));         
+\end_layout
+
+\begin_layout Plain Layout
+
+	Element anzahlVersuche = document.createElement("AnzahlVersuche");     
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+	anzahlVersuche.appendChild(document.createTextNode("3"));         
+\end_layout
+
+\begin_layout Plain Layout
+
+	kursElement.appendChild(note);         
+\end_layout
+
+\begin_layout Plain Layout
+
+	kursElement.appendChild(gesamtpunkte);         
+\end_layout
+
+\begin_layout Plain Layout
+
+	kursElement.appendChild(datum);         
+\end_layout
+
+\begin_layout Plain Layout
+
+	kursElement.appendChild(anzahlVersuche);
+\end_layout
+
+\begin_layout Plain Layout
+
+	leistungsnachweis.appendChild(kursElement);         
+\end_layout
+
+\begin_layout Plain Layout
+
+	return document;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "language=Java,basicstyle={\scriptsize\sffamily},tabsize=4,caption={Methode changeKonto }"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+public static Document changeKonto(Document document){         
+\end_layout
+
+\begin_layout Plain Layout
+
+	document.getElementsByTagName("Kontonummer").item(0).setTextContent("98654321");
+         
+\end_layout
+
+\begin_layout Plain Layout
+
+	document.getElementsByTagName("Kontoinhaber").item(0).setTextContent("B.B.");
+         
+\end_layout
+
+\begin_layout Plain Layout
+
+	document.getElementsByTagName("Bankleitzahl").item(0).setTextContent("21050505");
+         
+\end_layout
+
+\begin_layout Plain Layout
+
+	return document;     
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "language=Java,basicstyle={\scriptsize\sffamily},tabsize=4,caption={Methode writeXML2File}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+public static void writeXML2File(Document document,String path){       
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	TransformerFactory transformerFactory = TransformerFactory.newInstance();
+         
+\end_layout
+
+\begin_layout Plain Layout
+
+	Transformer transformer = null;         
+\end_layout
+
+\begin_layout Plain Layout
+
+	try {             
+\end_layout
+
+\begin_layout Plain Layout
+
+		transformer = transformerFactory.newTransformer();         
+\end_layout
+
+\begin_layout Plain Layout
+
+	} catch (TransformerConfigurationException e) {  e.printStackTrace(); }
+         
+\end_layout
+
+\begin_layout Plain Layout
+
+	DOMSource source = new DOMSource(document);         
+\end_layout
+
+\begin_layout Plain Layout
+
+	StreamResult result = new StreamResult(new File(path));         
+\end_layout
+
+\begin_layout Plain Layout
+
+	try {             
+\end_layout
+
+\begin_layout Plain Layout
+
+		transformer.transform(source, result);         
+\end_layout
+
+\begin_layout Plain Layout
+
+	} catch (TransformerException e) {  e.printStackTrace();  }     
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

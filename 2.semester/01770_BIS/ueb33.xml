@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Auftrag>
+  <Bestellposition>
+    <Positionsnummer></Positionsnummer>
+    <Produktname></Produktname>
+    <Menge></Menge>
+    <Einheit></Einheit>
+  </Bestellposition>
+  <Lieferdaten>
+    <Kunde>
+      <Kundenname></Kundenname>
+      <Anschrift>
+        <Adresse>
+          <Strasse></Strasse>
+          <Hausnummer></Hausnummer>
+        </Adresse>
+        <PLZ></PLZ>
+        <Ort></Ort>
+      </Anschrift>
+    </Kunde>
+    <Lieferdatum></Lieferdatum>
+  </Lieferdaten>
+  <Anmerkung>
+    <Text></Text>
+  </Anmerkung>
+</Auftrag>

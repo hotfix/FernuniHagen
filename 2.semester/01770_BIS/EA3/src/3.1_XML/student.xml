@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Studenten SYSTEM "student.dtd" >
+<Studenten>
+    <Student>
+        <Name>
+            <Vorname>Max</Vorname>
+            <Nachname>Mustermann</Nachname>
+            <Anrede>Herr</Anrede>
+        </Name>
+        <Matrikelnummer>123465789</Matrikelnummer>
+        <Anschrift>Hauptstrasse 105, 14199 Berlin</Anschrift>
+        <Lieferanschrift>Seitenstrasse 10, 10115 Berlin</Lieferanschrift>
+        <Kontodaten>
+            <Kontoinhaber>Peter Mustermann</Kontoinhaber>
+            <Kontonummer>132465789</Kontonummer>
+            <Bankleitzahl>20000000</Bankleitzahl>
+        </Kontodaten>
+        <Leistungsnachweise>
+            <Kurs nummer="1770">
+                <Note>2,3</Note>
+                <Gesamtpunkte>120</Gesamtpunkte>
+                <Datum>12.12.2014</Datum>
+                <AnzahlVersuche>1</AnzahlVersuche>
+            </Kurs>
+            <Kurs nummer="1793">
+                <ErreichtePunkte>50</ErreichtePunkte>
+                <Gesamtpunkte>70</Gesamtpunkte>
+                <Datum>01.09.2012</Datum>
+                <AnzahlVersuche>2</AnzahlVersuche>
+            </Kurs>
+        </Leistungsnachweise>
+        <SchriftlicheArbeiten art="Bachelorarbeit">
+            <Thema>Hier kann ein Thema der Bachelorarbeit stehen</Thema>
+            <Note>2,5</Note>
+            <Betreuer>Prof. XYX</Betreuer>
+            <Betreuer>Prof. ABC</Betreuer>
+            <Abgabedatum>31.12.2015</Abgabedatum>
+        </SchriftlicheArbeiten>
+        <Anmerkungen>Keine besonderen Anmerkungen</Anmerkungen>
+    </Student>
+</Studenten>
