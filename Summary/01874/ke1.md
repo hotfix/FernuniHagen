@@ -59,5 +59,56 @@ mehrere Objekte verteilt ist. Man unterscheide: Multilateral attribute correspon
 Modellierungselemente zur Repräsentation von Information derselben Art. z.B. Attribut Wert <-> Separate Tabelle
 
 ## Heterogenitätskonflikte zwischen Daten-Instanzen (semantische Ebene)
++ Konflikte lassen sich nicht durch die Betrachtung der Struktur lösen
++ Man unterscheide:
+  + Datenkonflikte - Konflikte, die aus unterschiedlicher Kodierung hervorgehen
+    + spricht man von unterschiedlichen Skalen (different scales),
+wenn insbesondere numerische Werte auf verschiedenen Maßstäben
+basieren
+    + Different value ranges - z.b. Bewertung 1-5 Sternen <->  1-5 Schlüssel
+    + surjectiv mapping - Wenn ein Wert einer Quelle auf mehrere Werte der anderen Quelle abgebildet wird
+    + Schema mapping - 
+  + Domänenkonflikte - Konflikte, die aus unterschiedlicher Konzeptionierung des jeweiligen Wissensbereichs erwachsen.
+    + Subsumption - eine Repräsentantenmenge Untermenge einer anderen Repräsentantenmenge.
+    + Überlappung - müssen sich die jeweiligen Repräsentantenmengen überschneiden
+
+## Lösungsansätze für die Semantische Integration
++ Informationsintegration kann dabei als Verbindung von Daten- und
+Funktionsintegration angesehen werden
++ Datenintegration zielt auf die Zusammenführung heterogener Datenbestände ab
++ Funktionsintegration bezeichnet das Verfügbarmachen lokaler Funktionen bzw. Dienste aus den einzelnen Systemen in einer einheitlichen Form
++ zur Verwendung kommen Datenintegrationsysteme, welche auf einer wrapper/mediator Architektur basieren.
 
 
+## Wrapper und Mediatoren
++ **Wrapper** sind Softwarekomponenten, die den Inhalt einer Datenquelle zur
+Vereinheitlichung in einem anderen Datenmodell oder Schema repräsentieren.
+Ein Beispiel dafür wäre ein XML-Wrapper für eine relationale Datenbank.
++ **Mediatoren** sind Softwarekomponenten, die der Vereinfachung, Reduzierung,
+Kombination und Erklärung von Daten dienen. Sie werden v. a. zur
+Bereitstellung einer gemeinsamen Anfragemöglichkeit auf unterschiedliche
+Datenquellen genutzt
+
+## Erfassen von Semantik über die Struktur
+...
+
+## Zugang über natürlich-sprachliche Verarbeitung des Ursprungstextes
+...
+
+## Semantische Modelle
++ Möglichkeiten der Kontext-Wissens-Darstellungen: Die Möglichkeiten reichen mit wachsender semantischer Ausdrucksstärke von der einfachen informellen Beschreibung von Ausdrücken in natürlicher Sprache (Glossar) über einfache
+Hierarchien von Ausdrücken oder komplexe Netzwerke über Hierarchien von
+Konzepten, komplexen Konzeptbeschreibungen (Ontologien) bis hin zu
+streng formalen Ansätzen mit der Ausdrucksstärke von Prädikatenlogik
+  + Namen und Bezeichner
+  + Termnetzwerke
+  + Konzepthierarchien
+  + Ontologien
+
++ Ontologien- sprachlich gefasste und formal geordnete Darstellungenvon Wissen. werden dazu genutzt, „Wissen“ in digitalisierter und formaler Form zwischen Anwendungsprogrammen und Diensten auszutauschen.
++ Konzepte werden mithilfe von RTF-S beschrieben.
++ Ein RDF-Schema enthält Definitionen von Klassen mit entsprechend
+zugehörigen Eigenschaften, die durch constraint-properties enger
+gefasst werden.
+
+ 

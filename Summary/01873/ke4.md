@@ -92,3 +92,12 @@
 * beschreibt welche Werte Objekte annehmen können und die Beziehungen zwischen Objekten
 * jedes RDF-Schema seinen eigenen Namensraum via Präfix verwendet, können Ausdrücke aus verschiedenen Modellen in einem RDF-Dokument ohne Konflikte gemischt werden.
 
+## Ontologie
+
+* Bestandteile einer Ontologie:
+  * Begriffe
+  * Typen
+  * Instanzen
+  * Relationen
+  * Vererbung
+  * Axiome
