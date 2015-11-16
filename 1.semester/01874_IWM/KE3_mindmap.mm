@@ -11,8 +11,7 @@
       Information-Retrieval-Systeme (IRS) stellen Systeme f&#252;r die Speicherung, die Verwaltung und den Zugriff auf &#252;berwiegend unformatierte Daten und Wissensressourcen mit variabler L&#228;nge dar
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node CREATED="1435600076992" ID="ID_1607243039" MODIFIED="1435603465275" TEXT="Information Retrieval">
 <richcontent TYPE="NOTE"><html>
   <head>
@@ -23,8 +22,7 @@
       Suchvorg&#228;nge automatisch in einem Faktendatenbestand oder einer schwach- oder unstrukturierten Kollektion von Wissensressourcen durchzuf&#252;hren.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 <node CREATED="1435600087961" ID="ID_657607910" MODIFIED="1435603477820" TEXT="Information Filtering">
 <richcontent TYPE="NOTE"><html>
@@ -39,8 +37,7 @@
       textueller Form vorliegen k&#246;nnen, in Abh&#228;ngigkeit der jeweiligen Benutzereinstellungen und Relevanzvorgaben.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 <node CREATED="1435600635045" ID="ID_941419733" MODIFIED="1435600645080" TEXT="Search Engine"/>
 <node CREATED="1435600645404" ID="ID_1565118710" MODIFIED="1435603602564" TEXT="Queries">
@@ -56,8 +53,7 @@
       Inhaltsbeschreibungen von Wissensressourcen
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 <node CREATED="1435603602551" ID="ID_1362714952" MODIFIED="1435603644212" TEXT="Maschinele Methoden">
 <richcontent TYPE="NOTE"><html>
@@ -81,8 +77,7 @@
       mit Hilfe von Methoden der elektronischen Datenverarbeitung.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 <node CREATED="1435603659863" ID="ID_1797851668" MODIFIED="1435603697993" TEXT="Informationdefizit">
 <richcontent TYPE="NOTE"><html>
@@ -94,8 +89,7 @@
       Durch die Verwendung eines Informationssystems zum Zweck der Probleml&#246;sung oder der Entscheidungsunterst&#252;tzung kommt auf den Benutzer neben der Bew&#228;ltigung seines Informationsdefizites auch eine Reihe von Folgeproblemen zu
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node CREATED="1435603710206" ID="ID_1492849835" MODIFIED="1435603731387" TEXT="Bestimmung der genauen Natur des Informationdefizites"/>
 <node CREATED="1435603733349" ID="ID_1215159346" MODIFIED="1435603744259" TEXT="Formulierung einer angemessenen Anfrage"/>
 <node CREATED="1435603753005" ID="ID_23488196" MODIFIED="1435603788578" TEXT="Wahrnehmung/Analyse/Bewertung der Ergebnisvorschl&#xe4;ge"/>
@@ -115,8 +109,7 @@
       Beschreibung, Speicherung und Verwaltung umfangreicher Datenmengen, die von mehreren Anwendungsprogrammen genutzt werden k&#246;nnen
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 <node CREATED="1435684319760" ID="ID_592021044" MODIFIED="1435684345563" TEXT="Objektorientierte Datenbanksysteme (OODBS)">
 <node CREATED="1435684412325" ID="ID_1831781495" MODIFIED="1435684456121" TEXT="Erweiterungen der OO Programmiersprachen">
@@ -129,8 +122,7 @@
       Diese Systeme bauen auf dem bereits bestehenden Daten- und Programmiermodell einer objektorientierten Sprache auf und erg&#228;nzen dieses um die F&#228;higkeit, Objekte &#252;ber die Laufzeit eines Programmes hinaus anderen Programmen und Benutzern zug&#228;nglich zu machen
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 <node CREATED="1435684594668" ID="ID_906815985" MODIFIED="1435686160982" TEXT="ORDBMS">
 <richcontent TYPE="NOTE"><html>
@@ -145,8 +137,7 @@
       einer objektorientierten Programmiersprache ist. Diese Systeme orientieren sich an den derzeitigen relationalen Datenbanken, die mit der nichtprozeduralen Abfragesprache SQL eine standardisierte Schnittstelle sowohl f&#252;r den Benutzer als auch f&#252;r den Entwickler liefern
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 </node>
 <node CREATED="1435686151441" ID="ID_63600515" MODIFIED="1435686186363" TEXT="Datenbankschema">
@@ -159,8 +150,7 @@
       Eine Modellierung eines Weltausschnitts mittels dieser Konzepte nennt man das Datenbankschema einer Anwendung. Es beschreibt die Struktur, in der in der Datenbank Informationen gespeichert werden
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 <node CREATED="1435686692725" ID="ID_340445423" MODIFIED="1435686737348" TEXT="Konzepte der OODBS">
 <richcontent TYPE="NOTE"><html>
@@ -172,8 +162,7 @@
       Im Gegensatz dazu gibt es f&#252;r objektorientierte Datenmodelle keinen einheitlichen Standard.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node CREATED="1435686739654" ID="ID_1613786584" MODIFIED="1435686821168" TEXT="Objekte und Objektidentit&#xe4;t">
 <richcontent TYPE="NOTE"><html>
   <head>
@@ -184,8 +173,7 @@
       Einheiten der realen Welt werden als Objekte modelliert. Jedes Objekt hat einen eindeutigen Bezeichner.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 <node CREATED="1435686747460" ID="ID_399336586" MODIFIED="1435686827079" TEXT="Komplexe Objekte">
 <richcontent TYPE="NOTE"><html>
@@ -197,8 +185,7 @@
       Attribute von Objekten k&#246;nnen komplexe Typen darstellen in Form von Listen oder Mengen. Ebenso kann es sich um Verweise auf andere Objekte handeln. So lassen sich komplexe Objektstrukturen erstellen.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 <node CREATED="1435686755877" ID="ID_1984903769" MODIFIED="1435686843467" TEXT="Klassen">
 <richcontent TYPE="NOTE"><html>
@@ -210,8 +197,7 @@
       Objekte mit gleichen Eigenschaften werden in Klassen zusammengefasst
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 <node CREATED="1435686759909" ID="ID_906975660" MODIFIED="1435686851471" TEXT="Kapselung von Zusatnd und Verhalten">
 <richcontent TYPE="NOTE"><html>
@@ -223,8 +209,7 @@
       Der Zustand von Objekten in der Datenbank wird &#252;ber Methoden ver&#228;ndert. Unter Methoden sind Prozeduren zu verstehen, die einem Objekt zugeordnet werden, indem sie beispielsweise mit dem Objekt oder mit der Klasse des Objektes gespeichert werden
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 <node CREATED="1435686773845" ID="ID_1656611121" MODIFIED="1435686906456" TEXT="Vererbung">
 <richcontent TYPE="NOTE"><html>
@@ -236,8 +221,7 @@
       Eine Klasse kann Eigenschaften einer anderen Klasse erben
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 <node CREATED="1435686777804" ID="ID_1249583572" MODIFIED="1435686971486" TEXT="OO Modellierung">
 <richcontent TYPE="NOTE"><html>
@@ -249,8 +233,7 @@
       Bei der Modellierung werden Objekte und Konzepte der realen Welt auf das Datenbankschema abgebildet.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node CREATED="1435686990235" ID="ID_599733087" MODIFIED="1435687054771" TEXT="Klassifikation">
 <richcontent TYPE="NOTE"><html>
   <head>
@@ -261,8 +244,7 @@
       Es wird zwischen dem Typ und dem Wert eines Objektes unterschieden; ein Objekttyp beschreibt Eigenschaften (Struktur und Verhalten) einer Menge gleichartiger Objekte.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 <node CREATED="1435686994084" ID="ID_1950922899" MODIFIED="1435687067294" TEXT="Aggregation">
 <richcontent TYPE="NOTE"><html>
@@ -274,8 +256,7 @@
       Neue, komplexe Objekttypen werden aus elementaren Datentypen und anderen Objekttypen zusammengesetzt.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 <node CREATED="1435687000307" ID="ID_402672537" MODIFIED="1435687084820" TEXT="Assoziazion">
 <richcontent TYPE="NOTE"><html>
@@ -287,8 +268,7 @@
       Objekte eines Typs haben Beziehungen zu Objekten eines anderen Objekttyps.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 <node CREATED="1435687084811" ID="ID_1219246529" MODIFIED="1435687110923" TEXT="Spezialisierung/Generalisierung">
 <richcontent TYPE="NOTE"><html>
@@ -300,8 +280,7 @@
       In einer Generalisierungshierarchie von Objekttypen erben Objekte Eigenschaften von allgemeineren Objekten
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 </node>
 </node>
@@ -326,8 +305,7 @@
       die automatische Extraktion einer Daten- oder Dokumentmenge gemeint, die bez&#252;glich eines informationellen Benutzerinteresses bedeutungstragend ist.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node CREATED="1435688020125" ID="ID_645144410" MODIFIED="1435688037224" TEXT="Nummerische Ma&#xdf;e der Effektivit&#xe4;t">
 <node CREATED="1435688039451" ID="ID_391135496" MODIFIED="1435688086648" TEXT="Precision">
 <richcontent TYPE="NOTE"><html>
@@ -342,8 +320,7 @@
       Anfrage vom System als relevant pr&#228;sentierten Dokumente und der Anzahl der tats&#228;chlich relevanten Dokumente innerhalb dieser Ergebnismenge.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 <node CREATED="1435688045684" ID="ID_261825005" MODIFIED="1435688114551" TEXT="Recall">
 <richcontent TYPE="NOTE"><html>
@@ -355,8 +332,7 @@
       das Verh&#228;ltnis der Gesamtzahl aller f&#252;r eine Anfrage relevanten Dokumente der Dokumentmenge und der Anzahl der vom System im Anfrageergebnis pr&#228;sentierten relevanten Dokumente.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 </node>
 <node CREATED="1435688629727" ID="ID_517005192" MODIFIED="1435688642756" TEXT="Systemkomponenten einse IRS">
@@ -370,8 +346,7 @@
       enth&#228;lt formale Beschreibung der im jeweiligen Dokument enthaltenen Information
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 <node CREATED="1435688661823" ID="ID_590289037" MODIFIED="1435689113173" TEXT="Anfragerepr&#xe4;sentation">
 <richcontent TYPE="NOTE"><html>
@@ -383,8 +358,7 @@
       unterst&#252;tzt die formale Beschreibung des Informationsbed&#252;rfnisses
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 <node CREATED="1435688670671" ID="ID_690361986" MODIFIED="1435689154154" TEXT="Retrieval engine">
 <richcontent TYPE="NOTE"><html>
@@ -399,11 +373,10 @@
       Regeln, automatisch mit Hilfe von algorithmischen Pattern-Matching-Prozeduren, diejenigen Dokumente gefunden werden, die f&#252;r die Anfrage des Benutzers relevant sind
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 </node>
-<node CREATED="1435689252532" ID="ID_1347909845" MODIFIED="1435691939932" TEXT="2.1 Exact-Match-Modelle">
+<node CREATED="1435689252532" ID="ID_1347909845" MODIFIED="1447694439907" TEXT="2.1 Exact-Match-Modelle">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -449,8 +422,7 @@
       Bei den auf bestm&#246;glicher Erf&#252;llung beruhenden Modellen werden die Vektorraum-, die Wahrscheinlichkeitstheorie und die Theorie der Fuzzy-Logik herangezogen f&#252;r die Entwicklung eines Modells, welches die Nachteile des boole'schen Information-Retrieval-Modells vermeidet.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node CREATED="1435693422126" ID="ID_340595443" MODIFIED="1435694113370" TEXT="2.2.1 Ranking-Modelle">
 <richcontent TYPE="NOTE"><html>
   <head>
@@ -461,8 +433,7 @@
       es wird eine geordnete Auswahl von Dokumenten aus der Datenbasis berechnet, wobei die Ergebnisdokumente in der Reihenfolge pr&#228;sentiert werden, in der sie als f&#252;r die Anfrage relevant berechnet worden sind.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node CREATED="1435694126128" ID="ID_1539824979" MODIFIED="1435694168106" TEXT="Weak Ordering">
 <richcontent TYPE="NOTE"><html>
   <head>
@@ -473,8 +444,7 @@
       Beim so genannten weichen Ordnen (Weak Ordering) k&#246;nnen zwei Dokumente den gleichen Wert bzw. Rang einnehmen.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 <node CREATED="1435694129345" ID="ID_1393355335" MODIFIED="1435694172481" TEXT="Linear Ordering">
 <richcontent TYPE="NOTE"><html>
@@ -489,8 +459,7 @@
       Unterschiede vorhanden sein [39] - &#252;blich ist das Weak Ordering [18]
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 </node>
 <node CREATED="1435695374816" ID="ID_1036394431" MODIFIED="1435779706433" TEXT="2.2.2 Vektorraum-Modelle">
@@ -533,8 +502,7 @@
       Gewicht des Terms bei 1 liegt, desto bedeutungsschwerer ist er [45].
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node CREATED="1435777950493" ID="ID_973662135" MODIFIED="1435777952787" TEXT="Kosinus-Ma&#xdf;"/>
 </node>
 <node CREATED="1435695400056" FOLDED="true" ID="ID_516879330" MODIFIED="1435779786233" TEXT="2.2.3 Clustering-Modelle">
@@ -547,8 +515,7 @@
       Um diese Art des IRs zu verwirklichen, wird ein System aus H&#228;ufungen von Dokumenten zu so genannten Clustern &#228;hnlichen Inhalts erzeugt. Als Ma&#223;e f&#252;r die Berechnung der &#196;hnlichkeit von Dokumenten werden etwa Skalarprodukt oder Kosinus-Ma&#223; verwendet und anhand dieser werden die Abst&#228;nde einzelner Dokumente voneinander quantifiziert.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node CREATED="1435779634842" ID="ID_1433668138" MODIFIED="1435779648471" TEXT="Skalarprodukt "/>
 <node CREATED="1435779639322" ID="ID_962315580" MODIFIED="1435779645158" TEXT="Kisinus-Mass"/>
 </node>
@@ -565,8 +532,7 @@
       und Vorkommensh&#228;ufigkeiten von Begriffen spielen dabei eine wichtige Rolle.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 <node CREATED="1435695435487" ID="ID_106559614" MODIFIED="1435695444140" TEXT="2.2.5 Inferenz Modelle"/>
 </node>
@@ -586,8 +552,7 @@
       Information-Retrieval-Technik an sich, sondern eher um eine interaktive Anfrageverfeinerungsmethode.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 <node CREATED="1435695463607" ID="ID_1877419556" MODIFIED="1435695479692" TEXT="2.4. Intelligente Modelle"/>
 <node CREATED="1435695480119" ID="ID_1396194217" MODIFIED="1435777850579" TEXT="2.5.Neuronale Modelle"/>
