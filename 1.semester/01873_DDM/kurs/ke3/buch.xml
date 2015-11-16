@@ -1,0 +1,12 @@
+<?xml version = "1.0"?> 
+<?xml-stylesheet href="xslt_temp.xslt" type="text/xsl"?>
+<buch> 
+  <titel> Dies ist der Buchtitel </titel> 
+  <autor name="Nachname" nname="Vorname" /> 
+  <Inhalt> 
+    <Kapitel Nummer="1"> 
+      <Unterkapitel Nummer="1.3"> Der Name des Unterkapitels 1.3 </Unterkapitel> 
+    </Kapitel> 
+    <Kapitel Nummer="2"> Der Name des zweiten Kapitels </Kapitel> 
+  </Inhalt> 
+</buch>

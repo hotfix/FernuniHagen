@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ISO-8859-1"?> 
+<?xml-stylesheet type="text/xsl" href="datenbank.xslt"?> 
+<resources xmlns:xsi="http://w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="datenbank.xsd"> 
+<buecher> 
+<buch isbn="8534"> 
+<verlag>Bucherdruck</verlag> 
+<autor>Roman Herzig</autor>
+<title>Das verlorene Schatzi</title> 
+</buch> 
+<buch isbn="0567"> 
+<verlag>Die Binder</verlag> 
+<autor>Sven Bach</autor> 
+<title>Der Dunkle Mond</title> 
+</buch> 
+<buch isbn="9643"> 
+<verlag>Die Binder</verlag> 
+<autor>Rene Westrupp</autor> 
+<title>Das Ende des Buches</title> 
+</buch> 
+<buch isbn="3267"> 
+<verlag>Bucherdruck</verlag> 
+<autor>Sven Bach</autor> 
+<title>Informatik verstehen</title> 
+</buch>
+ </buecher> 
+ </resources>
