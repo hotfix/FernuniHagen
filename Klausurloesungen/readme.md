@@ -2,7 +2,7 @@
 
 In diesem Verzeichnis findet man die Mustelösungen zu den Klausuren der Fakultät Mathematik & Informatik inkl. Wirtschaftsinformatik der Fernuni-Hagen.
 
-Viele Klausuren findet man auf der Seite des [Fachschaftsrates](der Fakultät Mathematik & Informatik inkl. Wirtschaftsinformatik).
+Viele Klausuren findet man auf der Seite des [Fachschaftsrates](http://www.fernuni-hagen.de/FACHSCHINF/Klausuren.htm).
 
 Zur zeit sind nur die Mustenlösungen der Klausuren vorhanden, die ich selbst bearbeitet habe.
 
