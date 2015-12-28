@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+
+    <error-page>
+        <error-code>404</error-code>
+        <location>/404.html</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/500.html</location>
+    </error-page>
+    <error-page>
+        <exception-type>java.lang.NumberFormatException</exception-type>
+        <location>/NumberFormatException.html</location>
+    </error-page>
+
+    <context-param>
+        <param-name>Testfall</param-name>
+        <param-value>1</param-value>
+    </context-param>
+
+    <servlet>
+        <servlet-name>BasisServlet</servlet-name>
+        <servlet-class>BasisServlet</servlet-class>
+        <init-param>
+            <description>Name des Teilnehmers</description>
+            <param-name>tname</param-name>
+            <param-value>Jens</param-value>
+        </init-param>
+        <init-param>
+            <description>Alter des Teilnehmers</description>
+            <param-name>talter</param-name>
+            <param-value>38</param-value>
+        </init-param>
+    </servlet>
+    <servlet>
+        <servlet-name>HTTPHeaderServlet</servlet-name>
+        <servlet-class>de.fernuni.kap03.HTTPHeaderServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RessourceLaden</servlet-name>
+        <servlet-class>de.fernuni.kap03.LadeRessource</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>FehlerServlet</servlet-name>
+        <servlet-class>de.fernuni.kap03.FehlerServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ExceptionServlet</servlet-name>
+        <servlet-class>de.fernuni.kap03.ExceptionServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>HTTPHeaderServlet2</servlet-name>
+        <servlet-class>de.fernuni.kap03.HTTPHeaderServlet2</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>HTTPHeaderServlet3</servlet-name>
+        <servlet-class>de.fernuni.kap03.HTTPHeaderServlet3</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>FormularServlet</servlet-name>
+        <servlet-class>de.fernuni.kap03.FormularServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SessionServlet</servlet-name>
+        <servlet-class>de.fernuni.kap03.SessionServlet</servlet-class>
+    </servlet>
+
+
+
+    <servlet-mapping>
+        <servlet-name>BasisServlet</servlet-name>
+        <url-pattern>/BasisServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>HTTPHeaderServlet</servlet-name>
+        <url-pattern>/HTTPHeaderServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RessourceLaden</servlet-name>
+        <url-pattern>/RessourceLaden/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FehlerServlet</servlet-name>
+        <url-pattern>/FehlerServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ExceptionServlet</servlet-name>
+        <url-pattern>/ExceptionServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>HTTPHeaderServlet2</servlet-name>
+        <url-pattern>/HTTPHeaderServlet2</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>HTTPHeaderServlet3</servlet-name>
+        <url-pattern>/HTTPHeaderServlet3</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FormularServlet</servlet-name>
+        <url-pattern>/FormularServlet/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SessionServlet</servlet-name>
+        <url-pattern>/SessionServlet/*</url-pattern>
+    </servlet-mapping>
+
+
+</web-app>

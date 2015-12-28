@@ -67,3 +67,8 @@ $RECYCLE.BIN/
 *.xlsx
 *.*~
 *.*#
+
+# IntelliJ
+.idea/
+out/
+*.iml
