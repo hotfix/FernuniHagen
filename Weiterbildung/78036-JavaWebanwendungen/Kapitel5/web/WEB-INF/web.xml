@@ -9,5 +9,15 @@
       <taglib-uri>/NameTag</taglib-uri>
       <taglib-location>/WEB-INF/NamenTags.tld</taglib-location>
     </taglib>
+    <taglib>
+      <taglib-uri>/Kap05Tags</taglib-uri>
+      <taglib-location>/WEB-INF/Kap05Tags.tld</taglib-location>
+    </taglib>
+    <taglib>
+      <taglib-uri>/UpperTag</taglib-uri>
+      <taglib-location>/WEB-INF/upperTag.tld</taglib-location>
+    </taglib>
   </jsp-config>
+
+
 </web-app>

@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<Kunden>
+  <Kunde>
+    <Name>
+      Meier
+    </Name>
+    <Vorname>
+      Kurt
+    </Vorname>
+    <Telefon>123456</Telefon>
+  </Kunde>
+  <Kunde>
+    <Name>
+      Schmanz
+    </Name>
+    <Vorname>
+      Bodo
+    </Vorname>
+    <Telefon>987654</Telefon>
+  </Kunde>
+  <Kunde>
+    <Name>
+      Horn
+    </Name>
+    <Vorname>
+      Blas
+    </Vorname>
+    <Telefon>11223344</Telefon>
+  </Kunde>
+</Kunden>

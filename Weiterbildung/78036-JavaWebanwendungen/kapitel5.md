@@ -110,5 +110,22 @@
 <%@ taglib uri="Kap05TLD" prefix="t" %> 
 // flexibelste variante
 // verwendet als URI den im Element <taglib-uri> verwendeten Namen aus der Datei web.xml
-<%@ taglib uri="/Kap05Tags" prefix="t" %> 
+<%@ taglib uri="/Kap05Tags" prefix="t" %>
 ```
+
+## 5.4 JavaServer Pages Standard Tag Library 
+
+- **JSTL** - JavaServer Pages Standard Tag Library
+- Diese enthält Routinen in Form von Tags aus unterschiedlichen Bereichen. Die Tags wurden in fünf Bibliotheken aufgeteilt
+
+Bibliothek | Präfix | Funktion(en)
+--|--|--
+core | c |Variablenwerte auslesen,Deklarationen,Exceptions ,Kontrollflusssteuerung ,Http-Funktionalität
+functions |fn |Hilfsfunktionen, z.B. Zeichenkettenverarbeitung
+I18n | fmt|Lokalisierung
+sql | sql|Datenbankzugriff
+XML|x |Verarbeitung von XML-Daten
+
+> Die **Core-Tags** (Basis-Tags) stellen allgemeine Funktionen zur Verfügung
+
+- Funktions-Tags stellen Hilfsfunktionen zur Verfügung, die hauptsächlich auf die Verarbeitung von Zeichenketten ausgelegt sind

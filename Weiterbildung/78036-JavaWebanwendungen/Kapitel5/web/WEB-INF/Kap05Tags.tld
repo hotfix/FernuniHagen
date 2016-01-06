@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<taglib xmlns="http://java.sun.com/xml/ns/javaee"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+      http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
+      version="2.1"> 
+ <tlib-version>2.1</tlib-version>
+    <short-name>Demo</short-name>
+
+    <uri>Kap05TLD</uri>
+  <tag>
+    <name>KundenListe1</name>
+    <tag-class>de.fernuni.kap05.KundenListeTag</tag-class>
+    <body-content>empty</body-content>
+  </tag>
+  <tag>
+    <name>KundenListe2</name>
+    <tag-class>de.fernuni.kap05.KundenListeSimpleTag</tag-class>
+    <body-content>empty</body-content>
+  </tag>
+  <tag>
+    <name>KundenListe3</name>
+    <tag-class>de.fernuni.kap05.KundenListeAttrTag</tag-class>
+    <body-content>empty</body-content>
+    <attribute>
+      <name>useList</name>
+      <required>false</required>
+    </attribute>
+  </tag>
+  <tag>
+    <name>Iteration</name>
+    <tag-class>de.fernuni.kap05.IterationTag</tag-class>
+    <body-content>JSP</body-content>
+    <attribute>
+      <name>to</name>
+      <required>true</required>
+    </attribute>
+    <attribute>
+      <name>from</name>
+      <required>true</required>
+    </attribute>
+    <attribute>
+      <name>step</name>
+      <required>true</required>
+    </attribute>
+  </tag>
+</taglib>

@@ -18,6 +18,14 @@
         <name>MeinNameSimpleTag</name>
         <tag-class>de.fernuni.kap05.MeinNameSimpleTag</tag-class>
         <body-content>empty</body-content>
+        <attribute>
+            <name>useOnlyFirstName</name>
+            <required>false</required>
+        </attribute>
+        <attribute>
+            <name>useCity</name>
+            <required>false</required>
+        </attribute>
     </tag>
 
 

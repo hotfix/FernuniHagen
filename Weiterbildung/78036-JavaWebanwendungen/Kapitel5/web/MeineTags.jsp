@@ -16,5 +16,14 @@
 <t:MeinNameTag />
 <h3>Meinname Version 2</h3>
 <t:MeinNameSimpleTag/>
+<hr>
+<h2>Mein Name  mit verwendung von Attributen</h2>
+<h3>Meinname Version 3</h3>
+<t:MeinNameSimpleTag useCity="true"/>
+
+<h3>Meinname Version 4</h3>
+<t:MeinNameSimpleTag useOnlyFirstName="true"/>
+<h3>Meinname Version 4</h3>
+<t:MeinNameSimpleTag useCity="false"/>
 </body>
 </html>
