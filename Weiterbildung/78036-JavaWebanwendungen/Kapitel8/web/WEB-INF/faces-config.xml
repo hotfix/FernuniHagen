@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
+    http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+
+    <managed-bean>
+        <description>Prüft Altersangaben</description>
+        <managed-bean-name>AlterBean</managed-bean-name>
+        <managed-bean-class>de.fernuni.kap08.AlterBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+        <managed-property>
+            <property-name>alter</property-name>
+            <property-class>int</property-class>
+            <value>100</value>
+        </managed-property>
+    </managed-bean>
+</faces-config>
