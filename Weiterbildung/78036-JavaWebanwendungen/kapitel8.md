@@ -51,3 +51,30 @@
 -  Es gibt mehrere Vorteile bei der 2. Methode
   - Die Navigation wird vorwiegend in der Konfigurationsdatei festgelegt und ist damit leichter wartbar, da diese Informationen hier zentralisiert vorliegen.
   -  Tools können die Konfigurationsdatei nutzen, um eine grafische Definition von Navigationsregeln zu ermöglichen.
+- Möglichkleiten statischer Verlinkung
+  - über `<a>` Tag
+  - `<h:link value="Test-Seite" outcome="Test.xhtml" />`
+  - über `<h:outputLink>` 
+```xml
+  <h:outputLink value="/faces/Test.xhtml"> 
+  <h:outputText value="Test-Seite" /> 
+</h:outputLink>
+```
+
+- Die Navigation über JSF erfolgt in der Regel über Aktionen
+
+# 8.5 Ereignisse
+
+- Das JSF-API definiert Event- und Listenerklassen um auf Ereignisse zu reagieren.
+  - Action-Event 
+  - ValueChange-Event 
+  - System-Events 
+  - DataModel-Event 
+
+- Um auf Ereignisse in einer UI-Komponente zu reagieren, 
+  - benötigt man eine Listenerklasse, die das entsprechende Interface implementiert
+  - der Listener wird bei der Komponente registriert
+
+- ActionEvents treten beim Klicken einer Schaltfläche oder eines Links vom Typ `<h:commandLink>` auf.
+
+- Änderungen von Daten führen zum Auslösen von Ereignissen `ValueChangeEvent`
