@@ -29,10 +29,10 @@ b)	Wie werden JSP-Ausdrücke in einer JSP-Seite gekennzeichnet? Geben Sie beide 
 ##Aufgabe6
 Innerhalb einer JSP-Seite stehen standardmäßig mehrere vordefinierte Variablen zum Zugriff auf verschiedene Anwendungsbereiche zur Verfügung. Nennen Sie mindestens drei dieser Variablen und geben Sie deren Verwendungszweck an.
 
-Aufgabe7
+##Aufgabe7
 Objekte einer JSP-Seite können zu einem von vier Gültigkeitsbereichen gehören. Geben Sie die Gültigkeitsbereiche an und erläutern Sie diese kurz.
 
-Aufgabe8
+##Aufgabe8
 a)	Erstellen Sie im Package `de.fernuni.pruefung` eine JavaBean `Haus` mit den Eigenschaften `Etagen` und `Ort`.
 
 b)	Geben Sie an, wie eine Instanz dieser Bean in der JSP-Seite erzeugt wird, die für eine Sitzung gültig ist.
