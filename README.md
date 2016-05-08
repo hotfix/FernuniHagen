@@ -13,6 +13,7 @@ Submitted assignments, snippets and other stuff of my MSc. study on the Distance
 - 01770 - Betriebliche Informationssysteme
 
 ## 3. Semester
+
 - 01796 - Web Programmierung
 
 zusätzlich ein Weiterbildungskurs
@@ -22,3 +23,13 @@ zusätzlich ein Weiterbildungskurs
 other Weblinks:
 - Blog: [Das Fernstudium Blog](https://dasfernstudium.blogspot.de)
 - Community: [Fernuni Hagen M+I](https://plus.google.com/communities/101235634393003623262)
+=======
+
+- 01796 - Web Programmierung
+
+zusatzlich ein Weiterbildungskurs
+- 78036 - [Java-Webanwendungen](http://www.isdb.fernuni-hagen.de/weiterbildung/index.php/informatik-kurse/java-webanwendungen)
+
+<hr>
+Mein Blog: [Das Fernstudium Blog](https://dasfernstudium.blogspot.de)
+>>>>>>> Stashed changes
