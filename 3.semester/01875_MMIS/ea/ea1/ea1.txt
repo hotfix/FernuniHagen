@@ -1,0 +1,24 @@
+Aufgabe 1
+a) Char-Code
+A - 0x0041
+a - 0x0061
+¾ - 0x00BE
+ü - 0x00FC
+Ø´ - 0x00d8 0x00b4 - Ich tippe, dass es sich bei diesem Zeichen ein Basiszeichen und eine Kombinationszeichen handelt, welches
+als Folge kodiert wird.
+Ω - 0x03A9 oder 0x2126 Bei diesem Zeichen wusste ich nicht genau ob es sich um das Ohm Symbol oder den griechischen Buchstaben handelt.
+ﻺ - 0xFEFA
+▼ - 0x25BC
+♪ - 0x266A
+☺ - 0x263A
+  - 0x0649 oder 0x1C46- hier war es auch nicht einfach, konnte mir eines der beiden Vorstellen.
+  
+Quelle: http://unicode-table.com/de  
+  
+b)
+Hallo Welt
+ 
+ 
+ Aufgabe 2
+ a) Das Abtasttheorem
+ 
