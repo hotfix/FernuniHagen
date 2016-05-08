@@ -20,5 +20,5 @@ zusätzlich ein Weiterbildungskurs
 
 <hr>
 other Weblinks:
-Blog: [Das Fernstudium Blog](https://dasfernstudium.blogspot.de)
-Community: [Fernuni Hagen M+I](https://plus.google.com/communities/101235634393003623262)
+- Blog: [Das Fernstudium Blog](https://dasfernstudium.blogspot.de)
+- Community: [Fernuni Hagen M+I](https://plus.google.com/communities/101235634393003623262)
