@@ -53,5 +53,18 @@
 
 ### Konvertierung
 
++ zuständig für Konvertierung von Daten  zwischen Client 
 
+### Ereignis
+
++ Beschreibt Aktion und wird von einem Event Listener abgefangen, wenn dieser eintritt
++ Bezeichner muss mit der Komponente, die das Ereignis ausgelöst hat, verknüpft werden
+
+### Navigation 
+
+> Möchte eine Benutzerin von einer Seite zu einer anderen Seite wechseln, so hat dieser Abauf immer bestimmte Vorbedingungen und bestimmte Nachbedingungen und wird durch einbestimmtes Ereignis ausgelöst. Diese Bedingungen und Ereignisse können in sogenannten Navigationsregeln festgehalten werden. JSF bietet eine implizite und eine explizite Navigation an.In Kapitel 18 werden beide Navigationstypen betrachtet.[S.172 Kurstext]
+
+
+
+## Kapitel 15
 
