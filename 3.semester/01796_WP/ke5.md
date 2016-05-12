@@ -137,5 +137,63 @@
   + Panel-Komponenten
   + Nachrichtenkomponenten
 
+### Die Core-Tag Library
 
-  
++ einhaltet Elemente, die Basisfunktionalitäten von JSF zur Verf¨ugung stellen
+
+### Validatoren
+``` xml
+<f:validateRequired />
+<f:validateLength minimum="5" maximum="10" />
+<f:validateLongRange minimum="20" maximum="1000" />
+<f:validateDoubleRange minimum="1.5" maximum="3.7" />
+<f:validateRegex pattern="[0-9]" />
+<f:validator validatorID="myCustomValidator" />
+```
+
++ JSF Anwendung kann sich in unterscheidlichen Stufen befinden: z.B. Entwicklungsstufe oder Produktionsstufe
++ Stufe wird in web.xml festgelegt
++ Fehleingaben werden in der Entwicklungsstufe angezeigt
++ Für die Anzeige der Fehleingaben in Produktionsstufe kann `<message>`-Element verwendet werden
++ Fehlermeldung kann im Attribut `validatorMessage` übersteuert werden
+
+## Kapitel 17
+###Wichtige Scopes für Managed Beans
+
++ Request Scope - Z.B. Für absenden des Formulars
++ Conversation Scope - z.B. zum Ausfüllen eines mehrseitigen Formulars
++ Session Scope - z.B. zum Verwalten eines Warenkorbes
++ Application Scope - z.B. ein Besuicherzähler
+  +  wird beim start der Webanwendung erzeugt
+  +  Instanz ist für alle Benutzer verfügbar
+
+## Kapitel 18
+### Navigation in JSF
++ Man unterscheide, explizite Navigation und implizite Navigation (ab JSF 2.0)
++ Spezifiziert wird eine Navigation durch vier Elemente: 
+  + *eine Vorbedingung* - von wo aus startet die Navigation
+  + *ein Ereignis* - löst eine Navigation aus
+  + *eine Bedingung* - feststellung ob Navigation beendet wird ode rnicht
+  + *eine Nachbedingung* - Ziel der Navigation
+
++ statische vs. dynamische Navigation
+
+### Explizite Navigation
++ Navigationsregeln müssen in der  ´faces-config.xml´ Datei eingetragen werden
++ Navigationsregel wird innerhalb der Konfigurationsdatei durch das Tag `<navigation-rule>` eingeleitet und durch das Tag `</navigation-rule>` abgeschlossen.
++ Es können mehrere Navigationsregeln definiert werden.
++ Vorbedinung wird zwischen `<from-view-id> ... </from-view-id>` definiert
++ Es können mehrere Navigationsfälle definiert werden. dafür werden `<navigation-case> ...</navigation-case>` Tags verwendet
++ Navigationsfall kann wiederum folgende Tags beinhalten:
+  + `<from-action> ... </from-action>`
+  + `<from-outcome> ... </from-outcome>`
+  + `<to-view-id> ... </to-view-id>`
+
++ für die Navigation wichtige Befehlskomponenten sind: `commandButton` und `commandLink`
+
+### Implizite Navigation
++ vereinfachung der Implementierung der Navigationsregeln
++ Im `action` kann ein Seite angegeben werden, JSF erkennt diese
++ Nachteil ist, dass die Navigationregeln dezentral definiert werden
+
+## Kapitel 19
