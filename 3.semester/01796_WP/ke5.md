@@ -197,3 +197,29 @@
 + Nachteil ist, dass die Navigationregeln dezentral definiert werden
 
 ## Kapitel 19
+
+### Events und Listeners in JSF
++ kennt zwei Hauptkategorien von Events:
+  + Anwendungs-Events (application events) - werden ausgelöst durch Iinteraktion der User mit der Anwendung
+  + Lebenszyklus-Events (lifecycle events) - es wird keine Userinteraktion benötigt. Beziehen sich auf die einzelnen Phasen eines Requests
+    + Phasen-Events - werden durch die Phasen eines Request-Lebenszyklus ausgelöst, z.B. Validierung durchführen
+    + System-Events- gehören die Komponenten-System-Events, diese beziehn sich auf die Phasen des Lebenszyklus von einzelnen Komponenten
++ Anwendungs-Events stellen die wichtigste Event-Kategorie dar und enthalten zwei Event-Typen: `ActionEvent` und `ValueChangeEvent`
++ Value-Change Event wird nur beim Absenden des übergeordneten Formulars ausgelöst
+
+##Kapitel 20
+
+### Das Attribut ajax
++ `ajax`-Tag kann auf eine oder auf mehrere Komponenten angewendet werden
++ Es kann entwerder in eine Komponenten eingebettet sein oder mehrere Komponenten in sich einbetten
+```xml
+<Komponente>
+  <f:ajax />
+</Komponente>
+
+<f:ajax>
+  <Komponente1 />
+  <Komponente2 />
+  <Komponente3 />
+</f:ajax>
+```
