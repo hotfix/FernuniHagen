@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Einsendeaufgabe 5.2</title>
+</h:head>
+
+<h:body>
+    <h:form>
+        <h:panelGrid columns="3">
+            <h:outputLabel for="forename" value="Vorname: "/>
+            <h:inputText id="forename" value="#{my52Bean.vname}"
+                         validatorMessage="Vorname darf nur zwischen 3 und 100 Zeichenlang sein">
+                <f:validateLength minimum="3" maximum="100"/>
+            </h:inputText>
+            <h:message for="forename" />
+
+            <h:outputLabel for="surname" value="Nachname: "/>
+            <h:inputText id="surname" value="#{my52Bean.nname}"
+                         validatorMessage="Nachname darf nur zwischen 3 und 100 Zeichenlang sein">
+                <f:validateLength minimum="3" maximum="255"/>
+            </h:inputText>
+            <h:message for="surname" />
+
+
+            <h:outputLabel for="street" value="Strasse: "/>
+            <h:inputText id="street" value="#{my52Bean.strasse}" validatorMessage=" Strasse muss mit Hausnummer angegeben werden">
+                <f:validateRegex pattern="[A-Za-z]+[A-Za-z]*[ ]([0-9]{1,3})[a-z]?"/>
+            </h:inputText>
+            <h:message for="street" />
+
+            <h:outputLabel for="plz" value="PLZ: "/>
+            <h:inputText id="plz" value="#{my52Bean.plz}" validatorMessage="PLZ darf nur aus Zahlen bestehen und und 4 bis 5 Stellen haben">
+                <f:validateRegex pattern="[0-9]{4,5}"/>
+            </h:inputText>
+            <h:message for="plz" />
+
+            <h:outputLabel for="ort" value="Ort: "/>
+            <h:inputText id="ort" value="#{my52Bean.ort}" validatorMessage="PLZ darf nur aus Buchstaben bestehen und 3 bis 5 Zeichen lang sein ">
+                <f:validateLength minimum="3" maximum="255"/>
+                <f:validateRegex pattern="[A-Za-z]+"/>
+            </h:inputText>
+            <h:message for="ort" />
+
+            <h:outputLabel for="alter" value="Alter: "/>
+            <h:inputText id="alter" value="#{my52Bean.alter}" validatorMessage="Darf nur ganze Zahlen enthalten">
+                <f:validateLongRange minimum="1" maximum="150" />
+            </h:inputText>
+            <h:message for="alter" />
+
+            <h:outputLabel for="groesse" value="Größe in cm: "/>
+            <h:inputText id="groesse" value="#{my52Bean.groesse}" validatorMessage="darf nur zwischen 50 und 250 liegen">
+                <f:validateLongRange minimum="50" maximum="250" />
+            </h:inputText>
+            <h:message for="groesse" />
+
+            <h:outputLabel for="email" value="Email: "/>
+            <h:inputText id="email" value="#{my52Bean.email}" validatorMessage="Bitte korrekte Email eintragen">
+                <f:validateRegex pattern="[a-z0-9]+[@][a-z0-9]+[.][a-z]{2,10}"/>
+            </h:inputText>
+            <h:message for="email" />
+        </h:panelGrid>
+
+        <h:commandButton id="submit" value="Senden" action="ausgabe.xhtml">
+        </h:commandButton>
+    </h:form>
+</h:body>
+</html>

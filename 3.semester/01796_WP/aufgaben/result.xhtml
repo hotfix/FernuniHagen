@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>JSF Persönliche Daten</title>
+    </h:head>
+    <h:body>
+        Die Daten wurden erfolgreich übertragen. Ihre Name ist <h:outputLabel value="#{datenBean.vorname}" />&nbsp;<h:outputLabel value="#{datenBean.nachname}" /> und
+        Sie wohnen in der Straße "<h:outputLabel value="#{datenBean.strasse}" />", in <h:outputLabel value="#{datenBean.plz}" />&nbsp;<h:outputLabel value="#{datenBean.ort}" />.
+        Sie sind <h:outputLabel value="#{datenBean.alter}" /> Jahre alt bei einer Größe von <h:outputLabel value="#{datenBean.groesse}" /> Zentimetern.
+        Möchte man mehr über Sie erfahren, sind Sie unter der E-Mail Adresse <h:outputLabel value="#{datenBean.email}" /> stets erreichbar.
+    </h:body>
+</html>

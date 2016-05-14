@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Ergebnisseite</title>
+</h:head>
+<h:body>
+    <h1>Ergebnis</h1>
+
+    <p>Die Daten wurden erfolgreich übertragen.</p>
+    Dein Name ist <h:outputLabel value="#{my52Bean.vname}" />&nbsp;<h:outputLabel value="#{my52Bean.nname}" />,
+    du wohnst in der Straße "<h:outputLabel value="#{my52Bean.strasse}" />", in <h:outputLabel value="#{my52Bean.plz}" />&nbsp;<h:outputLabel value="#{my52Bean.ort}" />.
+    Du bist <h:outputLabel value="#{my52Bean.alter}" /> Jahre alt und  <h:outputLabel value="#{my52Bean.groesse}" /> cm gross.
+    Deine E-Mail Adresse lautet <h:outputLabel value="#{my52Bean.email}" /> .
+</h:body>
+</html>
