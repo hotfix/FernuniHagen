@@ -14,7 +14,7 @@
 + Java Persistence API stellt eine vom EJB-Container implementierte Schnittstelle dar
 + *Persistence Provider* ist uber die Persistence API angebundene Persistenzframework
 
-![6 Schichten Architektur](./img/kap21_6Schichten.png)
+![6 Schichten Architektur](./img/kap21_6Schichten.PNG)
 
 ## Kapitel 22
 
@@ -84,7 +84,7 @@
 
 ### EJB Arten
 
-![EJB-Arten](./img/kap22_ejb_art.png)
+![EJB-Arten](./img/kap22_ejb_art.PNG)
 
 ###Callback-Methoden & Lebenszyklus einer Session Bean
 Kurstext Seite 225
