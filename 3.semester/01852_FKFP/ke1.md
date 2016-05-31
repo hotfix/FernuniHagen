@@ -328,3 +328,45 @@ and odd n = n=1 orelse even (n-1);
 + zwei Typen sind genau dann von gleicher Struktur, wenn die sie beschreibenden Typausdrücke bis auf die konstanten Typen wie `int`, `bool` usw. gleich sind
 + *impliziter Polymorphismus* - der Typ muss nicht expliziet angegeben werden
 + *flacher Polymorphismus* - 
+
+### 1.6 Datentypen und Pattern Matching
++ allgemeine Syntax fu ̈r die Definition von Datentypen
+```
+datatype (α1,. . .,αk) type = con1 of τ1
+                            | ...
+                            | conn of τn
+```
++ Ein *Aufzählungstyp* läßt sich als Spezialfall eines Datentyps darstellen, in dem alle Konstruktoren nullstellig sind
+```
+datatype color = RED | GREEN | BLUE;
+> datatype  color
+>   con BLUE : color
+>   con GREEN : color
+>   con RED : color
+```
++ Variantentypen können benutzt werden, um heterogene Listen zu realisieren. Man definiert die verschiedenen Typen als Varianten eines Datentyps.
+```
+local val p = (4.0,3.0):point
+  in
+      val picture = [(CIRCLE (p,1.0),RED),
+					 (CIRCLE (p,2.0),GREEN),
+					 (POINT p,BLUE)]
+end
+```
++ *pattern matching* ist ein Austruck der ausschließlich Variablen und Konstruktoren enthält.
++ Man kann *pattern matching* zum Erzeugen von Bindungen verwenden.
+
+```
+val CIRCLE (p,r) = c;
+> std_in:24.1-24.20 Warning: binding not exhaustive
+CIRCLE (p,r) = ...
+> val p = (2.0,3.1) : point
+> val r = 5.0 : real
+```
++ Wenn eine Bindung nicht erwünscht ist, so kann `_`als Variable verwendet werden
+```
+val POINT(x,_) = p;
+> val x = 2.0 : real
+```
+
+### 1.7 Funktionen höherer Ordnung										
