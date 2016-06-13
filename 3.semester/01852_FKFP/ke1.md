@@ -370,3 +370,36 @@ val POINT(x,_) = p;
 ```
 
 ### 1.7 Funktionen höherer Ordnung										
++ Ein häufig benötigte Operation ist das Applizieren einer Funktion auf alle Elemente einer Liste:
+```
+fun map (f,[]) =[]
+  | map (f,x::l) = f x::map (f,l);
+> val map = fn : (’a -> ’b) * ’a list -> ’b list
+
+ map (size,["a","","vier"]);
+ > val it = [1,0,4] : int list
+
+ map (fn x=>x+1,[1,2,3]);
+ > val it = [2,3,4] : int list
+```
++ Funktion `map`realisisert Iteration
+```
+fun map f [] = []
+  | map f (x::l) = f x::map f l
+```
++ diese Form der Definition nennt man currying
++ Currying erlaubt die *partielle Applikation* von Funktionen.
++ mit folgender Funktion kann man zu jeder Funktion auf Paaren
+eine entsprechend gescho ̈nfinkelte Version bilden
+```
+fun curry f x y = f (x,y);
+> val curry = fn : (’a * ’b -> ’c) -> ’a -> ’b -> ’c
+
+```
++ mit folgende Funktion auf Listen ist das Reduzieren einer Liste anhand einer binären Operation möglich
+```
+fun foldr f u [] = u
+  | foldr  f u (x::l) = f (x, foldr f u l);
+> val foldr = fn : (’a * ’b -> ’b) -> ’b -> ’a list -> ’b
+```
+
