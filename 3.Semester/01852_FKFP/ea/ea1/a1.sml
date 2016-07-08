@@ -15,13 +15,3 @@ Aufgabe 1
 10) [1|[2,3]] => ] expected but | was found
 11) ["Ein","Text","in"]@["einer","Liste"] => val it = ["Ein", "Text", "in", "einer", "Liste"]: string list
 12) {Artikelnr = 12345, Bezeichnung = "Diskettenlaufwerk"} => val it = {Artikelnr = 12345, Bezeichnung = "Diskettenlaufwerk"}: {Artikelnr: int, Bezeichnung: string}
-
-Aufgabe 2
-teil1:
-fun v_v_mult (l1,l2) = if (length(l1) <> length(l2)) orelse (l1=[] andalso l2=[]) then 0
-                          else hd(l1) * hd(l2) + v_v_mult (tl(l1),tl(l2));
-(*testcases*)
-v_v_mult([],[]);
-v_v_mult([1],[2]);
-v_v_mult([1],[2,2]);
-v_v_mult([1,2,3,4,5],[5,4,3,2,1]);
