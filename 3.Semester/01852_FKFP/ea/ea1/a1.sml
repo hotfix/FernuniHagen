@@ -1,8 +1,12 @@
-Kurs 1852 SS2016 - Fortgeschrittene Konzepte funktionaler Programmierung 
-------------------------------------------------------------------------
+(* -----------------------------------------------
+ * Kurs: 01852 Fortgeschrittene Konzepte funktionaler Programmierung	
+ * Fernuni Hagen
+ * SoSe 2016
+ * Einsendeaufgaben zu Kurseinheit 1
+ * Aufgabe 1
+----------------------------------------------- *)
 
-EA 1
-Aufgabe 1
+
 1) 7+ 4    => val it = 11: int
 2) 2E1 * 2 => Type error in function application. Function: * : real * real -> real
 3) 2E1/1E1 => val it = 2.0: real

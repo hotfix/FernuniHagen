@@ -1,3 +1,11 @@
+(* -----------------------------------------------
+ * Kurs: 01852 Fortgeschrittene Konzepte funktionaler Programmierung	
+ * Fernuni Hagen
+ * SoSe 2016
+ * Einsendeaufgaben zu Kurseinheit 1
+ * Aufgabe 3
+----------------------------------------------- *)
+
 (*Teil 1*)
 datatype ''a multimenge = LEER
 						| EINELEM of ''a

@@ -1,3 +1,11 @@
+(* -----------------------------------------------
+ * Kurs: 01852 Fortgeschrittene Konzepte funktionaler Programmierung	
+ * Fernuni Hagen
+ * SoSe 2016
+ * Einsendeaufgaben zu Kurseinheit 1
+ * Aufgabe 2
+----------------------------------------------- *)
+
 (* Funktion zum Multiplizieren zweier Vektoren*)
 fun v_v_mult  _			[]      = 0.0 
 |	v_v_mult []		  	_		= 0.0		 
