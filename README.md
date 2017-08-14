@@ -27,11 +27,12 @@ Submitted assignments, snippets and other stuff of my MSc. study on the Distance
 + Seminar
 
 
-zusatzlich ein Weiterbildungskurs
+**zusatzlich ein Weiterbildungskurs**
 + 78036 - [Java-Webanwendungen](http://www.isdb.fernuni-hagen.de/weiterbildung/index.php/informatik-kurse/java-webanwendungen)
 
 <hr>
-other Weblinks:
+**other Weblinks:**
 
 + Blog: [Das Fernstudium Blog](https://dasfernstudium.blogspot.de)
 + Community: [Fernuni Hagen M+I](https://plus.google.com/communities/101235634393003623262)
++ [Studium Webseite](http://www.stud.fernuni-hagen.de/q8950210/)
