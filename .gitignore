@@ -68,6 +68,8 @@ $RECYCLE.BIN/
 *.*~
 *.*#
 
+*.zip
+
 # IntelliJ
 .idea/
 out/
