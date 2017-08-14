@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+width="100%" height="100%" viewBox="-150 -150 300 300">
+<title>SVG Logo</title>
+<defs>
+<circle id="sc" cx="0" cy="-100" r="32" fill="#FFB13B" stroke="#000000" stroke-width="18" />
+<line id="l" x1="0" y1="-100" x2="0" y2="100" stroke="#FFB13B" strokewidth="32" />
+</defs>
+<circle cx="0" cy="0" r="100" fill="#000000" />
+<use xlink:href="#sc" />
+<use xlink:href="#sc" transform="rotate(45,0,0)" />
+<use xlink:href="#sc" transform="rotate(90,0,0)" />
+<use xlink:href="#sc" transform="rotate(135,0,0)" />
+<use xlink:href="#sc" transform="rotate(180,0,0)" />
+<use xlink:href="#sc" transform="rotate(225,0,0)" />
+<use xlink:href="#sc" transform="rotate(270,0,0)" />
+<use xlink:href="#sc" transform="rotate(315,0,0)" />
+<use xlink:href="#l" />
+<use xlink:href="#l" transform="rotate(45,0,0)" />
+<use xlink:href="#l" transform="rotate(90,0,0)" />
+<use xlink:href="#l" transform="rotate(135,0,0)" />
+</svg>
