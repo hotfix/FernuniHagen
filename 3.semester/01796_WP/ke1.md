@@ -50,7 +50,7 @@ Die Kommunikation zwischen Client und Server verläuft nach bestimmten Regeln. D
 - `HTTP`-Protokoll basiert auf Austausch von Nachrichten.
   - Client setzt eine Anfrge ab (Request)
   - Server beantwortet die Anfrage (Response)
-  - Man Spricht von einer *Pull-Technologie*. Client initiiert die Kommunikation und "<u>zieht</u>" eine Antwort vomServer
+  - Man Spricht von einer *Pull-Technologie*. Client initiiert die Kommunikation und "<u>zieht</u>" eine Antwort vom Server
 - Eine `HTTP`-Nachricht, ob Request oder Response, ist ein einfacher ASCII-Text.
 - Übertragungsmethoden:
   - GET - Parameter werden in der `URL` übertragen. Man beachte Längenbeschränkung
