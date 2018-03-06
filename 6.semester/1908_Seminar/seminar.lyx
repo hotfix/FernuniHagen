@@ -1,0 +1,9096 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass scrreprt
+\begin_preamble
+
+
+% verschieden Symbole, Zeichen wie (c), €
+\usepackage{textcomp,units}
+
+% Mehr Platz zwischen Tabelle und Untertitel
+\usepackage{caption}
+\captionsetup[table]{skip=10pt}
+
+%Kapitelzahl sehr groß
+\makeatletter% siehe De-TeX-FAQ 
+ \renewcommand*{\chapterformat}{% 
+   \begingroup% damit \unitlength-Änderung lokal bleibt 
+     \setlength{\unitlength}{1mm}% 
+     \begin{picture}(10,10)(0,5) 
+       \setlength{\fboxsep}{0pt} 
+       %\put(0,0){\framebox(20,40){}}% 
+       %\put(0,20){\makebox(20,20){\rule{20\unitlength}{20\unitlength}}}% 
+       \put(10,15){\line(1,0){\dimexpr 
+           \textwidth-20\unitlength\relax\@gobble}}% 
+       \put(0,0){\makebox(10,20)[r]{% 
+           \fontsize{28\unitlength}{28\unitlength}\selectfont\thechapter 
+           \kern-.05em% Ziffer in der Zeichenzelle nach rechts schieben 
+         }}% 
+       \put(10,15){\makebox(\dimexpr 
+           \textwidth-20\unitlength\relax\@gobble,\ht\strutbox\@gobble)[l]{% 
+             \ \normalsize\color{black}\chapapp~\thechapter\autodot 
+           }}% 
+     \end{picture} % <-- Leerzeichen ist hier beabsichtigt! 
+   \endgroup 
+}
+
+\usepackage{ %a4wide,
+            ellipsis, fixltx2e, mparhack,   %Fehlerkorrektur für Marginalien
+            booktabs, longtable             %schönere Tabellen
+}  
+
+\usepackage[automark]{scrpage2}
+%\automark[chapter]{chapter}
+\clearscrheadfoot
+\ohead{\\\headmark}
+\ihead{\includegraphics[scale=0.15]{logo.jpg}}%\pagemark}
+\ofoot[\pagemark]{\pagemark}
+
+
+%Kurzfassung und Abstract (englisch) auf eine Seite
+\renewenvironment{abstract}{
+    \@beginparpenalty\@lowpenalty
+      \begin{center}
+        \normalfont\sectfont\nobreak\abstractname
+        \@endparpenalty\@M
+      \end{center}
+}{
+    \par
+}
+
+
+
+% schönerer Blocksatz!!
+\usepackage{microtype}
+
+\usepackage{ifpdf} % part of the hyperref bundle
+\ifpdf % if pdflatex is used
+
+%set fonts for nicer pdf view
+ \IfFileExists{lmodern.sty}{\usepackage{lmodern}}
+  {\usepackage[scaled=0.92]{helvet}
+    \usepackage{mathptmx}
+    \usepackage{courier} }
+\fi
+
+ % the pages of the TOC are numbered roman
+ % and a pdf-bookmark for the TOC is added
+ \pagenumbering{roman}
+ \let\myTOC\tableofcontents
+ \renewcommand\tableofcontents{
+   %\pdfbookmark[1]{Contents}{}
+   \myTOC
+   \clearpage
+   \pagenumbering{arabic}}
+
+%Bezeichungen anpassen
+%Babelpaket muß zuvor geladen werden
+\usepackage[ngerman]{babel}
+\addto\captionsngerman{ 
+\renewcommand{\figurename}{Abb.}% 
+\renewcommand{\tablename}{Tab.}% 
+\renewcommand{\abstractname}{Kurzfassung}
+%\renewcommand{\nomname}{Abkürzungen}
+}
+
+% Alle Querverweise und URLs als Link darstellen
+% In der PDF-Ausgabe
+\usepackage[hyphens]{url}
+
+ \usepackage[colorlinks=true, bookmarks, bookmarksnumbered, bookmarksopen, bookmarksopenlevel=1,
+  linkcolor=black, citecolor=black, urlcolor=blue, filecolor=blue,
+  pdfpagelayout=OneColumn, pdfnewwindow=true, breaklinks=true
+  pdfstartview=XYZ, plainpages=false, pdfpagelabels,
+  pdfauthor={LyX Team}, pdftex,
+  pdftitle={LyX's Figure, Table, Floats, Notes, and Boxes manual},
+  pdfsubject={LyX-documentation about figures, tables, floats, notes, and boxes},
+  pdfkeywords={LyX, Tables, Figures, Floats, Boxes, Notes}]{hyperref}
+\def\UrlBreaks{\do\g\do\o\do\b\do\l\do-\do.\do\/}
+
+%mehr Platz zwischen Überschrift und Tabelle
+\newcommand{\@ldtable}{}
+\let\@ldtable\table
+\renewcommand{\table}{ %
+                 \setlength{\@tempdima}{\abovecaptionskip} %
+                 \setlength{\abovecaptionskip}{\belowcaptionskip} %
+                 \setlength{\belowcaptionskip}{\@tempdima} %
+                 \@ldtable}
+
+%In dieser Arbeit wird auf die Nomenklatur als Abkürzungsverzeichnis verzichtet. Bei Wunsch wieder aktivieren.
+%Nomenklatur als Abkürzungsverzeichnis verwenden
+%\renewcommand{\nomname}{Abkürzungsverzeichnis}
+%\renewcommand{\nomlabelwidth}{20mm}
+
+%Nomenklatur als Glossar verwenden
+%Nur Noetig wenn auch Glossar verwendet wird.
+%\renewcommand{\nomname}{Glossar}
+
+%Farbe für Programmcode festlegen
+%\definecolor{lightgray}{rgb}{0.8,0.8,0.8}
+
+%Farben fuer Programmlisting
+\usepackage{listings,xcolor}
+\definecolor{pl_background}{rgb}{0.95,0.95,0.95}
+
+% Vordefiniertes Programmlisting
+\lstset{
+language = ruby,
+basicstyle = \scriptsize\sffamily,
+backgroundcolor = \color{pl_background},
+stringstyle = \color{black},
+keywordstyle = \color{blue}\bfseries,
+commentstyle = \color{black}\itshape,
+frame = lrbt,
+numbers = left,
+showstringspaces = false,
+breaklines = true,
+xleftmargin = 15pt,
+emph = [1]{ruby},
+emphstyle = [1]\color{black},
+emph = [2]{if,and,or,else},
+emphstyle = [2]\color{blue}
+}
+\end_preamble
+\options pointlessnumbers, abstracton, headsepline,
+\use_default_options true
+\begin_modules
+theorems-ams
+\end_modules
+\maintain_unincluded_children false
+\language ngerman
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family sfdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 120 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement h
+\paperfontsize 12
+\spacing other 1.2
+\use_hyperref false
+\pdf_title "Analyse und Interpretation des Risswachstums an thermisch hochbelasteten Bauteilen für die Fusionsforschung mittels IR Diagnostik und FE Modellierung"
+\pdf_author "Timo Schindler"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Stichwortverzeichnis
+\shortcut idx
+\color #008000
+\end_index
+\topmargin 2.5cm
+\bottommargin 2.5cm
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation skip
+\defskip medskip
+\quotes_language german
+\papercolumns 1
+\papersides 1
+\paperpagestyle plain
+\bullet 2 0 9 -1
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\noindent
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+titlepage
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/Uni_hagen_logo.jpg
+	lyxscale 90
+	height 3cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row interlinespace="default">
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size huge
+Fernuniversität Hagen
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size large
+Fakultät Mathematik
+\size default
+/
+\size large
+Informatik
+\size default
+
+\begin_inset space \hspace{}
+\length 2.5cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset VSpace 7cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+
+\series bold
+\size larger
+Seminar 1908
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+
+\size large
+Ruby - Eine Einführung
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+
+\size larger
+\begin_inset VSpace 1.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top">
+<column alignment="left" valignment="top">
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+eingereicht von:
+\begin_inset space \hspace{}
+\length 1cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Alexander Albrant
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Matrikelnummer: 8950210
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Studiengang: MSc praktische Informatik
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fernuniversität Hagen
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Hamburg, der 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+today
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+ACHTUNG: Hier am Ende noch die richtige Seite einstellen! Sonst passt die
+ Nummerierung nicht!
+\end_layout
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagenumbering{roman}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{page}{4}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagenumbering{arabic}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Einführung
+\end_layout
+
+\begin_layout Section
+Geschichte
+\end_layout
+
+\begin_layout Standard
+Die Entwicklung von Ruby geht auf das Jahr 1993 zurück.
+ In diesem Jahr entschied sich Yukihiro „Matz“ Matsumoto eine Programmiersprache
+ Ruby zu erschaffen, die „mächtiger als Perl und objektorientierter als
+ Python“ sein sollte.
+ Sein Interesse an Skriptsprachen und der objektorientierten Programmierung
+ haben den Entwicklungsprozess beeinflusst.
+ Ruby sollte eine objektorientierte Skriptsprache werden.
+ Mit einer einfachen und prägnanten Syntax sollte der Einstieg und die Benutzung
+ von Ruby erleichtert werden.
+ Die neue Sprache sollte dem Entwickler die Möglichkeit bieten, sich voll
+ und ganz auf die kreativen Aufgaben zu konzentrieren, anstatt sich mit
+ den Fehlerquellen und Überraschungen einer Programmiersprache zu beschäftigen.
+ „Matz“ sagte auch, dass Ruby der Philosophie "principle of least surprise"
+ folgt 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Strewart2001"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Im Jahr 1995 veröffentlichte „Matz“ die erste Version seiner Programmiersprache
+ Ruby als Open Source.
+ Bereits ein Jahr später, im Dezember 1996, erschien die Version 1.0.
+ Mittlerweile ist Ruby in der Version 2.5.0 verfügbar, welche im Dezember
+ 2017 fertiggestellt wurde.
+ 
+\end_layout
+
+\begin_layout Standard
+Zu Beginn war Ruby nur in Japan verbreitet, da keine Dokumentation in einer
+ anderen Sprache außer japanisch existierte.
+ In dem Jahr 2000 erschien das erste Buch “Programming Ruby“, welches Ruby
+ in der ganzen Welt berühmt gemacht hat.
+ Die vierte Auflage des Buches behandelt Ruby Versionen 1.9 und 2.0 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Thomas2013"
+
+\end_inset
+
+.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Flanagan2008"
+
+\end_inset
+
+ ist ein weiteres Standardwerk, welches von Matz und David Flanagan geschrieben
+ wurde und im Jahr 2008 erschienen ist.
+ Die Veröffentlichung des Ruby on Rails Framework (RoR) 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "RoR"
+description "- Ruby on Rails"
+
+\end_inset
+
+ von David Heinemeier Hansson im Jahr 2004 gab der Programmiersprache einen
+ weiteren Popularitätsschub.
+ Mittlerweile ist Ruby zu einer populären Programmiersprache weltweit aufgestieg
+en und hat eine große internationale Community aufgebaut, die die Weiterentwickl
+ung der Sprache immer schneller vorantreibt.
+\end_layout
+
+\begin_layout Section
+Was ist Ruby?
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Was-ist-Ruby"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ruby ist eine vollständig objektorientierte, dynamisch typisierte, interpretiert
+e Skriptsprache.
+ Im Unterschied zu anderen Skriptsprachen, wie PHP
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "PHP"
+description "- PHP: Hypertext Preprocessor, ursprünglich \"Personal Home Page Tools\""
+
+\end_inset
+
+ oder Perl, bei denen die Unterstützung der Objektorientierung erst später
+ hinzugekommen ist, ist die Objektorientierung in Ruby tief in der Struktur
+ verankert.
+ Primitive Datentypen, wie man diese aus anderen objektorientierten Programmiers
+prachen (zum Beispiel (z.B.) Java) kennt, existieren in Ruby nicht.
+ 
+\begin_inset Quotes gld
+\end_inset
+
+Interpretiert bedeutet
+\begin_inset Quotes grd
+\end_inset
+
+, dass der Ruby Code nicht durch einen Compiler in ein Binärformat übersetzt,
+ sondern erst zur Laufzeit durch einen Interpreter eingelesen, analysiert
+ und ausgeführt wird.
+ Dabei werden die Typen dynamisch zur Ausführungszeit bestimmt und gebunden.
+ Ruby weist auch einige Merkmale typischer Skriptsprachen auf.
+ So können die Anweisungen, ohne ein formalen Hauptprogramm, einfach hintereinan
+der geschrieben werden.
+ Außerdem bietet Ruby auch die Möglichkeit, mit einfachen Mitteln auf die
+ zugrunde liegenden Funktionen eines Betriebssystem zugreifen zu können.
+ 
+\end_layout
+
+\begin_layout Section
+Prinzipien von Ruby
+\end_layout
+
+\begin_layout Standard
+In die Entwicklung von Ruby sind Konzepte aus vielen von Matz geschätzten
+ Programmiersprachen eingeflossen.
+ Unter anderem findet man Elemente aus den Sprachen Smalltalk, Perl, Eiffel,
+ Scheme, CLU, Sather und Lisp.
+ Von Anfang an hat Matz Ruby nach den Prinzipien des Mensch-Maschinen Interfaces
+ entwickelt 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Hunt2001"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Konsistenz
+\series default
+: Die gesamte Sprache wird durch eine kleine Menge an Regeln definiert und
+ folgt dem Prinzip der geringsten Überraschung.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Flexibilität
+\series default
+: Die Sprache bietet die Möglichkeit, jede Art von Aufgaben lösen zu können.
+ Einfache Dinge sollen einfach sein und schwere sollen möglich sein.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Kompaktheit
+\series default
+: Die Sprache hat nur die notwendigen Sprachelemente.
+ Aus diesem Grund gibt es in Ruby keine Deklarationen oder statische Typangaben.
+ Ruby Skripte sind so kurz und bündig wie Perl Skripte, nur viel besser
+ lesbar.
+\end_layout
+
+\begin_layout Chapter
+Ruby - Sprachgrundlagen 
+\end_layout
+
+\begin_layout Standard
+Dieses Kapitel basiert zum großen Teil auf 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Flanagan2008"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Section
+Grundlagen
+\end_layout
+
+\begin_layout Standard
+Die Syntax von Ruby wurde designt, um möglichst kurz und prägnant zu sein.
+ Im Gegensatz zu den C-ähnlichen Programmiersprachen werden in Ruby kaum
+ Sonderzeichen verwendet.
+ Als zeilenorientierte Sprache werden in Ruby Anweisungen durch einen Zeilenumbr
+uch getrennt.
+ Aus diesem Grund wird auch kein Ende-Zeichen am Ende einer Zeile benötigt.
+ Es ist jedoch möglich, mehrere Anweisungen in einer Zeile auszuführen.
+ In diesem Fall müssen die einzelnen Anweisungen durch Semikolon getrennt
+ werden.
+ In vielen Fällen bietet Ruby mehrere Möglichkeiten etwas auszudrücken.
+ So können Codeblöcke oder Rümpfe entweder durch 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{begin}
+\end_layout
+
+\end_inset
+
+ und 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{end}
+\end_layout
+
+\end_inset
+
+ oder durch geschweiften Klammern 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{
+\backslash
+{
+\backslash
+}}
+\end_layout
+
+\end_inset
+
+ umschlossen werden.
+ 
+\end_layout
+
+\begin_layout Standard
+Wie auch andere Programmiersprachen bringt Ruby auch Konventionen mit, um
+ den Code verständlicher, lesbarer und wartbarer zu machen.
+ Diese werden in den folgenden Unterkapiteln jeweils kurz vorgestellt.
+ 
+\end_layout
+
+\begin_layout Section
+Variablen und Konstanten
+\end_layout
+
+\begin_layout Subsection
+Variablen
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Variablen"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In Ruby gibt es vier Arten von Variablen (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Flanagan2008"
+
+\end_inset
+
+, Seite 87):
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Globale Variablen
+\emph default
+ - sind in dem gesamten Programm sichtbar.
+ Der Name einer globalen Variable fangen mit 
+\series bold
+$
+\series default
+- Zeichen an.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Instanzvariablen
+\emph default
+ - sind Attribute von Objekten, auf welche nur über das dazugehörige Objekt
+ zugegriffen werden kann.
+ Instanzvariablen fangen mit 
+\series bold
+@
+\series default
+- Zeichen an.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Klassenvariablen
+\emph default
+ - werden von allen Instanzen einer Klasse geteilt.
+ Klassenvariablen fangen mit 
+\series bold
+@@
+\series default
+- Zeichen an.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Lokale Variablen
+\emph default
+ - gelten nur lokal innerhalb eines lokalen Kontextes, wie z.B.
+ innerhalb einer Methode.
+ Der Name muss mit einem Unterstrich
+\series bold
+ (_)
+\series default
+ oder einem Kleinbuchstaben anfangen.
+\end_layout
+
+\begin_layout Standard
+Eine Variable wird durch die Zuweisung eines Wertes erzeugt und ist kein
+ Objekt, sondern ein Bezeichner für ein Objekt.
+ Jede Variable speichert eine Referenz auf ein Objekt, welches sich in einem
+ Speicherpool (meistens Heap) befindet 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Thomas2013"
+
+\end_inset
+
+.
+ Dies ermöglicht, dass mehrere Variablen auf das selbe Objekt referenzieren
+ können.
+ Folgendes Beispiel macht es deutlich.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Ruby,showstringspaces=false,tabsize=2,captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+irb(main):025:0> seminar = "1908 programmiersysteme" 
+\end_layout
+
+\begin_layout Plain Layout
+
+=> "1908 programmiersysteme" 
+\end_layout
+
+\begin_layout Plain Layout
+
+irb(main):026:0> seminar2 = seminar 
+\end_layout
+
+\begin_layout Plain Layout
+
+=> "1908 programmiersysteme" 
+\end_layout
+
+\begin_layout Plain Layout
+
+irb(main):027:0> seminar[5] = "P" 
+\end_layout
+
+\begin_layout Plain Layout
+
+=> "P" 
+\end_layout
+
+\begin_layout Plain Layout
+
+irb(main):028:0> seminar 
+\end_layout
+
+\begin_layout Plain Layout
+
+=> "1908 Programmiersysteme" 
+\end_layout
+
+\begin_layout Plain Layout
+
+irb(main):029:0> seminar2 
+\end_layout
+
+\begin_layout Plain Layout
+
+=> "1908 Programmiersysteme" 
+\end_layout
+
+\begin_layout Plain Layout
+
+irb(main):030:0> seminar.object_id
+\end_layout
+
+\begin_layout Plain Layout
+
+=> 354876
+\end_layout
+
+\begin_layout Plain Layout
+
+irb(main):031:0> seminar2.object_id
+\end_layout
+
+\begin_layout Plain Layout
+
+=> 354876
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Variablen und Objektreferenzen
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In Ruby enthält jeder Variable eine Referenz auf ein Objekt.
+ Eine nicht initialisierte Variable liefert eine Referenz auf ein nil-Objekt
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Da in Ruby keine Variablendeklarationen notwendig sind, sind in diesem Fall
+ nicht initialisierte Klassen- bzw.
+ Instanzvariablen gemeint
+\end_layout
+
+\end_inset
+
+ zurück.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Ruby,tabsize=2,captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+class NilReferenz   
+\end_layout
+
+\begin_layout Plain Layout
+
+  attr_accessor :not_initialized 
+\end_layout
+
+\begin_layout Plain Layout
+
+end
+\end_layout
+
+\begin_layout Plain Layout
+
+ni = NilReferenz.new 
+\end_layout
+
+\begin_layout Plain Layout
+
+p ni.not_initialized 
+\end_layout
+
+\begin_layout Plain Layout
+
+=> nil
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Beispiel für eine "nicht initialisierte" Variable
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Wie bereits im Kapitel 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Was-ist-Ruby"
+
+\end_inset
+
+ erwähnt wurde, ist Ruby eine 
+\emph on
+dynamisch typisierte
+\emph default
+ Sprache.
+ Eine Variable hat bei der Definition keinen bestimmten Typ.
+ Die Typzuordnung erfolgt dynamisch zur Laufzeit.
+ Ruby verwendet das 
+\emph on
+Duck Typing
+\emph default
+ Ansatz (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Flanagan2008"
+
+\end_inset
+
+, Seite 220).
+ In Anlehnung an das James Whitcomb Gedicht: 
+\emph on
+„Wenn ich einen Vogel sehe, der wie eine Ente läuft, wie eine Ente schwimmt
+ und wie eine Ente schnattert, dann nenne ich diesen Vogel eine Ente.“
+\emph default
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+deutsche Übersetzung, original: 
+\begin_inset Quotes gld
+\end_inset
+
+“When I see a bird that walks like a duck and swims like a duck and quacks
+ like a duck, I call that bird a duck.”
+\end_layout
+
+\end_inset
+
+ wird der Typ nicht anhand der Klasse, sondern durch das Besitzen von Methoden
+ oder Eigenschaften bestimmt.
+ Das folgende Beispiel zeigt ein einfaches Beispiel des 
+\emph on
+Duck Typing
+\emph default
+ Ansatzes.
+ Die Methode 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{print
+\backslash
+_list}
+\end_layout
+
+\end_inset
+
+ kann mit einem beliebigen Objekt aufgerufen werden.
+ Nur wenn das Objekt die Methode 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{each}
+\end_layout
+
+\end_inset
+
+ besitzt, wird 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{print
+\backslash
+_list}
+\end_layout
+
+\end_inset
+
+ fehlerfrei ausgeführt.
+ In einem anderen Fall wird eine Ausnahme ausgelöst.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Ruby,tabsize=2,captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# Methode die eine Liste auf die stdout ausgibt 
+\end_layout
+
+\begin_layout Plain Layout
+
+def print_list(obj)   
+\end_layout
+
+\begin_layout Plain Layout
+
+  obj.each{|x| puts x} 
+\end_layout
+
+\begin_layout Plain Layout
+
+end
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Aufruf mit einem Array Objekt 
+\end_layout
+
+\begin_layout Plain Layout
+
+print_list(["a","b","c"]) 
+\end_layout
+
+\begin_layout Plain Layout
+
+# a 
+\end_layout
+
+\begin_layout Plain Layout
+
+# b 
+\end_layout
+
+\begin_layout Plain Layout
+
+# c
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#Aufruf mit einem Range Objekt 
+\end_layout
+
+\begin_layout Plain Layout
+
+print_list(1..3) 
+\end_layout
+
+\begin_layout Plain Layout
+
+# 1 
+\end_layout
+
+\begin_layout Plain Layout
+
+# 2 
+\end_layout
+
+\begin_layout Plain Layout
+
+# 3
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Aufruf mit einem Fixnum Objekt 
+\end_layout
+
+\begin_layout Plain Layout
+
+print_list(1) 
+\end_layout
+
+\begin_layout Plain Layout
+
+# `print_list': undefined method `each' for 1:Integer (NoMethodError)
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Duck Typing Prinzip
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Konstanten
+\end_layout
+
+\begin_layout Standard
+Konstanten sind in Ruby nicht wirklich konstant.
+ Der Wert einer Konstanten kann nach der Initialisierung verändert werden.
+ In diesem Fall wird vom Interpreter zwar eine Warnung ausgegeben, das Programm
+ läuft jedoch weiter.
+ Im Unterschied zu lokalen Variablen werden die Konstanten in Ruby großgeschrieb
+en und müssen bei der Definition initialisiert werden.
+ Sie sind wie die globalen Variablen in dem gesamten Programm sichtbar 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ruby-Community2017"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Ruby,showstringspaces=false,tabsize=2,captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+irb(main):039:0> JAHR 
+\end_layout
+
+\begin_layout Plain Layout
+
+NameError: uninitialized constant JAHR         
+\end_layout
+
+\begin_layout Plain Layout
+
+       from (irb):39         
+\end_layout
+
+\begin_layout Plain Layout
+
+       from D:/Programme/Ruby24/bin/irb.cmd:19:in '<main>' 
+\end_layout
+
+\begin_layout Plain Layout
+
+irb(main):040:0> JAHR = 2017 
+\end_layout
+
+\begin_layout Plain Layout
+
+=> 2017 
+\end_layout
+
+\begin_layout Plain Layout
+
+irb(main):041:0> JAHR = 2018 
+\end_layout
+
+\begin_layout Plain Layout
+
+(irb):41: warning: already initialized constant JAHR 
+\end_layout
+
+\begin_layout Plain Layout
+
+(irb):40: warning: previous definition of JAHR was here 
+\end_layout
+
+\begin_layout Plain Layout
+
+=> 2018 
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Verwendung von Konstanten
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Symbole
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Symbole"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In Ruby werden des öfteren Symbole statt Strings verwendet.
+ Symbole werden immer mit einem Doppelpunkt am Anfang definiert.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Symbole
+\emph default
+ sind besondere Objekte in Ruby.
+ Sie sind im Vergleich zu Strings atomar.
+ Das bedeutet, dass es für den gesamten Programmablauf genau eine Kopie
+ eines Symbols im Speicher gehalten wird, während bei Strings jedes Mal
+ eine neue Instanz erzeugt wird.
+ Aus diesem Grund finden die Symbole immer dort einen Einsatz, wo keine
+ neuen Instanzen benötigt werden.
+ So z.B.
+ werden in dem Ruby on Rails Framework Symbole zum Bezeichnen von Parametern
+ in Methoden verwendet.
+ Symbole werden auch oft als Keys in einem Hash eingesetzt.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Ruby,tabsize=4,captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+irb(main):020:0> "seminar".object_id 
+\end_layout
+
+\begin_layout Plain Layout
+
+=> 44058680 
+\end_layout
+
+\begin_layout Plain Layout
+
+irb(main):021:0> "seminar".object_id 
+\end_layout
+
+\begin_layout Plain Layout
+
+=> 40106340 
+\end_layout
+
+\begin_layout Plain Layout
+
+irb(main):022:0> :seminar.object_id 
+\end_layout
+
+\begin_layout Plain Layout
+
+=> 1648988 
+\end_layout
+
+\begin_layout Plain Layout
+
+irb(main):023:0> :seminar.object_id 
+\end_layout
+
+\begin_layout Plain Layout
+
+=> 1648988 
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Unterschied zwischen einem String- und einem Symbol-Objekt
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Die Verwendung der Symbole hat auch einen weiteren Vorteil.
+ Beim Vergleich auf Gleichheit muss bei Symbolen nur deren Referenz verglichen
+ werden, während bei Strings auch der inhaltliche Vergleich notwendig ist.
+ Somit ist der Vergleich zweier Symbole gegenüber Strings schneller (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Flanagan2008"
+
+\end_inset
+
+, Seite 70).
+\end_layout
+
+\begin_layout Section
+Ausdrücke
+\end_layout
+
+\begin_layout Standard
+Ein großer Unterschied zwischen Ruby und anderen Programmiersprachen ist,
+ dass alles, was in Ruby einen sinnvollen Wert zurück liefert, ein Ausdruck
+ ist.
+ Die üblichen Kontrollstrukturen sowie die Schleifen, stellen in Ruby auch
+ Ausdrücke dar.
+ 
+\end_layout
+
+\begin_layout Subsection
+Bedingungsausdrücke
+\end_layout
+
+\begin_layout Standard
+Die Bedingungsausdrücke unterscheiden sich kaum von anderen gängigen Programmier
+sprachen.
+ Neben dem 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{if}
+\end_layout
+
+\end_inset
+
+- Ausdruck kennt Ruby den aus Perl bekannten 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{unless}
+\end_layout
+
+\end_inset
+
+-Ausdruck.
+ Dieser verhält sich zum 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{if}
+\end_layout
+
+\end_inset
+
+-Ausdruck ähnlich wie die 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{until}
+\end_layout
+
+\end_inset
+
+-Schleife zur 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{while}
+\end_layout
+
+\end_inset
+
+-Schleife.
+ Der 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{then}
+\end_layout
+
+\end_inset
+
+-Anweisungsteil bei dem 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{unless}
+\end_layout
+
+\end_inset
+
+-Ausdruck wird also nur dann ausgeführt, wenn die Bedienung nicht zutrifft.
+ Ein Beispiel für einen 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{if}
+\end_layout
+
+\end_inset
+
+- und 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{unless}
+\end_layout
+
+\end_inset
+
+-Ausdruck ist in dem Listing 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lis:Bedingungsausdrücke---und"
+
+\end_inset
+
+ dargestellt.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "language=Ruby,tabsize=4,captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# If - Anweisung 
+\end_layout
+
+\begin_layout Plain Layout
+
+if n > 0 then p "n grösser Null" 
+\end_layout
+
+\begin_layout Plain Layout
+
+elsif n < 0 then p "n kleiner Null" 
+\end_layout
+
+\begin_layout Plain Layout
+
+else p "n gleich Null" 
+\end_layout
+
+\begin_layout Plain Layout
+
+end
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# unless - Anweisung 
+\end_layout
+
+\begin_layout Plain Layout
+
+unless n != 0 then 
+\end_layout
+
+\begin_layout Plain Layout
+
+  p "n gleich null" 
+\end_layout
+
+\begin_layout Plain Layout
+
+end
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Bedingungsausdrücke 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{if}
+\end_layout
+
+\end_inset
+
+- und 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{unless}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "lis:Bedingungsausdrücke---und"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Eine weitere sehr nützliche Eigenschaft, die Ruby aus Perl übernommen hat,
+ sind die sogenannte Anweisungsmodifizierer.
+ Es handelt sich dabei um eine 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{if}
+\end_layout
+
+\end_inset
+
+- oder eine 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{unless}
+\end_layout
+
+\end_inset
+
+-Anweisung, die an das Ende einer normalen Anweisung angehängt wird.
+ So wird der Ausdruck nur dann ausgewertet, wenn die 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{if}
+\end_layout
+
+\end_inset
+
+-Bedingung 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{true}
+\end_layout
+
+\end_inset
+
+, bzw.
+ die 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{unless}
+\end_layout
+
+\end_inset
+
+-Bedingung
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+texttt{false}
+\end_layout
+
+\end_inset
+
+ ist.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Ruby,tabsize=4,captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+ kursname = "Seminar Programmiersysteme" if kursNr == 1908
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{if}
+\end_layout
+
+\end_inset
+
+- Anweisungsmodifizierer
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Der Konditionalausdruck, welcher auch als Ternäroperator bezeichnet wird,
+ ist in Ruby vorhanden und wurde aus der Programmiersprache C geerbt: 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{b = a > 0 ? "grösser Null" : "kleiner oder gleich Null"}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Der 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{case}
+\end_layout
+
+\end_inset
+
+-Ausdruck, welcher in Programmiersprache C oder Java als 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{switch}
+\end_layout
+
+\end_inset
+
+-Anweisung bekannt ist, existiert auch in Ruby.
+ Die Syntax ist dabei sehr ähnlich mit anderen Programmiersprachen.
+ Das Besondere an dem 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{case}
+\end_layout
+
+\end_inset
+
+-Ausdruck ist, dass das vergleichende Objekt die Vergleichsmethode
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Prüfung auf 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{case}
+\end_layout
+
+\end_inset
+
+ - Gleichheit erfolgt mit der Methode 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{===}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+ sinnvoll implementieren muss.
+ Dies ist bei allen integrierten Klassen in Ruby bereits der Fall.
+\end_layout
+
+\begin_layout Subsection
+Schleifen
+\end_layout
+
+\begin_layout Standard
+Die einzigen Schleifenkonstrukte in Ruby sind 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{while}
+\end_layout
+
+\end_inset
+
+- und 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{until}
+\end_layout
+
+\end_inset
+
+-Schleifen.
+ Diese beide Schleifenarten gibt es in Ruby ebenfalls als Anweisungsmodifizierer
+ - 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{while}
+\end_layout
+
+\end_inset
+
+ kann also wie 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{unless}
+\end_layout
+
+\end_inset
+
+ am Ende einer normalen Anweisung eingesetzt werden.
+ In diesem Fall wird die Anweisung ausgeführt, so lange die 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{while}
+\end_layout
+
+\end_inset
+
+-Bedingung 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{true}
+\end_layout
+
+\end_inset
+
+ zurückliefert.
+ Der Anweisungsmodifizierer bietet also die Möglichkeit, eine Schleife in
+ einer kompakteren Weise zu implementieren.
+ Im Listing 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lis:-Schleife-versus--Anweisungsmodi"
+
+\end_inset
+
+ werden die beiden Ansätze an einen einfachem Beispiel verdeutlicht.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+a = [1,2,3,4,5]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#  while - Schleife
+\end_layout
+
+\begin_layout Plain Layout
+
+while not a.empty?
+\end_layout
+
+\begin_layout Plain Layout
+
+  puts a.pop 
+\end_layout
+
+\begin_layout Plain Layout
+
+end
+\end_layout
+
+\begin_layout Plain Layout
+
+# => 5 4 3 2 1
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#  while - Anweisungsmodifizierer
+\end_layout
+
+\begin_layout Plain Layout
+
+puts a.pop while not a.empty?
+\end_layout
+
+\begin_layout Plain Layout
+
+# => 5 4 3 2 1
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{while}
+\end_layout
+
+\end_inset
+
+-Schleife versus 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{while}
+\end_layout
+
+\end_inset
+
+-Anweisungsmodifizierer.
+ Quelle: 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Flanagan2008"
+
+\end_inset
+
+, Seite 128 
+\begin_inset CommandInset label
+LatexCommand label
+name "lis:-Schleife-versus--Anweisungsmodi"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Es sollte beachtet werden, dass der Anweisungsmodifizierer in der selben
+ Zeile stehen muss wie die auszuführende Anweisung (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Flanagan2008"
+
+\end_inset
+
+, Seite 128).
+\end_layout
+
+\begin_layout Standard
+Die aus C oder Java bekannte 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{for}
+\end_layout
+
+\end_inset
+
+-Schleife gibt es so in Ruby nicht.
+ Ruby bietet ein Konstrukt mit dem Schlüsselwort 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{for}
+\end_layout
+
+\end_inset
+
+.
+ Dieses eignet sich sehr gut, um Anweisungen für alle Elemente eines Bereichs,
+ einer Liste oder einer anderen Art von Collections durchzuführen.
+ Intern verwendet Ruby für diese Art von Schleife Iteratormethoden, die
+ in den internen Klassen implementiert sind.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Ruby,tabsize=4,caption={ for - Schleifenkonstrukt},captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+array = [ "a" , "b" , "c" , "d" ]  
+\end_layout
+
+\begin_layout Plain Layout
+
+for l in array      
+\end_layout
+
+\begin_layout Plain Layout
+
+  puts l   
+\end_layout
+
+\begin_layout Plain Layout
+
+end
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Schleifenkonstrukt - 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{for}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dieses Konstrukt wird in Ruby intern in die Variante mit 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{each}
+\end_layout
+
+\end_inset
+
+ umgewandelt (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Flanagan2008"
+
+\end_inset
+
+, Seite 129).
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Ruby,tabsize=4,captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+ array.each{|l| puts l}
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Ruby interne Implementierung des 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{for}
+\end_layout
+
+\end_inset
+
+-Konstruktes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Der Unterschied der beiden Konstrukte liegt in dem Gültigkeitsbereich der
+ Variablen.
+ Die erstellten Variablen in einem Block, der von Iteratoren verwendet wird,
+ sind von außen nicht erreichbar.
+ Schleifen dagegen führen keine neuen Gültigkeitsbereiche ein.
+ Auf die Iteratoren wird im Kapitel 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Blöcke-und-Iteratoren"
+
+\end_inset
+
+ näher eingegangen.
+\end_layout
+
+\begin_layout Standard
+Die einfachste Schleifenart ist die Endlosschleife.
+ In Ruby wird diese durch den 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{loop}
+\end_layout
+
+\end_inset
+
+- Iterator realisiert.
+ Mit den Anweisungen 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{break}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{do}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{next}
+\end_layout
+
+\end_inset
+
+ und 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{retry}
+\end_layout
+
+\end_inset
+
+ kann der Ablauf der Schleife gesteuert werden 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Thomas2013"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{break}
+\end_layout
+
+\end_inset
+
+ - Anweisung bricht die Ausführung ab und springt aus der Schleife raus.
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{redo}
+\end_layout
+
+\end_inset
+
+ - Anweisung wiederholt den Block von Anfang an, ohne die Schleifenbedingung
+ erneut zu überprüfen und den nächsten Wert zu ermitteln.
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{next}
+\end_layout
+
+\end_inset
+
+ - Anweisung springt zum Ende der Schleife und beginnt die nächste Iteration.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{retry}
+\end_layout
+
+\end_inset
+
+ - Anweisung startet die Schleife von Anfang an neu.
+\end_layout
+
+\begin_layout Standard
+Folgendes Beispiel zeigt die Funktionsweise einer 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{loop}
+\end_layout
+
+\end_inset
+
+-Schleife.
+ Es werden bis zu zehn Eingabezeilen, oder sobald 
+\begin_inset Quotes gld
+\end_inset
+
+EOF
+\begin_inset Quotes grd
+\end_inset
+
+ eingegeben wird, in eine Textdatei geschrieben, solange diese nicht länger
+ als 20 Zeichen sind.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Ruby,tabsize=4,captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+filename = "example.txt" 
+\end_layout
+
+\begin_layout Plain Layout
+
+file = File.open(filename, "w") 
+\end_layout
+
+\begin_layout Plain Layout
+
+i = 0 
+\end_layout
+
+\begin_layout Plain Layout
+
+loop do   
+\end_layout
+
+\begin_layout Plain Layout
+
+  line = gets
+\end_layout
+
+\begin_layout Plain Layout
+
+  next if line.chomp.length > 20
+\end_layout
+
+\begin_layout Plain Layout
+
+  break if i > 10 or line.chomp == "EOF"   
+\end_layout
+
+\begin_layout Plain Layout
+
+  file.puts line.chomp   
+\end_layout
+
+\begin_layout Plain Layout
+
+  i += 1 
+\end_layout
+
+\begin_layout Plain Layout
+
+end 
+\end_layout
+
+\begin_layout Plain Layout
+
+file.close
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Funktionsweise einer 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{loop}
+\end_layout
+
+\end_inset
+
+-Schleife
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Blöcke und Iteratoren
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Blöcke-und-Iteratoren"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Blöcke
+\end_layout
+
+\begin_layout Standard
+Ein von Smalltalk übernommenes Sprachmitteln sind die sogenannten Codeblöcke.
+ Ein Block ist ein Codestück, das in geschweiften Klammern oder zwischen
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{do}
+\end_layout
+
+\end_inset
+
+ und 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{end}
+\end_layout
+
+\end_inset
+
+ steht.
+ In Ruby sind diese Codeblöcke mehr als nur eine Gruppe von Anweisungen,
+ gelegentlich werden sie als namenlose Funktionen bezeichnet 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Fitzgerald2007"
+
+\end_inset
+
+.
+ Solch ein Block kann nur in Verbindung mit einer Methode aufgerufen werden,
+ in dem er als letzter Parameter an einen Methodenaufruf übergeben wird.
+ Die Ausführung des Blocks erfolgt nicht, wenn Ruby auf ihn trifft.
+ Stattdessen wird der Kontext, in dem der Block sich befindet, gemerkt.
+ Erst in der Methode kommt es zu dem Aufruf des Blocks, wenn diese ein 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{yield}
+\end_layout
+
+\end_inset
+
+ enthält.
+ Ein Block kann auch Parameter enthalten.
+ Der letzte ausgewertete Ausdruck des Blocks wird als Wert an die Methode
+ zurück geliefert.
+ Folgendes Beispiel zeigt eine Anwendung von Blöcken zur Berechnung eines
+ Brutto- oder Nettobetrages.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Ruby,tabsize=2,captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# bruttoNettoKnz hat einen Defaultwert = b
+\end_layout
+
+\begin_layout Plain Layout
+
+def bruttoNetto (betrag, bruttoNettoKnz='b' )
+\end_layout
+
+\begin_layout Plain Layout
+
+  if block_given? then      
+\end_layout
+
+\begin_layout Plain Layout
+
+    yield betrag, bruttoNettoKnz    
+\end_layout
+
+\begin_layout Plain Layout
+
+  else      
+\end_layout
+
+\begin_layout Plain Layout
+
+    betrag    
+\end_layout
+
+\begin_layout Plain Layout
+
+  end 
+\end_layout
+
+\begin_layout Plain Layout
+
+end
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+p bruttoNetto(119,'n'){|betrag,bNKnz| if bNKnz == 'b' then
+\end_layout
+
+\begin_layout Plain Layout
+
+                                        betrag * 1.19 
+\end_layout
+
+\begin_layout Plain Layout
+
+                                      else 
+\end_layout
+
+\begin_layout Plain Layout
+
+                                        betrag / 1.19 
+\end_layout
+
+\begin_layout Plain Layout
+
+                                      end 
+\end_layout
+
+\begin_layout Plain Layout
+
+					  } # 100.0 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Block mit einem Parameter, zu berechnung des Brutto-Betrages
+\end_layout
+
+\begin_layout Plain Layout
+
+p bruttoNetto(100){|betrag| betrag * 1.19 } # 119.0
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Kein Block übergeben, somit wird nur der Wert zurückgeliefert
+\end_layout
+
+\begin_layout Plain Layout
+
+p bruttoNetto(100) #100
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Beispiel für Verwendung von Codeblöcken
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Zu beachten ist, dass die Methodendeklaration keinen Block als Eingangsparameter
+ enthält.
+ Es ist also notwendig vor dem Aufruf der 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{yield}
+\end_layout
+
+\end_inset
+
+-Anweisung sicher zu stellen, dass der Methode ein Block übergeben wurde.
+ Dies kann mit Hilfe von 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{block
+\backslash
+_given?}
+\end_layout
+
+\end_inset
+
+ sichergestellt werden.
+ Nach der Ausführung von 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{yield}
+\end_layout
+
+\end_inset
+
+ wird mit der Ausführung der Anweisungen, die unmittelbar nach 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{yield}
+\end_layout
+
+\end_inset
+
+ kommen, fortgesetzt.
+ 
+\end_layout
+
+\begin_layout Subsection
+Proc und Lambda 
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Proc-und-Lambda"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Codeblöcke sind in Ruby keine Objekte, sondern syntaktische Strukturen.
+ Ruby bietet mehrere Möglichkeit, ein Objekt zu erzeugen, das einen Block
+ darstellt.
+ Diese Objekte werden 
+\emph on
+Procs
+\emph default
+ oder 
+\emph on
+Lambdas
+\emph default
+ genannt.
+ Beide sind zwar Instanzen der Klasse 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{Proc}
+\end_layout
+
+\end_inset
+
+, verhalten sich jedoch unterschiedlich.
+ Lambdas haben ein methodenähnliches und Procs dagegen ein blockähnliches
+ Verhalten (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Flanagan2008"
+
+\end_inset
+
+, Seite 192).
+ Die Unterschiede werden später genauer erläutert.
+\end_layout
+
+\begin_layout Standard
+Lambdas werden mit dem Aufruf der 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{lambda}
+\end_layout
+
+\end_inset
+
+ Methode aus der 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{Kernel}
+\end_layout
+
+\end_inset
+
+-Klasse oder mit dem Lamba-Literal 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{->}
+\end_layout
+
+\end_inset
+
+ erzeugt.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# erste Möglichkeit: Block mit dem Argument x
+\end_layout
+
+\begin_layout Plain Layout
+
+inc = lambda {|x| x + 1}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# zweite Möglichkeit: Lambda mit  dem Argument x 
+\end_layout
+
+\begin_layout Plain Layout
+
+inc = ->(x) { x + 1}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+inc.call(2) 
+\end_layout
+
+\begin_layout Plain Layout
+
+# => 3
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Erzeugung eines Lambda-Objektes
+\begin_inset CommandInset label
+LatexCommand label
+name "lis:Erzeugung-eines-Lambda-Objektes"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ein 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{Proc}
+\end_layout
+
+\end_inset
+
+-Objekt kann ganz klassisch über die Klassenmethode 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{new}
+\end_layout
+
+\end_inset
+
+ der Klasse 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{Proc}
+\end_layout
+
+\end_inset
+
+ erzeugt werden.
+ Alternativ kann auf die 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{proc}
+\end_layout
+
+\end_inset
+
+ Methode der 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{Kernel}
+\end_layout
+
+\end_inset
+
+-Klasse zurückgegriffen werden.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# erste Möglichkeit
+\end_layout
+
+\begin_layout Plain Layout
+
+inc = proc {|x| x + 1}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# zweite Möglichkeit
+\end_layout
+
+\begin_layout Plain Layout
+
+inc = Proc.new {|x| x + 1}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+inc.call(2) 
+\end_layout
+
+\begin_layout Plain Layout
+
+# => 3
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Erzeugung eines Proc-Objektes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Eine weitere Möglichkeit, einen Codeblock in ein 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{Proc}
+\end_layout
+
+\end_inset
+
+ Objekt umzuwandeln, ist, diesen Block mit einer Methode zu verknüpfen,
+ die als Parameter ein Blockargument erwartet.
+ Der Parametername muss ein 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{
+\backslash
+&}
+\end_layout
+
+\end_inset
+
+-Zeichen als Präfix enthalten.
+ Im Listing 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lis:Erzeugung-eines--Objektes"
+
+\end_inset
+
+ wird dies an einem Beispiel verdeutlicht.
+ Beim Aufruf der 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{get
+\backslash
+_proc}
+\end_layout
+
+\end_inset
+
+ Methode mit einem beliebigen Codeblock wird dieser in ein 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{Proc}
+\end_layout
+
+\end_inset
+
+ Objekt umgewandelt und als Ergebnis zurückgegeben.
+ Mit der Methode 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{call}
+\end_layout
+
+\end_inset
+
+ wird der Block ausgeführt.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Ruby,tabsize=2,captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# Methode liefert ein Proc Objekt zurück
+\end_layout
+
+\begin_layout Plain Layout
+
+def get_proc(&block)
+\end_layout
+
+\begin_layout Plain Layout
+
+  block
+\end_layout
+
+\begin_layout Plain Layout
+
+end
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+mal = get_proc{ |a,b| a * b } 
+\end_layout
+
+\begin_layout Plain Layout
+
+durch = get_proc{ |a,b| a / b }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Block wird ausgeführt
+\end_layout
+
+\begin_layout Plain Layout
+
+p mal.call(2,3) #=> 6 
+\end_layout
+
+\begin_layout Plain Layout
+
+p durch.call(6,2) #=> 3
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Erzeugung eines 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{Proc}
+\end_layout
+
+\end_inset
+
+-Objektes durch Übergabe an eine Methode
+\begin_inset CommandInset label
+LatexCommand label
+name "lis:Erzeugung-eines--Objektes"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Wie bereits zu Beginn der Unterabschnittes 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Proc-und-Lambda"
+
+\end_inset
+
+ erwähnt wurde, sind
+\emph on
+ Procs
+\emph default
+ oder 
+\emph on
+Lambdas
+\emph default
+ Instanzen der Klasse 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{Proc}
+\end_layout
+
+\end_inset
+
+ mit dem Unterschied, dass Lambdas sich methodenähnlich und Procs blockähnlich
+ verhalten.
+ Das unterschiedliche Verhalten wird in folgenden zwei Fällen deutlich.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Lambdas
+\emph default
+ führen im Gegensatz zu 
+\emph on
+Procs
+\emph default
+ Parameterüberprüfung durch.
+ Wird eine falsche Argumentenanzahl an das Lambda-Objekt übergeben, so kommt
+ es zu der 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{wrong number of arguments}
+\end_layout
+
+\end_inset
+
+- Exception.
+ Proc dagegen führt den Block normal aus.
+ Listing 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lis:Lambda-versus-Proc"
+
+\end_inset
+
+ zeigt dieses unterschiedliche Verhalten an einem kleinen Beispiel.
+ Beim Aufruf der 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{call}
+\end_layout
+
+\end_inset
+
+-Methode beim Lambda-Objekt führt zu einer erwarteten Exception.
+ Der Codeblock des Proc-Objektes wird fehlerfrei ausgeführt und liefert
+ 
+\begin_inset Quotes gld
+\end_inset
+
+"Proc Block" als Ausführungsergebnis zurück.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Ruby,tabsize=2,captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+l = ->(x){puts "Lambda Block"+x.to_s} 
+\end_layout
+
+\begin_layout Plain Layout
+
+l.call 
+\end_layout
+
+\begin_layout Plain Layout
+
+#=> wrong number of arguments (given 0, expected 1) (ArgumentError)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+p = proc {|x| "Proc Block"+x.to_s}
+\end_layout
+
+\begin_layout Plain Layout
+
+p.call
+\end_layout
+
+\begin_layout Plain Layout
+
+#=> "Proc Block"
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Lambda versus Proc - Parameterüberprüfung 
+\begin_inset CommandInset label
+LatexCommand label
+name "lis:Lambda-versus-Proc"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ein weiterer Unterschied zwischen Procs und Lambdas liegt in dem Verhalten
+ bei der Ausführung einer Return-Anweisung.
+ Die Ausführung einer Return-Anweisung bei einem Proc-Objekt führt zum Verlassen
+ des Kontextes der aktuellen Ausführung.
+ Das bedeutet, dass die Anweisungen, die direkt nach dem Blockaufruf kommen,
+ nicht mehr ausgeführt werden.
+ Lambda verhält sich in diesem Fall wiederum methodenähnlich und verlässt
+ nur den Block.
+ Anweisungen, die in dem Kontext nach dem Block kommen, werden ganz normal
+ ausgeführt.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Ruby,tabsize=2,captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def proc_bsp
+\end_layout
+
+\begin_layout Plain Layout
+
+  puts "Vor dem Block"   
+\end_layout
+
+\begin_layout Plain Layout
+
+  p = Proc.new { return "proc" }   
+\end_layout
+
+\begin_layout Plain Layout
+
+  p.call
+\end_layout
+
+\begin_layout Plain Layout
+
+  puts "Nach dem Block" 
+\end_layout
+
+\begin_layout Plain Layout
+
+end
+\end_layout
+
+\begin_layout Plain Layout
+
+p proc_bsp
+\end_layout
+
+\begin_layout Plain Layout
+
+#=> Vor dem Block 
+\end_layout
+
+\begin_layout Plain Layout
+
+#=> "proc"
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def lambda_bsp  	
+\end_layout
+
+\begin_layout Plain Layout
+
+  puts "Vor dem Block"   
+\end_layout
+
+\begin_layout Plain Layout
+
+  l = -> { return "lambda" }   
+\end_layout
+
+\begin_layout Plain Layout
+
+  l.call
+\end_layout
+
+\begin_layout Plain Layout
+
+  puts "Nach dem Block" 
+\end_layout
+
+\begin_layout Plain Layout
+
+end
+\end_layout
+
+\begin_layout Plain Layout
+
+p lambda_bsp
+\end_layout
+
+\begin_layout Plain Layout
+
+#=> Vor dem Block
+\end_layout
+
+\begin_layout Plain Layout
+
+#=> Nach dem Block 
+\end_layout
+
+\begin_layout Plain Layout
+
+#=> nil
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Lambda versus Proc - Die Return-Anweisung
+\begin_inset CommandInset label
+LatexCommand label
+name "lis:Lambda-versus-Proc-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Iteratoren
+\end_layout
+
+\begin_layout Standard
+Iteratoren sind ein weiteres interessantes Konzept aus der Programmiersprache
+ Smalltalk.
+ Ein Iterator ist eine Methode, die auf Objekten (sogenannten Containern,
+ vergleiche (vgl.) Kapitel 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Container"
+
+\end_inset
+
+), die mehrere Objekte beinhalten, arbeitet.
+ Sobald die Iterator-Methode einen neuen Wert aus dem Container Objekt generiert
+, wird mit 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{yield}
+\end_layout
+
+\end_inset
+
+ der übergebene Block, welcher den Code zur Verarbeitung dieses Wertes enthält,
+ aufgerufen.
+ Ruby Klassen, wie z.B.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{Array}
+\end_layout
+
+\end_inset
+
+ oder 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{Hash}
+\end_layout
+
+\end_inset
+
+, bringen bereits einige Iterator-Methoden mit.
+ Die wohl am häufigsten verwendete Iterator-Methode ist 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{each}
+\end_layout
+
+\end_inset
+
+, welche für einzelne Elemente eines Container die Anweisungen im Block
+ ausführt.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Ruby,tabsize=2,captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+['a','b','c'].each {|b| puts b} 
+\end_layout
+
+\begin_layout Plain Layout
+
+ # a
+\end_layout
+
+\begin_layout Plain Layout
+
+ # b
+\end_layout
+
+\begin_layout Plain Layout
+
+ # c
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Iteratormethode - 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{each}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Durch die Verwendung von Codeblöcken und Iteratoren wird eine klare Trennung
+ der Verantwortlichkeiten ermöglicht.
+ Für die Beschaffung des nächstmöglichen Elementes ist der Iterator zuständig
+ und der Block übernimmt ausschließlich die Verarbeitung einzelner Elemente.
+ So kann eine Iteration mit einer beliebigen Verarbeitung einzelner Elemente
+ in einem Container-Objekt auf eine einfacher Weise kombiniert werden.
+\end_layout
+
+\begin_layout Section
+Methoden
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Methoden"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Methodendefinition in Ruby beginnt mit dem Schlüsselwort 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{def}
+\end_layout
+
+\end_inset
+
+ und endet mit dem Schlüsselwort 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{end}
+\end_layout
+
+\end_inset
+
+.
+ Da Ruby eine dynamisch typisierte Sprache ist, ist die Typangabe für Parameter
+ und Rückgabewert nicht erforderlich.
+ Der Rückgabewert einer Methode kann durch das optionale 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{return}
+\end_layout
+
+\end_inset
+
+- Statement festgelegt werden.
+ Wenn kein 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{return}
+\end_layout
+
+\end_inset
+
+- Statement angegeben wird, liefert Ruby immer das Ergebnis des letzten
+ ausgewerteten Ausdruckes als Wert zurück.
+ Somit liefert jede Methode ein Wert zurück.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "tabsize=2,captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def plus(a, b) 
+\end_layout
+
+\begin_layout Plain Layout
+
+  a + b
+\end_layout
+
+\begin_layout Plain Layout
+
+end 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+puts plus(3, 3) # 6
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Beispiel für eine einfache Methode
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Für Methodennamen gibt es in Ruby eine Konvention, die zwar von der Sprache
+ nicht erzwungen wird, jedoch in der Ruby-Welt verbreitet ist.
+ So haben die Methoden, die einen booleschen Wert zurückliefern, einen Namen
+ mit einem Fragezeichen am Ende: z.B.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{eql?}
+\end_layout
+
+\end_inset
+
+ oder 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{nil?}
+\end_layout
+
+\end_inset
+
+.
+ Die Setter-Methoden haben einen Gleichheitszeichen am Ende des Methodennamens.
+ Eine Besonderheit der Setter-Methoden ist, dass das 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{return}
+\end_layout
+
+\end_inset
+
+- Statement in diesem Methoden immer ignoriert wird.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Ruby,tabsize=2,captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def wert=(x)   
+\end_layout
+
+\begin_layout Plain Layout
+
+	return x + 5 
+\end_layout
+
+\begin_layout Plain Layout
+
+end 
+\end_layout
+
+\begin_layout Plain Layout
+
+puts (wert=5) 
+\end_layout
+
+\begin_layout Plain Layout
+
+#=> 5
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Beispiel für eine Setter- Methode
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Wenn eine Methode destruktiv ist, d.h.
+ sie verändert das Objekt und liefert kein neues Objekt zurück, endet der
+ Methodenname mit einem Ausrufezeichen.
+ In diesem Beispiel wird die Funktionsweise der destruktiven Methoden verdeutlic
+ht.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Ruby,tabsize=2,captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+irb(main):001:0> string = "hello world!" 
+\end_layout
+
+\begin_layout Plain Layout
+
+=> "hello world!" 
+\end_layout
+
+\begin_layout Plain Layout
+
+irb(main):002:0> string.capitalize 
+\end_layout
+
+\begin_layout Plain Layout
+
+=> "Hello world!" 
+\end_layout
+
+\begin_layout Plain Layout
+
+irb(main):003:0> string 
+\end_layout
+
+\begin_layout Plain Layout
+
+=> "hello world!" 
+\end_layout
+
+\begin_layout Plain Layout
+
+# Das Objekt String wurde nicht verändert
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+irb(main):004:0> string.capitalize! 
+\end_layout
+
+\begin_layout Plain Layout
+
+=> "Hello world!" 
+\end_layout
+
+\begin_layout Plain Layout
+
+irb(main):005:0> string 
+\end_layout
+
+\begin_layout Plain Layout
+
+=> "Hello world!" 
+\end_layout
+
+\begin_layout Plain Layout
+
+# Das Objekt String wurde verändert
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Beispiel für eine destruktive Methode
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Klammern bei einer Methodendefinition oder einem Methodenaufruf sind zwar
+ optional, aber um dem Interpreter die Entscheidung zu erleichtern und die
+ Mehrdeutigkeit bei der Auswertung der Ausdrucke zu vermeiden, wird es empfohlen
+, die Klammern zu verwenden (vgl.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Flanagan2008"
+
+\end_inset
+
+, Seite 184 ).
+ 
+\end_layout
+
+\begin_layout Standard
+In Ruby ist es nicht erlaubt, Methoden zu überladen, d.h.
+ es können keine zwei Methoden mit demselben Namen in einer Klasse definiert
+ werden.
+ Um dies zu umgehen, wurde die Möglichkeit einer Defaultbelegung von Argumenten
+ bei der Definition von Methoden geschaffen.
+ So kann dieselbe Methode mit unterschiedlicher Anzahl von Argumenten aufgerufen
+ werden.
+ Die Parameter mit einer Defaultbelegung müssen dabei am Ende der Parameteraufzä
+hlung angegeben werden.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def methode(a, b, c=4 ) 
+\end_layout
+
+\begin_layout Plain Layout
+
+  puts [a,b,c].to_s
+\end_layout
+
+\begin_layout Plain Layout
+
+end
+\end_layout
+
+\begin_layout Plain Layout
+
+methode(1,2,3) #=> [1, 2, 3]
+\end_layout
+
+\begin_layout Plain Layout
+
+methode(1,2)   #=> [1, 2, 4]
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Beispiel für Methodenargumente mit einer Defaultbelegung
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Alternativ kann an eine Methode eine variable Argumentenanzahl als Array
+ übergeben werden.
+ Hierfür muss die Methode mit einem Parameter, der mit einem 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{*}
+\end_layout
+
+\end_inset
+
+ anfangen muss, definiert werden: 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{def methode(*args) ..
+ end}
+\end_layout
+
+\end_inset
+
+.
+ Es ist durchaus möglich, einfache Argumente mit den Array-Argumenten zusammen
+ zu verwenden.
+ In diesem Fall ist Ruby schlau genug, um die übergebenen Argumente an die
+ Parameter richtig zu mappen.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Ruby,tabsize=2,captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def methode(a, b, c, *d)   
+\end_layout
+
+\begin_layout Plain Layout
+
+	puts [a, b, c].to_s  
+\end_layout
+
+\begin_layout Plain Layout
+
+	puts d.to_s
+\end_layout
+
+\begin_layout Plain Layout
+
+end
+\end_layout
+
+\begin_layout Plain Layout
+
+methode(1, 2, 3, 4, 5, 6)  
+\end_layout
+
+\begin_layout Plain Layout
+
+#=> [1, 2, 3] = a
+\end_layout
+
+\begin_layout Plain Layout
+
+#=> [4, 5, 6] = [b,c,d]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def methode(*a, b, c, d)   
+\end_layout
+
+\begin_layout Plain Layout
+
+	puts a.to_s  
+\end_layout
+
+\begin_layout Plain Layout
+
+	puts [b, c, d].to_s 
+\end_layout
+
+\begin_layout Plain Layout
+
+end 
+\end_layout
+
+\begin_layout Plain Layout
+
+methode(1, 2, 3, 4, 5, 6)
+\end_layout
+
+\begin_layout Plain Layout
+
+#=> [1, 2, 3] 
+\end_layout
+
+\begin_layout Plain Layout
+
+#=> [4, 5, 6] 
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Beispiel für Übergabe einer variablen Argumentenanzahl an eine Methode
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In der Version 2 von Ruby sind optionale benannte Parameter dazugekommen
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Endoh2013"
+
+\end_inset
+
+.
+ Die Argumente können mit der Angabe der Parameternamen an die Methode übergeben
+ werden.
+ Dabei muss die Reihenfolge der Parameter in der Methodensignatur nicht
+ mit der Reihenfolge der Argumente übereinstimmen.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def methode(a:, b:, c:)   
+\end_layout
+
+\begin_layout Plain Layout
+
+  puts [a, b, c].to_s 
+\end_layout
+
+\begin_layout Plain Layout
+
+end 
+\end_layout
+
+\begin_layout Plain Layout
+
+methode(b:2,a:1,c:3)
+\end_layout
+
+\begin_layout Plain Layout
+
+#=> [1, 2, 3] 
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+benannte Methodenparamerter
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Container
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Container"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Im folgendem Kapitel werden die beiden Standardtypen für Container Objekte,
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{Array}
+\end_layout
+
+\end_inset
+
+ und 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{Hash}
+\end_layout
+
+\end_inset
+
+,  vorgestellt.
+\end_layout
+
+\begin_layout Subsection
+Array
+\end_layout
+
+\begin_layout Standard
+Arrays sind vom Typ der Klasse 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{Array}
+\end_layout
+
+\end_inset
+
+.
+ Sie beinhalten eine geordnete Liste von Objekten beliebigen Typs.
+ Im folgendem sollen einige Zugriffsmöglichkeiten an Hand von Beispiel verdeutli
+cht werden.
+\end_layout
+
+\begin_layout Standard
+Die Erzeugung eines Arrays erfolgt durch eine Zuweisung einer Gruppe von
+ Werten, welche durch Komma getrennt zwischen den eckigen Klammern stehen.
+ Alternativ kann ein Array über den Aufruf der Klassenmethode 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{new}
+\end_layout
+
+\end_inset
+
+ der Klasse 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{Array}
+\end_layout
+
+\end_inset
+
+ erzeugt werden (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Flanagan2008"
+
+\end_inset
+
+, Seite 335).
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "tabsize=2,captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+array = Array.new
+\end_layout
+
+\begin_layout Plain Layout
+
+liste = [24, "Dezember", 1.314, nil]
+\end_layout
+
+\begin_layout Plain Layout
+
+leeres_array = []
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Beispiel für die Erzeugung eines Arrays
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Der Zugriff auf die Elemente erfolgt mit der Methode 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{[]}
+\end_layout
+
+\end_inset
+
+ und der Angabe eines Indexes.
+ Wie auch in C oder Java beginnt der Index eines Array in Ruby bei 0.
+ Darüber hinaus kann in Ruby ein Index auch negativ sein kann.
+ Dies ermöglicht den Zugriff vom letzten zum ersten Element eines Arrays.
+ In diesem Fall beginnt die Indizierung mit -1 für das letzte Element, -2
+ für das Vorletzte und so weiter.
+\end_layout
+
+\begin_layout Standard
+Durch die Angabe eines Indexes und der Anzahl der zurückzuliefernden Elemente,
+ ist es möglich einen Teilbereich des Arrays zu adressieren.
+ Rückgabewert ist in diesem Fall wieder ein Array(
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Flanagan2008"
+
+\end_inset
+
+, Seite 3356.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "tabsize=2,captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# Index Zugriff
+\end_layout
+
+\begin_layout Plain Layout
+
+liste[0] #=> 24
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Negativer Index
+\end_layout
+
+\begin_layout Plain Layout
+
+liste[-2] #=>1.314
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Bereichs-Indizierung, ab Position 1, 2 Elemeten
+\end_layout
+
+\begin_layout Plain Layout
+
+liste[1,2] #=> ["Dezember", 1.314]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Bereichs-Indizierung, Elemente mit Index 2 bis Index 3 
+\end_layout
+
+\begin_layout Plain Layout
+
+liste[2..3] #=> [1.314, nil]
+\end_layout
+
+\begin_layout Plain Layout
+
+# Bereichs-Indizierung, Elemente mit Index 1 bis Index 2
+\end_layout
+
+\begin_layout Plain Layout
+
+liste[1...3] #=> ["Dezember",1.314]
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Beispiel für Zugriffe auf die Elemente eines Arrays
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Zum Iterieren über die Elemente eines Array werden in der Regel Iteratoren
+ in Verbindung mit Blöcken verwendet (vgl.
+ Kapitel 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Blöcke-und-Iteratoren"
+
+\end_inset
+
+).
+ Der wohl am meisten verwendete Iterator bei Array ist 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{each}
+\end_layout
+
+\end_inset
+
+: 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{ [1,2,3,4].each 
+\backslash
+{ |i| ...
+\backslash
+}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Neben den kurz vorgestellten Zugriffsmöglichkeiten stellt die Klasse 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{Array}
+\end_layout
+
+\end_inset
+
+ weitere Methoden bereit, die die Arbeit mit dem Array-Objekten vereinfacht
+ und die Entwicklung eigener Container in vielen Fällen unnötig macht.
+ Im folgenden werden einige von diesem Methoden kurz vorgestellt.
+ Eine vollständige Liste der vorhandenen Methoden ist unter 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "RubydocArray2018"
+
+\end_inset
+
+ aufgelistet.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{sort}
+\end_layout
+
+\end_inset
+
+ - ist die einfachste Möglichkeit ein Array zu sortieren.
+ Sind nicht alle Elemente vom gleichen Typ, so kann die Methode mit einem
+ Block verwendet werden 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{ liste.sort
+\backslash
+{|x,y| x.to
+\backslash
+_s <=> y.to
+\backslash
+_s
+\backslash
+}}
+\end_layout
+
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Itemize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{select}
+\end_layout
+
+\end_inset
+
+ - liefert ein Array mit Elementen, die auf die Bedingung im Block passen.
+ Folgender Aufruf 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{liste.select 
+\backslash
+{|e| e.to
+\backslash
+_i > 0 
+\backslash
+}}
+\end_layout
+
+\end_inset
+
+ liefert 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{[24, 1.314]}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{reject}
+\end_layout
+
+\end_inset
+
+ - liefert ein Array mit Elementen, die auf die Bedingung im Block nicht
+ passen.
+ Folgender Aufruf 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{liste.reject 
+\backslash
+{|e| e.to
+\backslash
+_i > 0 
+\backslash
+}}
+\end_layout
+
+\end_inset
+
+ liefert 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{["Dezember", nil]}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{map}
+\end_layout
+
+\end_inset
+
+ - wird mit einem Block aufgerufen.
+ Der Block wird für jedes Element aus dem Array ausgeführt.
+ Als Ergebnis wird ein neues Array mit den Ergebnissen zurückgeliefert.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{flatten}
+\end_layout
+
+\end_inset
+
+ - liefert ein eindimensionales Array zurück.
+ Elemente, die Arrays sind, werden in das neue Array extrahiert.
+\end_layout
+
+\begin_layout Subsection
+Hash
+\end_layout
+
+\begin_layout Standard
+Ein weiteres wichtiges Konstrukt in Ruby sind Hashes, welche durch die Klasse
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{Hash}
+\end_layout
+
+\end_inset
+
+ repräsentiert werden.
+ Hashes sind ungeordnete Listen mit Key-Value-Paaren.
+ Ein weiterer Unterschied zum Array ist, dass die Indizes beliebige Objekte,
+ sogenannte Keys, sein können.
+ Als Index werden des öfteren Strings oder Symbole verwendet.
+ 
+\end_layout
+
+\begin_layout Standard
+Die Erzeugung eines Hash-Objektes erfolgt mit der Angabe von Schlüssel-Wert-Paar
+en in den geschweiften Klammern 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{
+\backslash
+{
+\backslash
+}}
+\end_layout
+
+\end_inset
+
+.
+ Alternativ kann auch die Klassenmethode 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{new}
+\end_layout
+
+\end_inset
+
+ verwendet werden.
+\end_layout
+
+\begin_layout Standard
+Der Zugriff auf die Elemente eines Hashes erfolgt analog zum Array über
+ die 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{[]}
+\end_layout
+
+\end_inset
+
+-Methode.
+ Der Index ist dabei der Key-Wert des Key-Value Paares (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Flanagan2008"
+
+\end_inset
+
+, Seite 341).
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "tabsize=2,captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+leer = {}
+\end_layout
+
+\begin_layout Plain Layout
+
+coors = {:x => 15, :y =>37, :z =>9}
+\end_layout
+
+\begin_layout Plain Layout
+
+coors[:x] #=> 15
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Funktionsweise eines Hashes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Die Iteration über die Elemente eines Hashes erfolgt mit Hilfe der Iteratoren
+ in Verbindung mit Blöcken.
+ Auch hier kann der bereits bekannte Iterator 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{each}
+\end_layout
+
+\end_inset
+
+ dafür verwendet werden 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{ 
+\backslash
+{:x => 15, :y =>37, :z =>9
+\backslash
+}.each 
+\backslash
+{ |key,value| ...
+\backslash
+}}
+\end_layout
+
+\end_inset
+
+.
+ Möchte man nur über die Keys oder Values iterieren, so kann auf die Iteratoren
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{each
+\backslash
+_key}
+\end_layout
+
+\end_inset
+
+ und 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{each
+\backslash
+_value}
+\end_layout
+
+\end_inset
+
+ zurückgegriffen werden (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Flanagan2008"
+
+\end_inset
+
+, Seite 344).
+\end_layout
+
+\begin_layout Standard
+Um in einem Hash einen Wert finden zu können, muss gegebenenfalls Key Vergleich
+ durchgeführt werden.
+ Für den Vergleich sind die Methoden 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{hash}
+\end_layout
+
+\end_inset
+
+ und 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{eql?}
+\end_layout
+
+\end_inset
+
+ relevant.
+ Die Methode 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{hash}
+\end_layout
+
+\end_inset
+
+ liefert den Hashwert des Objektes als Ganzzahl und die 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{eql?}
+\end_layout
+
+\end_inset
+
+ Methode vergleicht den Key aus dem Hash Objekt mit dem übergebenem Wert.
+ 
+\end_layout
+
+\begin_layout Standard
+Werden Instanzen eigener Klassen als Keys in einem Hash verwendet, so müssen
+ die beiden Methoden, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{hash}
+\end_layout
+
+\end_inset
+
+ und 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{eql?}
+\end_layout
+
+\end_inset
+
+, in der Klasse überschrieben werden.
+ Andernfalls erfolgt der Vergleich anhand der Objekt-Id.
+ Wird das Objekt im Programmablauf verändert, kann es dazu führen, dass
+ der Wert im Hash nicht mehr gefunden werden kann.
+ Aus diesem Grund wir in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Flanagan2008"
+
+\end_inset
+
+ empfohlen, Symbole als Keys zu verwenden.
+\end_layout
+
+\begin_layout Section
+Klassen und Objekte
+\end_layout
+
+\begin_layout Standard
+Als eine objektorientierte Sprache bietet Ruby das Konzept der Klassen und
+ Objekte.
+ Da bei Ruby alles ein Objekt ist, ist auch eine Klasse ein Objekt, auch
+ dann wenn sie noch nicht instanziiert wurde.
+ Sie ist nämlich eine Instanz der Klasse 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{Class}
+\end_layout
+
+\end_inset
+
+.
+ Im Gegensatz zu anderen Programmiersprachen sind Klassen in Ruby immer
+ offen.
+ Jede Klasse kann also verändert oder mit neuen Funktionalitäten erweitert
+ werden.
+ 
+\end_layout
+
+\begin_layout Subsection
+Klassen
+\end_layout
+
+\begin_layout Standard
+Eine Klassendefinition beginnt in Ruby mit dem Schlüsselwort 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{class}
+\end_layout
+
+\end_inset
+
+ und endet mit 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{end}
+\end_layout
+
+\end_inset
+
+.
+ Der Name einer Klasse beginnt immer mit einem Großbuchstaben.
+ Wenn der Klassenname aus mehreren Wörtern besteht, so wird die camel case-Notat
+ion
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Eine Konvention zur Benennung von Bezeichnern wie Variablen, Methoden und
+ Klassen.
+ Es wird dabei gemischte Groß-/Kleinschreibung verwendet, wobei nur der
+ erste Buchstabe jedes Wortes groß geschrieben wird.
+ z.B.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{ class MeineErsteRubyKlasse ..
+ end}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+ verwendet.
+ 
+\end_layout
+
+\begin_layout Standard
+Eine Instanz einer Klasse wird über die Klassenmethode 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{new}
+\end_layout
+
+\end_inset
+
+ erstellt.
+ Es wird also bereits zu diesem Zeitpunkt eine Instanz der Klasse erzeugt.
+ Im Anschluss wird die private Methode 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{initialize}
+\end_layout
+
+\end_inset
+
+ aufgerufen, welche sich ähnlich verhält wie Klassenkonstruktoren in anderen
+ Programmiersprachen.
+ Übergebene Argumente an die Klassenmethode 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{new}
+\end_layout
+
+\end_inset
+
+ werden dabei an 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{initialize}
+\end_layout
+
+\end_inset
+
+ weitergereicht (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Flanagan2008"
+
+\end_inset
+
+, Seiten 215-216).
+ Wie bereits im Unterkapitel 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Methoden"
+
+\end_inset
+
+ erwähnt wurde, können Methoden in Ruby nicht überladen werden.
+ Dies gilt auch für die 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{initialize}
+\end_layout
+
+\end_inset
+
+ Methode.
+ Somit kann in einer Klasse kann immer nur eine 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{initialize}
+\end_layout
+
+\end_inset
+
+ Methode existieren.
+ Um die Möglichkeit zu bieten, Instanzen mit unterschiedlicher Anzahl von
+ Werten erzeugen zu können, müssen die optionalen Parameter mit einem Default
+ Wert belegt werden (vgl.
+ Unterkapitel 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Methoden"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Ruby,tabsize=2,captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+class Klasse   
+\end_layout
+
+\begin_layout Plain Layout
+
+  def initialize (parameter1, paramter2 = nil)     
+\end_layout
+
+\begin_layout Plain Layout
+
+    @member1 = parameter1     
+\end_layout
+
+\begin_layout Plain Layout
+
+    @member2 = paramter2   
+\end_layout
+
+\begin_layout Plain Layout
+
+  end 
+\end_layout
+
+\begin_layout Plain Layout
+
+end
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Beispiel einer Klasse in Ruby
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In einer Klasse können Instanz- und Klassenvariablen (vgl.
+ Kapitel 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Variablen"
+
+\end_inset
+
+), sowie Methoden (vgl.
+ Kapitel 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Methoden"
+
+\end_inset
+
+) definiert werden.
+ Methoden unterteilen sich in Instanz- und Klassenmethoden.
+ Der Unterschied bei der Definition der Klassenmethoden ist, dass der Klassennam
+e oder das Schlüsselwort 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{self}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Entspricht 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{this}
+\end_layout
+
+\end_inset
+
+ in Java 
+\end_layout
+
+\end_inset
+
+ dem Methodennamen mit einem Punkt vorangestellt wird.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Ruby,tabsize=2,captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+class Klasse
+\end_layout
+
+\begin_layout Plain Layout
+
+..
+\end_layout
+
+\begin_layout Plain Layout
+
+  # Instanzmethode
+\end_layout
+
+\begin_layout Plain Layout
+
+  def methode
+\end_layout
+
+\begin_layout Plain Layout
+
+   ...
+\end_layout
+
+\begin_layout Plain Layout
+
+  end
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  # Klassenmethode
+\end_layout
+
+\begin_layout Plain Layout
+
+  def Klasse.class_methode1
+\end_layout
+
+\begin_layout Plain Layout
+
+    ...
+\end_layout
+
+\begin_layout Plain Layout
+
+  end
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+  # Klassenmethode
+\end_layout
+
+\begin_layout Plain Layout
+
+  def self.class_methode2
+\end_layout
+
+\begin_layout Plain Layout
+
+    ...
+\end_layout
+
+\begin_layout Plain Layout
+
+  end
+\end_layout
+
+\begin_layout Plain Layout
+
+..
+\end_layout
+
+\begin_layout Plain Layout
+
+end
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Aufruf
+\end_layout
+
+\begin_layout Plain Layout
+
+Klasse.class_methode1
+\end_layout
+
+\begin_layout Plain Layout
+
+Klasse.class_methode2
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Beispiel für Instanz- und Klassenmethoden
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Eine weitere Möglichkeit eine Klassenmethode zu definieren, ist es, eine
+ Singleton-Klasse in der Klasse zu verwenden (vgl.
+ Listing 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lis:Beispiel-für-Klassenmethode"
+
+\end_inset
+
+).
+ Diese Singleton-Klasse wäre dann an das eine Objekt gebunden.
+ Die Methoden in der Singelton-Klasse sind somit Singleton-Methoden, da
+ sie nur an die Singleton-Klasse gebunden sind.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "language=Ruby,tabsize=2,captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+class Klasse
+\end_layout
+
+\begin_layout Plain Layout
+
+..
+\end_layout
+
+\begin_layout Plain Layout
+
+  class << self
+\end_layout
+
+\begin_layout Plain Layout
+
+	 
+\end_layout
+
+\begin_layout Plain Layout
+
+    def class_methode
+\end_layout
+
+\begin_layout Plain Layout
+
+      ...
+\end_layout
+
+\begin_layout Plain Layout
+
+    end	  
+\end_layout
+
+\begin_layout Plain Layout
+
+  end
+\end_layout
+
+\begin_layout Plain Layout
+
+..
+\end_layout
+
+\begin_layout Plain Layout
+
+end
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Aufruf
+\end_layout
+
+\begin_layout Plain Layout
+
+Klasse.class_methode
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Beispiel für Klassenmethode als Methode in einer Singleton-Klasse
+\begin_inset CommandInset label
+LatexCommand label
+name "lis:Beispiel-für-Klassenmethode"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Um die Zugriffe auf die Methoden und Attribute zu kontrollieren, hat Ruby
+ analog zu anderen objektorientierten Sprachen auch die Möglichkeit, Attributen
+ und Methoden einer Klasse unterschiedliche Sichtbarkeiten zu zuweisen.
+ Dabei wird zwischen 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{private}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{protected}
+\end_layout
+
+\end_inset
+
+ und 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{public}
+\end_layout
+
+\end_inset
+
+ unterschieden.
+\end_layout
+
+\begin_layout Standard
+Eine Methode
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Ausnahme ist die 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{initialize}
+\end_layout
+
+\end_inset
+
+ Methode
+\end_layout
+
+\end_inset
+
+ ist per default immer 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{public}
+\end_layout
+
+\end_inset
+
+.
+ Wenn eine Methode als 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{protected}
+\end_layout
+
+\end_inset
+
+ deklariert wird, dann kann diese nur von den Instanzen der Klasse oder
+ von den abgeleiteten Klassen verwendet werden.
+ Instanz- wie auch Klassenvariablen sind per Default nach außen nicht sichtbar
+ und somit immer 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{private}
+\end_layout
+
+\end_inset
+
+ deklariert.
+ Für den Zugriff muss eine entsprechende Getter- und /oder Setter-Methode
+ für jedes Attribut implementiert werden.
+ Ruby wäre aber nicht Ruby, wenn es keine einfachere Möglichkeit dafür gäbe.
+ Mit Hilfe der vordefinierten Objekt-Methoden 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{attr
+\backslash
+_reader}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{attr
+\backslash
+_writer}
+\end_layout
+
+\end_inset
+
+ und 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{attr
+\backslash
+_accessor}
+\end_layout
+
+\end_inset
+
+ kann die Definition der Getter-/Setter-Methoden für die einzelnen Attribute
+ vereinfacht werden.
+ Der Name des jeweiligen Attributes muss als Symbol
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Symbole"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ hinter der Methode aufgeführt werden (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Flanagan2008"
+
+\end_inset
+
+, Seite 218).
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Ruby,tabsize=2,captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+class Klasse   
+\end_layout
+
+\begin_layout Plain Layout
+
+  attr_reader :member  # Getter Methode für den Member
+\end_layout
+
+\begin_layout Plain Layout
+
+  attr_writer :member # Setter Methode für den Member
+\end_layout
+
+\begin_layout Plain Layout
+
+  # für member kann alternativ (attr_accessor :member) verwendet werden
+\end_layout
+
+\begin_layout Plain Layout
+
+  def initialize (param)     
+\end_layout
+
+\begin_layout Plain Layout
+
+    @member = param     
+\end_layout
+
+\begin_layout Plain Layout
+
+  end 
+\end_layout
+
+\begin_layout Plain Layout
+
+end
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+rubyKlasse = Klasse.new("Ruby") 
+\end_layout
+
+\begin_layout Plain Layout
+
+puts rubyKlasse 
+\end_layout
+
+\begin_layout Plain Layout
+
+# => #<Klasse:0x0000000004ea3770 @member="Ruby">
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Objektmethoden als Ersatz für klassische Getter- und Setter-Methoden
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In Ruby werden die Klassen nie geschlossen, das bedeutet, eine Klasse kann
+ zur Laufzeit jederzeit geändert oder erweitert werden.
+ Wenn der Interpreter auf eine Klassendefinition trifft, so prüft er als
+ erstes, ob die Klasse bereits existiert.
+ Ist dies der Fall, so werden die Methoden und Variablen aus der neuen Definitio
+n in die bereits existierende Klasse hinzugefügt.
+ Die Funktionalität der bereits existierende Klassen kann auch modifiziert
+ werden, in dem die bestehenden Methoden überschrieben werden.
+ Das Beispiel im dem Listing 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lis:Beispiel-einer-Erweiterung"
+
+\end_inset
+
+ zeigt eine Erweiterung der Klasse 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{Integer}
+\end_layout
+
+\end_inset
+
+ um die Methode 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{isPrimzahl?}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "language=Ruby,tabsize=2,captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+class Integer
+\end_layout
+
+\begin_layout Plain Layout
+
+	def isPrimzahl?     
+\end_layout
+
+\begin_layout Plain Layout
+
+		(2..Math.sqrt(self)).each { |i|       
+\end_layout
+
+\begin_layout Plain Layout
+
+			if self % i == 0 && i < self         
+\end_layout
+
+\begin_layout Plain Layout
+
+				return false       
+\end_layout
+
+\begin_layout Plain Layout
+
+			end     
+\end_layout
+
+\begin_layout Plain Layout
+
+		}     
+\end_layout
+
+\begin_layout Plain Layout
+
+		true   
+\end_layout
+
+\begin_layout Plain Layout
+
+	end
+\end_layout
+
+\begin_layout Plain Layout
+
+end
+\end_layout
+
+\begin_layout Plain Layout
+
+p 4.isPrimzahl? # false
+\end_layout
+
+\begin_layout Plain Layout
+
+p 7.isPrimzahl? # true
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Beispiel einer Erweiterung 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{Integer}
+\end_layout
+
+\end_inset
+
+-Klasse
+\begin_inset CommandInset label
+LatexCommand label
+name "lis:Beispiel-einer-Erweiterung"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Vererbung
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Vererbung"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ruby ist eine objektorientierte Sprache und bietet also auch die Möglichkeit
+ der Vererbung.
+ Um den Komplikationen der Mehrfachvererbung aus dem Weg zu gehen, unterstützt
+ Ruby standardmäßig nur einfache Vererbung.
+ Das bedeutet aber nicht, dass eine Mehrfach-Vererbung in Ruby nicht möglich
+ ist.
+ In diesem Unterkapitel, werden die Möglichkeiten der Vererbung in Ruby
+ näher vorgestellt.
+\end_layout
+
+\begin_layout Subsubsection
+Einfach-Vererbung
+\end_layout
+
+\begin_layout Standard
+Bei der Definition einer Klasse kann angegeben werden, dass diese eine andere
+ Klasse (Oberklasse) erweitert oder von ihr erbt.
+ Wird keine Klasse explizit angegeben, erweitert die neue Klasse implizit
+ die 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{Object}
+\end_layout
+
+\end_inset
+
+ -Klasse.
+ In Ruby kann eine Klasse beliebig viele Unterklassen haben und nur eine
+ Oberklasse.
+ Die Vererbung wird in Ruby mit Hilfe von 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{<}
+\end_layout
+
+\end_inset
+
+ - Operator erreicht.
+ 
+\end_layout
+
+\begin_layout Standard
+Eine Unterklasse, die eine andere Klasse erweitert oder von dieser Klasse
+ erbt, hat den Zugriff auf deren Eigenschaften und Methoden der Oberklasse.
+ Dies gilt auch für die 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{initialize}
+\end_layout
+
+\end_inset
+
+ Methode, da es sich hier um eine normale Methode und nicht um einen Konstruktor
+, wie z.B.
+ in Java, handelt.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Ruby,tabsize=2,captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+class Klasse   
+\end_layout
+
+\begin_layout Plain Layout
+
+	def initialize(bezeichnung)     
+\end_layout
+
+\begin_layout Plain Layout
+
+		@bezeichnung = bezeichnung   
+\end_layout
+
+\begin_layout Plain Layout
+
+	end 
+\end_layout
+
+\begin_layout Plain Layout
+
+end
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+class Unterklasse < Klasse   
+\end_layout
+
+\begin_layout Plain Layout
+
+    # Definition von initialize nicht notwendig   
+\end_layout
+
+\begin_layout Plain Layout
+
+	def bezeichnung     
+\end_layout
+
+\begin_layout Plain Layout
+
+		puts @bezeichnung   
+\end_layout
+
+\begin_layout Plain Layout
+
+	end 
+\end_layout
+
+\begin_layout Plain Layout
+
+end
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Beispiel für die Implementierung einer einfachen Vererbung
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Mehrfach-Vererbung
+\end_layout
+
+\begin_layout Standard
+Mehrfach-Vererbung ist die Möglichkeit, dass eine Kindklasse Eigenschaften
+ von mehreren Elternklassen erbt.
+ Wie bereits erwähnt wurde, kennt Ruby standardmäßig  keine direkte Mehrfach-Ver
+erbung.
+ Mit Hilfe sogenannter Mixins
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Bei Mixins handelt es sich um Module bzw.
+ Klassen, die aber nicht instanziiert werden können.
+ Klassen können Mixins einschließen und so auf deren Methoden zugreifen.
+\end_layout
+
+\end_inset
+
+ kann das Verhalten der Mehrfach-Vererbung simuliert werden.
+ Eine Ruby Klasse kann beliebig viele Mixins einschließen und somit auf
+ deren Funktionen zugreifen (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Carlson2006"
+
+\end_inset
+
+, Seite 315).
+\end_layout
+
+\begin_layout Standard
+Ein Mixin kann entweder mit dem Schlüsselwort 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{include}
+\end_layout
+
+\end_inset
+
+ oder 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{extend}
+\end_layout
+
+\end_inset
+
+ in einer Klasse eingebunden werden.
+ Mit dem Schlüsselwort 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{include}
+\end_layout
+
+\end_inset
+
+ werden die Methoden eines Mixins als Instanzmethoden in der Klasse hinzugefügt
+ und als Klassenmethoden bei 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{extend}
+\end_layout
+
+\end_inset
+
+ (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Carlson2006"
+
+\end_inset
+
+, Seiten 319-322).
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Ruby,tabsize=2,captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+module Mixin   
+\end_layout
+
+\begin_layout Plain Layout
+
+	def module_method     
+\end_layout
+
+\begin_layout Plain Layout
+
+		puts "Methode aus dem Mixin!"   
+\end_layout
+
+\begin_layout Plain Layout
+
+	end 
+\end_layout
+
+\begin_layout Plain Layout
+
+end
+\end_layout
+
+\begin_layout Plain Layout
+
+class KlasseMitInclude   
+\end_layout
+
+\begin_layout Plain Layout
+
+	include Mixin 
+\end_layout
+
+\begin_layout Plain Layout
+
+end 
+\end_layout
+
+\begin_layout Plain Layout
+
+class KlasseMitExtend   
+\end_layout
+
+\begin_layout Plain Layout
+
+	extend Mixin 
+\end_layout
+
+\begin_layout Plain Layout
+
+end
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+KlasseMitInclude.new.module_method       #=> "Methode aus dem Mixin!"
+\end_layout
+
+\begin_layout Plain Layout
+
+KlasseMitExtend.module_method            #=> "Methode aus dem Mixin!"
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Realisierung einer Mehrfach-Vererbung mit Hilfe von Mixins
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Exceptions
+\end_layout
+
+\begin_layout Standard
+Normalerweise erfolgt die Behandlung der Fehler im Programm mit Hilfe der
+ Ergebniscodes.
+ Diese werden im Fehlerfall von einer Methode zurückgegeben, um mitzuteilen,
+ dass der normale Programmfluss unterbrochen wurde.
+ Der Ergebniscode wird durch die verschachtelten Aufrufe solange durchgereicht,
+ bis eine Methode die Verarbeitung des Codes übernimmt.
+ Der Nachteil ist, dass die Verwaltung der Ergebniscodes mit großem Aufwand
+ verbunden ist.
+ Treten im Verlauf des Programms mehrere Fehler auf, so kann es kompliziert
+ werden, die einzelnen Fehler den Stellen, wo sie aufgetreten sind, zuzuordnen.
+\end_layout
+
+\begin_layout Standard
+Um dieses Problem zu lösen, steht in Ruby, sowie auch in anderen Sprachen,
+ das System der Exceptions zur Verfügung.
+ Tritt ein Fehler auf, wird die Information darüber in einem Objekt der
+ Klasse 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{Exception}
+\end_layout
+
+\end_inset
+
+ oder einer seiner Unterklasse so lange durchgereicht, bis dieser Fehlertyp
+ im Programm behandelt wird.
+ In Ruby ist eine feste Hierarchie der Exceptions definiert, die im folgendem
+ auszugsweise aufgelistet ist 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "RubyDoc2017"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "tabsize=2,captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+NoMemoryError
+\end_layout
+
+\begin_layout Plain Layout
+
+SystemExit
+\end_layout
+
+\begin_layout Plain Layout
+
+SystemStackError
+\end_layout
+
+\begin_layout Plain Layout
+
+ScriptError
+\end_layout
+
+\begin_layout Plain Layout
+
+	LoadError
+\end_layout
+
+\begin_layout Plain Layout
+
+	NotImplementedError
+\end_layout
+
+\begin_layout Plain Layout
+
+	SyntaxError
+\end_layout
+
+\begin_layout Plain Layout
+
+StandardError
+\end_layout
+
+\begin_layout Plain Layout
+
+	ArgumentError
+\end_layout
+
+\begin_layout Plain Layout
+
+		UncaughtThrowError
+\end_layout
+
+\begin_layout Plain Layout
+
+	IOError
+\end_layout
+
+\begin_layout Plain Layout
+
+		EOFError
+\end_layout
+
+\begin_layout Plain Layout
+
+	IndexError
+\end_layout
+
+\begin_layout Plain Layout
+
+		KeyError
+\end_layout
+
+\begin_layout Plain Layout
+
+		StopIteration
+\end_layout
+
+\begin_layout Plain Layout
+
+	NameError
+\end_layout
+
+\begin_layout Plain Layout
+
+		NoMethodError
+\end_layout
+
+\begin_layout Plain Layout
+
+	RangeError
+\end_layout
+
+\begin_layout Plain Layout
+
+		FloatDomainError
+\end_layout
+
+\begin_layout Plain Layout
+
+	RegexpError
+\end_layout
+
+\begin_layout Plain Layout
+
+	RuntimeError
+\end_layout
+
+\begin_layout Plain Layout
+
+	TypeError
+\end_layout
+
+\begin_layout Plain Layout
+
+	ZeroDivisionError
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Auszug aus der Exeption Hierarchie.
+ Quellen:
+\begin_inset CommandInset citation
+LatexCommand cite
+key "RubyDoc2017"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Es wird Situationen geben, in denen die vordefinierte Exceptions nicht ausreiche
+n werden.
+ In Ruby ist es durchaus möglich auch eigene Exceptionklassen zu definieren.
+ Diese sollten von der 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{StandardError}
+\end_layout
+
+\end_inset
+
+ oder einer Unterklasse der 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{StandardError}
+\end_layout
+
+\end_inset
+
+ erben.
+ Im anderen Fall wird die Exception nicht per default gefangen und muss
+ explizit angegeben werden 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Thomas2013"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Um in einem Codeabschnitt die Exceptions behandeln zu können, wird der Codeabsch
+nitt innerhalb eines Blockes zusammengefasst.
+ Das Schlüsselwort 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{rescue}
+\end_layout
+
+\end_inset
+
+ mit der Angabe des Fehlertyps innerhalb dieses Blocks dient zum Fangen
+ der aufgetretenen Exception.
+ Wenn der Fehler an dieser Stelle nicht behandelt werden soll, so ist es
+ möglich mit 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{raise}
+\end_layout
+
+\end_inset
+
+ den Fehler an die nächsthöhere Ebene weiterzugeben.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Ruby,tabsize=2,captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+begin 
+\end_layout
+
+\begin_layout Plain Layout
+
+# hier kommt es zum Fehler
+\end_layout
+
+\begin_layout Plain Layout
+
+...
+\end_layout
+
+\begin_layout Plain Layout
+
+rescue ArgumentError
+\end_layout
+
+\begin_layout Plain Layout
+
+# Fehler wird abgefangen und kann hier behandelt werden.
+\end_layout
+
+\begin_layout Plain Layout
+
+...
+\end_layout
+
+\begin_layout Plain Layout
+
+rescue NameError => ne
+\end_layout
+
+\begin_layout Plain Layout
+
+  raise ne # weitergeben
+\end_layout
+
+\begin_layout Plain Layout
+
+end 
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Aufbau eines Codeabschnitts für die Fehlerbehandlung
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Es kann vorkommen, dass bestimmte Anweisungen auf jeden Fall ausgeführt
+ werden sollen.
+ Um dies sicherzustellen, kann das 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{ensure}
+\end_layout
+
+\end_inset
+
+- Statement verwendet werden.
+ Es spielt dabei keine Rolle, ob ein Fehler aufgetreten ist oder der Block
+ normal ausgeführt wurde, der Code hinter dem 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{ensure}
+\end_layout
+
+\end_inset
+
+- Statement wird in jedem Fall ausgeführt.
+ Im folgenden Beispiel wird versucht, eine Datei im Lese-Modus zu öffnen
+ und zu verarbeiten.
+ Tritt dabei ein Fehler auf, wird dieser in dem 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{rescue}
+\end_layout
+
+\end_inset
+
+ -Block behandelt.
+ Unabhängig davon, ob ein Fehler aufgetreten ist oder nicht, wird zum Schluss
+ der Code in dem 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{ensure}
+\end_layout
+
+\end_inset
+
+-Block ausgeführt, wo die Datei geschlossen wird.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "tabsize=2,captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+begin 
+\end_layout
+
+\begin_layout Plain Layout
+
+  datei = File.open("text_datei.txt","r") 
+\end_layout
+
+\begin_layout Plain Layout
+
+  datei.each{ |line| ...
+ } 
+\end_layout
+
+\begin_layout Plain Layout
+
+...
+\end_layout
+
+\begin_layout Plain Layout
+
+rescue 
+\end_layout
+
+\begin_layout Plain Layout
+
+  puts "Fehler beim verarbeiten der Datei"
+\end_layout
+
+\begin_layout Plain Layout
+
+ # Fehlerbehandlung
+\end_layout
+
+\begin_layout Plain Layout
+
+ensure 
+\end_layout
+
+\begin_layout Plain Layout
+
+  datei.close if datei 
+\end_layout
+
+\begin_layout Plain Layout
+
+end
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Beispiel für Exeption-Handling
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Die Methoden, die eine Exception weiterreichen, müssen in Ruby nicht explizit
+ in der Signatur gekennzeichnet werden, da es im Unterschied zu Java keine
+ Checked Exceptions gibt.
+\end_layout
+
+\begin_layout Section
+Introspektion
+\end_layout
+
+\begin_layout Standard
+Introspektion ist die Möglichkeit, zur Laufzeit die Informationen über eine
+ Klasse oder ein Objekt zu untersuchen (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Flanagan2008"
+
+\end_inset
+
+, Seite 266).
+ Zum Beispiel kann zur Laufzeit ermitteln werden, zu welcher Klasse ein
+ Objekt gehört, welche Instanzmethoden oder Variablen ein Objekt besitzt
+ oder wie die Objekthierarchie aussieht.
+ Zu diesem Zweck stehen in Ruby viele Methoden bereit.
+ Im Folgendem werden einige davon vorgestellt.
+\end_layout
+
+\begin_layout Standard
+Die Introspektionsmethode 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{class()}
+\end_layout
+
+\end_inset
+
+ gibt die Klasse, der ein Objekt zugehört, zurück.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{instance
+\backslash
+_methods()} 
+\end_layout
+
+\end_inset
+
+ liefert alle Instanzmethoden des Objektes als eine Liste zurück.
+ Dabei werden auch Methoden aufgelistet, die nicht nur in der Klasse selbst
+ definiert sind, sondern auch die, die aus den übergeordneten Klassen und
+ Mixins vererbt wurden.
+ Mit Hilfe der 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{ancestors()}
+\end_layout
+
+\end_inset
+
+ Methode kann die Objekthierarchie ermittelt werden.
+ Das Beispiel aus dem Listing 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lis:Beispiel-für-die"
+
+\end_inset
+
+ zeigt die Ergebnisse der Ausführung der drei genanten Methoden von einem
+ Fixnum-Objekt.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Ruby,tabsize=2,captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+irb(main):001 > 1.class  
+\end_layout
+
+\begin_layout Plain Layout
+
+=> Fixnum  
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+irb(main):002 > 1.class.ancestors  
+\end_layout
+
+\begin_layout Plain Layout
+
+=> [Fixnum, Integer, Numeric, Comparable, Object, Kernel, BasicObject] 
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+irb(main):003 > 1.class.instance_methods  
+\end_layout
+
+\begin_layout Plain Layout
+
+=> [:to_s, :inspect, :-@, :+, :-, :*, :/, :div, :%, :modulo, :divmod, :fdiv,
+ :**, :abs, :magnitude, :==, :===, :<=>, :>, :>=, :<, :<=, :~, :&, :|, :^,
+ :[], :<<, :>>, :to_f, :size, :bit_length, :zero?, :odd?, :even?, :succ,
+ :integer?, :upto, :downto, :times, :next, :pred, :chr, :ord, :to_i, :to_int,
+ :floor, :ceil, :truncate, :round, :gcd, :lcm, :gcdlcm, :numerator, :denominator
+, :to_r, :rationalize, :singleton_method_added, :coerce, :i, :+@, :eql?,
+ :remainder, :real?, :nonzero?, :step, :quo, :to_c, :real, :imaginary, :imag,
+ :abs2, :arg, :angle, :phase, :rectangular, :rect, :polar, :conjugate, :conj,
+ :between?, :nil?, :=~, :!~, :hash, :class, :singleton_class, :clone, :dup,
+ :taint, :tainted?, :untaint, :untrust, :untrusted?, :trust, :freeze, :frozen?,
+ :methods, :singleton_methods, :protected_methods, :private_methods, :public_met
+hods, :instance_variables, :instance_variable_get, :instance_variable_set,
+ :instance_variable_defined?, :remove_instance_variable, :instance_of?,
+ :kind_of?, :is_a?, :tap, :send, :public_send, :respond_to?, :extend, :display,
+ :method, :public_method, :singleton_method, :define_singleton_method, :object_i
+d, :to_enum, :enum_for, :equal?, :!, :!=, :instance_eval, :instance_exec,
+ :__send__, :__id__]  
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Beispiel für die Verwendung der Introspektionsmethoden eines Fixnum-Objektes
+\begin_inset CommandInset label
+LatexCommand label
+name "lis:Beispiel-für-die"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In dem Unterkapitel 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Variablen"
+
+\end_inset
+
+ wurde bereits angesprochen, dass Ruby eine untypisierte Sprache ist und
+ nach dem 
+\emph on
+Duck Typing 
+\emph default
+Prinzip
+\emph on
+ 
+\emph default
+arbeitet.
+ Da es bei diesem Prinzip nicht um den Typ geht, sondern ob dieser Typ die
+ Methode, die aufgerufen werden soll, versteht, muss im Programmablauf dies
+ sichergestellt werden können.
+ Für diesen Zweck steht in Ruby eine weitere Introspektionsmethode:
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{respond
+\backslash
+_to?} 
+\end_layout
+
+\end_inset
+
+.
+ Mit Hilfe dieser Methode kann zur Laufzeit ermittelt werden, ob das Objekt
+ die aufzurufende Methode kennt.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Ruby,tabsize=2,captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+irb(main):020 > 1.respond_to? :to_str  
+\end_layout
+
+\begin_layout Plain Layout
+
+=> false  
+\end_layout
+
+\begin_layout Plain Layout
+
+irb(main):021 > "1".respond_to? :to_str  
+\end_layout
+
+\begin_layout Plain Layout
+
+=> true 
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Verwendung der 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{respond
+\backslash
+_to?} 
+\end_layout
+
+\end_inset
+
+ Methode.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Zur Laufzeit kann auch ermittelt werden, ob ein Objekt zu einer bestimmten
+ Klasse gehört.
+ Hierfür können die beiden Methoden 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{instance
+\backslash
+_of?} 
+\end_layout
+
+\end_inset
+
+ und 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{kind
+\backslash
+_of?} 
+\end_layout
+
+\end_inset
+
+ verwendet werden.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{instance
+\backslash
+_of?} 
+\end_layout
+
+\end_inset
+
+ liefert true zurück, wenn das Objekt von der angegebenen Klasse ist.
+ Bei 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{kind
+\backslash
+_of?} 
+\end_layout
+
+\end_inset
+
+ dagegen werden auch die Oberklassen und gegebenenfalls eingebundene Mixins
+ berücksichtigt.
+ Alternativ zu 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{kind
+\backslash
+_of?} 
+\end_layout
+
+\end_inset
+
+ Methode kann auch 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{is
+\backslash
+_a?} 
+\end_layout
+
+\end_inset
+
+ verwendet werden.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Ruby,tabsize=2,captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+irb(main):002 > 1.instance_of?(Integer)  
+\end_layout
+
+\begin_layout Plain Layout
+
+=> true  
+\end_layout
+
+\begin_layout Plain Layout
+
+irb(main):003 > 1.instance_of?(Numeric)
+\end_layout
+
+\begin_layout Plain Layout
+
+=> false
+\end_layout
+
+\begin_layout Plain Layout
+
+irb(main):004 > 1.kind_of?(Numeric)
+\end_layout
+
+\begin_layout Plain Layout
+
+=> true
+\end_layout
+
+\begin_layout Plain Layout
+
+irb(main):005 > 1.is_a?(Object)
+\end_layout
+
+\begin_layout Plain Layout
+
+=> true
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Vergleich der Methoden: 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{instance
+\backslash
+_of?} 
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{kind
+\backslash
+_of?} 
+\end_layout
+
+\end_inset
+
+ und 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{is
+\backslash
+_a?} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Funktionale Programmierung
+\end_layout
+
+\begin_layout Standard
+In diesem Kapitel wird auf einige Möglichkeiten der funktionalen Programmierung
+ in Ruby eingegangen.
+ Dieses Thema ist sehr umfangreich und kann nicht komplett in dieser Seminararbe
+it behandelt werden.
+ Eine Einführung in funktionale Programmierung, die auch als Quelle für
+ dieses Kapitel verwendet wurde, hat Kamil Lelonek in seinem Blog gemacht
+ (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lelonek2015-1"
+
+\end_inset
+
+und 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lelonek2015-2"
+
+\end_inset
+
+).
+ Das Thema Currying wird im Buch 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ohlig2013"
+
+\end_inset
+
+ sehr ausführlich behandelt.
+\end_layout
+
+\begin_layout Standard
+Ruby unterstützt mehre Paradigmen.
+ Eins davon ist die funktionale Programmierung.
+ Konstrukte wie Blöcke, Lambdas und Procs
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+vgl.
+ Kapitel 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Blöcke-und-Iteratoren"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ ermöglichen einen funktionalen Programmierstil.
+ 
+\end_layout
+
+\begin_layout Standard
+Funktionale Programmierung bedeutet nichts anderes als Programmieren mit
+ Funktionen.
+ Unter Funktionen werden dabei mathematische Funktionen verstanden, die
+ keine Seiteneffekte haben und so bei gleichen Eingabewerten immer den gleichen
+ Rückgabewert zurückliefern.
+ 
+\end_layout
+
+\begin_layout Standard
+Um Seiteneffekte möglichst zu vermeiden, sollten Variablen wie Konstanten
+ behandelt werden.
+ Wird ein Wert einer Variable zugewiesen, darf die Variable im weiteren
+ Programmablauf keinen anderen Wert mehr annehmen.
+ Aus diesem Grund ist der Ausdruck, wie 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{x = x + 1}
+\end_layout
+
+\end_inset
+
+ in der funktionalen Programmierung nicht erlaubt.
+ Hier ändert sich der Wert von 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{x}
+\end_layout
+
+\end_inset
+
+ nach der Zuweisung um 1.
+ Um diesen Ausdruck dem funktionalen Paradigma konform zu machen, kann eine
+ weitere Konstante eingeführt werden: 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{y = x + 1}
+\end_layout
+
+\end_inset
+
+.
+ In diesem Fall bleibt der Wert von 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{x}
+\end_layout
+
+\end_inset
+
+ auch nach der Auswertung des Ausdrucks.
+ Der neue Wert wird in der Variable 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{y}
+\end_layout
+
+\end_inset
+
+ gespeichert.
+ 
+\end_layout
+
+\begin_layout Standard
+Auch innerhalb der Funktionen sollten Seiteneffekte vermieden werden.
+ Eine Funktion darf keine eingehende Argumente verändern und unabhängig
+ davon, wie oft die Funktion aufgerufen wird, muss diese immer das selbe
+ Ergebnis zurückgeben.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def div(a, b)   
+\end_layout
+
+\begin_layout Plain Layout
+
+ a / b 
+\end_layout
+
+\begin_layout Plain Layout
+
+end
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Beispiel für eine Funktion ohne Seiteneffekte
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Funktionale Programmiersprachen zeichnen sich auch unter anderem durch First
+ Class Functions aus.
+ Das bedeutet, Funktionen lassen sich wie Werte zu Variablen zuweisen, können
+ zur Laufzeit erzeugt, als Argumente oder Rückgabewerte verwendet werden.
+ Funktionen, die andere Funktionen als Parameter erhalten oder zurückliefern,
+ werden auch als 
+\emph on
+higher order functions
+\emph default
+ (Funktionen höherer Ordnung) bezeichnet.
+ Funktionen höherer Ordnung sind ein zentraler Bestandteil von Ruby.
+ Eine solche Funktion ist z.B.
+ die 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{map}
+\end_layout
+
+\end_inset
+
+ Funktion, welche auf jedes Element eines Arrays eine Funktion anwendet
+ und als Ergebnis ein neues Array zurückliefern.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "tabsize=2,captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# Jedes Element wird mit sich selbst multipliziert
+\end_layout
+
+\begin_layout Plain Layout
+
+# Als Ergebnis wird eine Liste mit neuen Werten zurückgeliefert
+\end_layout
+
+\begin_layout Plain Layout
+
+[1,2,3,4].map {|x| x * x } # => [1, 4, 9, 16] 
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Verwendung der 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{map}
+\end_layout
+
+\end_inset
+
+ Funktion
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Weitere klassische Beispiele sind die Funktionen 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{filter}
+\end_layout
+
+\end_inset
+
+ und 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{foldr}
+\end_layout
+
+\end_inset
+
+.
+ Diese drei Funktion gehören zu den Bausteinen der funktionalen Programmierung
+ und stehen in jeder richtigen funktionalen Programmiersprache zur Verfügung.
+ In Ruby findet man diese Funktionen auch wieder.
+ Mit dem Iterator 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{select}
+\end_layout
+
+\end_inset
+
+ und einem Block kann ein Filter auf eine Liste angewendet werden.
+ Ein Analog der 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{foldr}
+\end_layout
+
+\end_inset
+
+ Funktion in Ruby ist der Iterator 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{inject}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Alternativ kann auch 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{reduce}
+\end_layout
+
+\end_inset
+
+ verwendet werden.
+ Es handelt sich um ein Alias von 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{inject}
+\end_layout
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "basicstyle={\scriptsize},tabsize=2,captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# filtert die Elemente einer Liste anhand der Bedingung im Block
+\end_layout
+
+\begin_layout Plain Layout
+
+[2,4,5,6,7].select { |i|   i.odd? } # => [5, 7]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Summiert alle Elemente einer Liste und gibt als Ergebnis zurück
+\end_layout
+
+\begin_layout Plain Layout
+
+[10,20,30].inject{|sum, x| sum + x} # => 60
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Verwendung der 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{inject}
+\end_layout
+
+\end_inset
+
+ und der 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{select}
+\end_layout
+
+\end_inset
+
+ Funktion
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Funktionen, die eine Funktion als Rückgabewerte haben, gibt es in der Ruby
+ Bibliothek nicht.
+ Das heißt jedoch nicht, dass dies in Ruby nicht umsetzbar ist.
+ Mit Hilfe bereits erwähnte Konstrukte wie Proc oder Lambda können 
+\begin_inset Quotes gld
+\end_inset
+
+Funktionen
+\begin_inset Quotes grd
+\end_inset
+
+ erzeugt werden, die einer Variable zugewiesen oder als Ergebnis einer Funktion
+ zurückgegeben werden können (vgl.
+ Unterkapitel 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Proc-und-Lambda"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "basicstyle={\scriptsize},tabsize=2,captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# addierer und subtrahierer haben eine "Funktion" als Rückgabewert
+\end_layout
+
+\begin_layout Plain Layout
+
+def addierer(a, b)   
+\end_layout
+
+\begin_layout Plain Layout
+
+	-> { a + b } # lambda-Proc Objekt
+\end_layout
+
+\begin_layout Plain Layout
+
+end
+\end_layout
+
+\begin_layout Plain Layout
+
+def subtrahierer(a, b)   
+\end_layout
+
+\begin_layout Plain Layout
+
+	-> { a - b } # lambda-Proc Objekt
+\end_layout
+
+\begin_layout Plain Layout
+
+end
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Funktion, kann als Wert einer Variable zugewiesen werden
+\end_layout
+
+\begin_layout Plain Layout
+
+fkt_addierer = addierer(1,1)
+\end_layout
+
+\begin_layout Plain Layout
+
+# call führt die Funktion aus
+\end_layout
+
+\begin_layout Plain Layout
+
+fkt_addierer.call #=> 2
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# alternativer Aufruf
+\end_layout
+
+\begin_layout Plain Layout
+
+subtrahierer(10,5).call #=> 5
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Beispiel für die Implementierung von Fuktionen höherer Ordnung in Ruby
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In der Version 1.9 von Ruby hat die Klasse 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{Proc}
+\end_layout
+
+\end_inset
+
+ eine neue Funktion, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{curry}
+\end_layout
+
+\end_inset
+
+, bekommen, die eine partielle Auswertung und Currying ermöglicht.
+ Currying bedeutet, dass eine Funktion mit 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{n}
+\end_layout
+
+\end_inset
+
+ Argumenten zu 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{n}
+\end_layout
+
+\end_inset
+
+ Funktionen mit jeweils einem Argument umgewandelt wird.
+ Partielle Auswertung ist so ähnlich wie Currying, jedoch muss eine Funktion
+ nicht unbedingt ein Argument haben.
+ Der Unterschied von partieller Auswertung und Currying wird im folgenden
+ Beispiel verdeutlicht:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "basicstyle={\scriptsize},tabsize=2,captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# Ausgangsfunktion
+\end_layout
+
+\begin_layout Plain Layout
+
+summe = proc { |x, y, z| x + y + z } 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# partieller Auswertung, wenn der erste Aufruf mit zwei Argumenten erfolgen
+ soll
+\end_layout
+
+\begin_layout Plain Layout
+
+# wird die  o.g.
+ Funktion zur folgenden Funktion umgewandelt
+\end_layout
+
+\begin_layout Plain Layout
+
+summe = proc { |x, y| proc { |z| x + y + z} } 
+\end_layout
+
+\begin_layout Plain Layout
+
+# Aufruf
+\end_layout
+
+\begin_layout Plain Layout
+
+summe.call(1,2).call(3) #=>6
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# currying
+\end_layout
+
+\begin_layout Plain Layout
+
+# wird die  o.g.
+ Funktion zur folgenden Funktion umgewandelt
+\end_layout
+
+\begin_layout Plain Layout
+
+summe = proc { |x| proc { |y| proc { |z| x + y + z} } } 
+\end_layout
+
+\begin_layout Plain Layout
+
+# Aufruf
+\end_layout
+
+\begin_layout Plain Layout
+
+summe.call(1).call(2).call(3)#=>6
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Einsatz der Methode curry
+\end_layout
+
+\begin_layout Plain Layout
+
+def add(a, b, c) 
+\end_layout
+
+\begin_layout Plain Layout
+
+  a + b + c 
+\end_layout
+
+\begin_layout Plain Layout
+
+end
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+add_currying = add.curry # => #<Proc:0x0000000004f258b0 (lambda)>
+\end_layout
+
+\begin_layout Plain Layout
+
+# Jetzt erfolgt der Aufruf, wie bereits oben aufgeführt.
+\end_layout
+
+\begin_layout Plain Layout
+
+add_currying.call(1).call(2).call(3) #=> 6
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Beispiel für Currying und Partielle Auswertung.
+ Quelle:
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lelonek2015-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ruby ist keine funktionale Sprache, aus diesem Grund hat die Sprache auch
+ keine entsprechenden Validierungen, um z.B Seiteneffekte in Funktionen zu
+ erkennen und den Entwickler zu warnen.
+ Es ist aber durchaus möglich in Ruby funktional zu entwickeln, dies erfordert
+ von dem Entwickler jedoch etwas Disziplin.
+ 
+\end_layout
+
+\begin_layout Section
+Ruby on Rails
+\end_layout
+
+\begin_layout Standard
+In diesem Unterkapitel wird das Ruby on Rails Framework kurz vorgestellt
+ und auf die Architektur und die Grundprinzipien des Frameworks eingegangen.
+ Eine genaue Beschreibung der einzelnen Funktionalitäten des Frameworks
+ ist nicht Bestandteil dieser Seminararbeit.
+\end_layout
+
+\begin_layout Subsection
+Einführung
+\end_layout
+
+\begin_layout Standard
+Ruby on Rails (RoR)
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+http://rubyonrails.org/
+\end_layout
+
+\end_inset
+
+, kurz Rails genannt, ist ein serverseitiges Framework für Webapplikation.
+ Wie der Name vermuten lässt, wurde das Framework in der Programmiersprache
+ Ruby entwickelt.
+ 
+\end_layout
+
+\begin_layout Standard
+Die Geschichte von Ruby on Rails Framework beginnt im Jahr 2004.
+ In diesem Jahr veröffentlichte David Heinemeier Hansson zum ersten Mal
+ das Webapplikation-Framework als Open Source Projekt
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+https://github.com/rails/rails
+\end_layout
+
+\end_inset
+
+.
+ Das Besondere an Rails ist, dass es nicht aus der Idee, ein neues Framework
+ zu entwickeln, entstanden ist, David extrahierte es aus seiner eigenen
+ Webanwendung, Basecamp
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+https://basecamp.com
+\end_layout
+
+\end_inset
+
+.
+ Dies spiegelt auch den praxisnahen Charakter von Rails wieder 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Morsy2008"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Die Grundidee, die Rails verfolgt, ist ein flexibler Programmentwurf, der
+ eine spätere Änderung oder Erweiterung erleichtert und eine Wiederverwendbarkei
+t der einzelnen Komponenten ermöglicht.
+ Um dies zu erreichen, verfolgt Rails die im Folgenden vorgestellten Prinzipien,
+ die dem Framework zugrunde liegen (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Vossen2010"
+
+\end_inset
+
+, Seite 222).
+\end_layout
+
+\begin_layout Subsection
+Model-View-Controller Architektur
+\end_layout
+
+\begin_layout Standard
+Rails ist verwendet das Model-View-Controller (MVC) Entwurfsmuster (vgl.
+ Abbildung 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:MVC--Entwurfsmuster.-Quelle:"
+
+\end_inset
+
+ ).
+ Das MVC-Entwurfsmuster zielt auf die klare Trennung der Businesslogik,
+ der Präsentation und der Daten-Objekte.
+ Die Anwendungen werden dadurch übersichtlicher und wartbarer.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename images/ModelViewControllerDiagram2.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Model-View-Controller-Entwurfmusters.
+ Quelle:
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Wikipedia2018"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:MVC--Entwurfsmuster.-Quelle:"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Model
+\series default
+ - hat zur Aufgabe die Bereitstellung, Änderung und Validierung der Daten.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+View
+\series default
+ - ist für die Repräsentation der Daten, die vom Modell bereitgestellt werden,
+ zuständig.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Controller
+\series default
+ - dient als Bindeglied der Anwendung.
+ Er nimmt die Eingaben des Benutzers entgegen, stellt den Views die benötigte
+ Models zur Verfügung und rendert die Views neu.
+\end_layout
+
+\begin_layout Subsection
+Convention over Configuration (CoC)
+\end_layout
+
+\begin_layout Standard
+Rails legt Wert auf die Einhaltung der Namenskonventionen und vermeidet
+ Konfigurationen in allen Bereichen des Frameworks.
+ Dies spart Zeit bei der Entwicklung und vermeidet die fehleranfälligen
+ Anpassungen der Konfigurationsdateien.
+ Die einzige Konfiguration, die in Rails gemacht werden muss, ist die Konfigurat
+ion der Datenbankverbindung (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Vossen2010"
+
+\end_inset
+
+, Seite 223).
+ Die Standard Konventionen können auch überschrieben werden um individuelle
+ Anpassungen zu ermöglichen.
+ 
+\end_layout
+
+\begin_layout Subsection
+Don't Repeat Yourself (DRY)
+\end_layout
+
+\begin_layout Standard
+Das DRY Prinzip besagt, dass 
+\begin_inset Quotes gld
+\end_inset
+
+
+\emph on
+jedes Stück Wissen eine einzige, eindeutige und maßgebliche Repräsentation
+ in einem System hat
+\emph default
+
+\begin_inset Quotes grd
+\end_inset
+
+ (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Thomas2003"
+
+\end_inset
+
+, Seite 24).
+ Das Befolgen dieses Prinzips trägt zur Zuverlässigkeit, Verständlichkeit
+ und Wartbarkeit eines Systems bei.
+ Ausserdem lassen sich Redundanzen und Code-Dublizierungen dadurch vermeiden.
+ Rails ist so konzipiert, dass einmalige Deklaration und Wiederverwendung
+ so einfach wie möglich gemacht werden.
+ Die Änderungen müssen nur also nur an einer Stelle gemacht werden.
+ 
+\end_layout
+
+\begin_layout Chapter
+Fazit
+\end_layout
+
+\begin_layout Standard
+Ruby ist in den letzten Jahren zu einer sehr populären Sprache aufgestiegen
+ und war zwischenzeitlich in den Top 10 der Programmiersprachen.
+ Dies ist dem populären Webframework, Ruby On Rails, zu verdanken.
+ 
+\end_layout
+
+\begin_layout Standard
+Der Vergleich der Redmonk Untersuchung aus dem Jahr 2016 (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "OGrady2016"
+
+\end_inset
+
+) mit der Untersuchung aus dem Jahr 2017 (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "OGrady2017"
+
+\end_inset
+
+) zeigt, dass die Popularität von Ruby runtergegangen ist.
+ Auch die Auswertung von IEEE Spectrum (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Cass2017"
+
+\end_inset
+
+) zeigt einen ähnlichen Verlauf.
+ 
+\end_layout
+
+\begin_layout Section
+Nachteile
+\end_layout
+
+\begin_layout Standard
+Als interpretierte Skriptsprache hat Ruby mehrere wesentliche Nachteile
+ zu kompilierten Sprachen.
+ Zum einen haben Ruby Programme eine viel langsamere Ausführungsgeschwindigkeit.
+ Zum anderen sind die Programme von dem Interpreter abhängig, da das Programm
+ nicht in ein Binärformat übersetzt wird.
+\end_layout
+
+\begin_layout Standard
+Die Umsetzung der Subtypings ist in Ruby gewöhnungsbedürftig implementiert.
+ Die Sichtbarkeit der Methoden kann in der Unterklasse überschrieben werden.
+ Beide Klassen würden in diesem Fall nicht mehr die gleiche Schnittstelle
+ nach außen haben.
+\end_layout
+
+\begin_layout Standard
+Der Gültigkeitsbereich der Variablen ist zum Teil verwirrend.
+ Variablen, die in einem Block definiert sind, sollten normalerweise auch
+ nur dort gültig sein.
+ Wird eine Variable außerhalb des Blocks mit dem gleichen Namen definiert,
+ kann es passieren, dass der Wert der Variable aus dem Block den Wert der
+ Variable außerhalb überschreibt.
+\end_layout
+
+\begin_layout Section
+Vorteile
+\end_layout
+
+\begin_layout Standard
+Ruby ist eine moderne Programmiersprache, die mehrere Programmierparadigmen
+ unterstützt.
+ Durch die ständige Weiterentwicklung der Sprache kommen immer wieder neue
+ Features, um die Entwicklung noch schneller, einfacher und charmanter zu
+ machen.
+ Auch die Performance der Sprache wird immer wieder verbessert und optimiert.
+ Unterstützung von Unicode und UTF-8 für Strings wurde mittlerweile umgesetzt,
+ wird aber immer weiter verbessert und erweitert.
+\end_layout
+
+\begin_layout Standard
+Der Verzicht auf Sonderzeichen und sinnvolle Konventionen machen den Code
+ der Sprache gut lesbar.
+ Viele Gemeinsamkeiten zu anderen Programmiersprachen machen sie leicht
+ erlernbar.
+\end_layout
+
+\begin_layout Standard
+Die Entwicklung mit Ruby wird durch immer aktuelle und gut strukturierte
+ Dokumentation erleichtert.
+ Eine gute Einführung in die Ruby bieten die beiden Standardwerke 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Thomas2013"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Flanagan2008"
+
+\end_inset
+
+.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Flanagan2008"
+
+\end_inset
+
+ ist auch in deutscher Sprache verfügbar.
+\end_layout
+
+\begin_layout Standard
+Ein wesentlicher Vorteil von Ruby ist die Plattformunabhängigkeit.
+ Da der Interpreter in C geschrieben ist, ist er für unterschiedliche Systeme
+ verfügbar.
+ Ruby Programme können also sowohl unter Linux, als auch unter Windows oder
+ Mac OS laufen.
+\end_layout
+
+\begin_layout Standard
+Der Sprachumfang von Ruby ist sehr groß.
+ Neben den in dieser Seminararbeit vorgestellten Themen gibt es in Ruby
+ Bibliotheken für Reguläre Ausdrücke, Prozesse und Threads, Grafische Frontends.
+ Darüber hinaus gibt es Unterstützung für Datenbanken, Open SSL und auch
+ gängige Kommunikationsprotokolle, wie http, ftp oder imap.
+ Ruby bringt auch einen guten Debugger mit sich, welcher die Fehlersucher
+ vereinfacht.
+ Für die Entwicklung der Unit-Test existiert in Ruby das Paket 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{test/unit}
+\end_layout
+
+\end_inset
+
+, welches den Entwickler dabei unterstützt.
+ Alle diese Themen würden den Rahmen dieser Seminararbeit sprengen und können
+ in einer weiteren behandelt werden.
+\end_layout
+
+\begin_layout Standard
+Mit Ruby können sowohl kleine als auch komplexere Programme mit relativ
+ wenig Aufwand umgesetzt werden.
+ Trotz der Nachteile hinterlässt Ruby einen Eindruck einer sehr flexiblen
+ und mächtigen Programmiersprache.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Ab hier folgt nun der Glossar.
+ Manchmal ist das nicht nötig, dann muss es auch unter Dokumente –> Einstellunge
+n –> Latex-Vorspann deaktivieren.
+ Übrigens werden Lyx-Notizen im späteren Dokument nicht angezeigt
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+% Dieser Code ist noetig, da sonst die falsche Seitenzahl im Inhaltsverzeichnis
+ angezeigt wird
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+clearpage
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+phantomsection
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{chapter}{Listings}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstlistoflistings
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+% Dieser Code ist noetig, da sonst die falsche Seitenzahl im Inhaltsverzeichnis
+ angezeigt wird
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+clearpage
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+phantomsection
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Hier folgt nun das Literaturverzeichnis.
+ Die benötigten Dateien liegen im Verzeichnis: bibtex-daten
+\end_layout
+
+\begin_layout Plain Layout
+Dieses wird automatisch erstellt.
+ Zum bearbeiten der 
+\begin_inset Quotes gld
+\end_inset
+
+Literatur-Datenbank
+\begin_inset Quotes grd
+\end_inset
+
+ verwende ich das Programm 
+\begin_inset Quotes gld
+\end_inset
+
+JabRef
+\begin_inset Quotes grd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "bibtex-daten/literatur"
+options "bibtotoc,bibtex-daten/unsrtdin"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

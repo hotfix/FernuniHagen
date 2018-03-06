@@ -1,0 +1,502 @@
+%% LyX 2.1.3 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[12pt,ngerman,pointlessnumbers, abstracton, headsepline]{scrreprt}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{geometry}
+\geometry{verbose,tmargin=2.5cm,bmargin=2.5cm}
+\pagestyle{plain}
+\setlength{\parskip}{\medskipamount}
+\setlength{\parindent}{0pt}
+\usepackage{color}
+\usepackage{babel}
+\usepackage{array}
+\usepackage{varioref}
+\usepackage{textcomp}
+\usepackage{multirow}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{nomencl}
+% the following is useful when we have the old nomencl.sty package
+\providecommand{\printnomenclature}{\printglossary}
+\providecommand{\makenomenclature}{\makeglossary}
+\makenomenclature
+\setstretch{1.2}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+% verschieden Symbole, Zeichen wie (c), ¤
+\usepackage{textcomp,units}
+
+% Mehr Platz zwischen Tabelle und Untertitel
+\usepackage{caption}
+\captionsetup[table]{skip=10pt}
+
+%Kapitelzahl sehr groß
+\makeatletter% siehe De-TeX-FAQ 
+ \renewcommand*{\chapterformat}{% 
+   \begingroup% damit \unitlength-Änderung lokal bleibt 
+     \setlength{\unitlength}{1mm}% 
+     \begin{picture}(10,10)(0,5) 
+       \setlength{\fboxsep}{0pt} 
+       %\put(0,0){\framebox(20,40){}}% 
+       %\put(0,20){\makebox(20,20){\rule{20\unitlength}{20\unitlength}}}% 
+       \put(10,15){\line(1,0){\dimexpr 
+           \textwidth-20\unitlength\relax\@gobble}}% 
+       \put(0,0){\makebox(10,20)[r]{% 
+           \fontsize{28\unitlength}{28\unitlength}\selectfont\thechapter 
+           \kern-.05em% Ziffer in der Zeichenzelle nach rechts schieben 
+         }}% 
+       \put(10,15){\makebox(\dimexpr 
+           \textwidth-20\unitlength\relax\@gobble,\ht\strutbox\@gobble)[l]{% 
+             \ \normalsize\color{black}\chapapp~\thechapter\autodot 
+           }}% 
+     \end{picture} % <-- Leerzeichen ist hier beabsichtigt! 
+   \endgroup 
+}
+
+\usepackage{ %a4wide,
+            ellipsis, fixltx2e, mparhack,   %Fehlerkorrektur für Marginalien
+            booktabs, longtable             %schönere Tabellen
+}  
+
+\usepackage[automark]{scrpage2}
+%\automark[chapter]{chapter}
+\clearscrheadfoot
+\ohead{\\\headmark}
+\ihead{\includegraphics[scale=0.15]{logo.jpg}}%\pagemark}
+\ofoot[\pagemark]{\pagemark}
+
+
+%Kurzfassung und Abstract (englisch) auf eine Seite
+\renewenvironment{abstract}{
+    \@beginparpenalty\@lowpenalty
+      \begin{center}
+        \normalfont\sectfont\nobreak\abstractname
+        \@endparpenalty\@M
+      \end{center}
+}{
+    \par
+}
+
+
+
+% schönerer Blocksatz!!
+\usepackage{microtype}
+
+\usepackage{ifpdf} % part of the hyperref bundle
+\ifpdf % if pdflatex is used
+
+%set fonts for nicer pdf view
+ \IfFileExists{lmodern.sty}{\usepackage{lmodern}}
+  {\usepackage[scaled=0.92]{helvet}
+    \usepackage{mathptmx}
+    \usepackage{courier} }
+\fi
+
+ % the pages of the TOC are numbered roman
+ % and a pdf-bookmark for the TOC is added
+ \pagenumbering{roman}
+ \let\myTOC\tableofcontents
+ \renewcommand\tableofcontents{
+   %\pdfbookmark[1]{Contents}{}
+   \myTOC
+   \clearpage
+   \pagenumbering{arabic}}
+
+%Bezeichungen anpassen
+%Babelpaket muß zuvor geladen werden
+\usepackage[ngerman]{babel}
+\addto\captionsngerman{ 
+\renewcommand{\figurename}{Abb.}% 
+\renewcommand{\tablename}{Tab.}% 
+\renewcommand{\abstractname}{Kurzfassung}
+%\renewcommand{\nomname}{Abkürzungen}
+}
+
+% Alle Querverweise und URLs als Link darstellen
+% In der PDF-Ausgabe
+ \usepackage[colorlinks=true, bookmarks, bookmarksnumbered, bookmarksopen, bookmarksopenlevel=1,
+  linkcolor=black, citecolor=black, urlcolor=blue, filecolor=blue,
+  pdfpagelayout=OneColumn, pdfnewwindow=true,
+  pdfstartview=XYZ, plainpages=false, pdfpagelabels,
+  pdfauthor={LyX Team}, pdftex,
+  pdftitle={LyX's Figure, Table, Floats, Notes, and Boxes manual},
+  pdfsubject={LyX-documentation about figures, tables, floats, notes, and boxes},
+  pdfkeywords={LyX, Tables, Figures, Floats, Boxes, Notes}]{hyperref}
+
+%mehr Platz zwischen Überschrift und Tabelle
+\newcommand{\@ldtable}{}
+\let\@ldtable\table
+\renewcommand{\table}{ %
+                 \setlength{\@tempdima}{\abovecaptionskip} %
+                 \setlength{\abovecaptionskip}{\belowcaptionskip} %
+                 \setlength{\belowcaptionskip}{\@tempdima} %
+                 \@ldtable}
+
+%In dieser Arbeit wird auf die Nomenklatur als Abkürzungsverzeichnis verzichtet. Bei Wunsch wieder aktivieren.
+%Nomenklatur als Abkürzungsverzeichnis verwenden
+%\renewcommand{\nomname}{Abkürzungsverzeichnis}
+%\renewcommand{\nomlabelwidth}{20mm}
+
+%Nomenklatur als Glossar verwenden
+%Nur Noetig wenn auch Glossar verwendet wird.
+\renewcommand{\nomname}{Glossar}
+
+%Farbe für Programmcode festlegen
+\definecolor{lightgray}{rgb}{0.8,0.8,0.8}
+
+\AtBeginDocument{
+  \def\labelitemiii{\(\circ\)}
+}
+
+\makeatother
+
+\usepackage{listings}
+\renewcommand{\lstlistingname}{Listing}
+
+\begin{document}
+\noindent \titlepage
+
+\noindent \begin{center}
+\begin{tabular}{cc}
+ & \multirow{5}{*}{\includegraphics[height=3cm]{images/Logo_OTH_Regensburg}}\tabularnewline
+{\large{}Fakultät Informatik / Mathematik}\hspace{2.5cm} & \tabularnewline
+ & \tabularnewline
+ & \tabularnewline
+ & \tabularnewline
+\end{tabular}
+\par\end{center}
+
+\noindent \vspace{7cm}
+
+
+\noindent \begin{flushleft}
+\textbf{\Large{}Bachelorarbeit}
+\par\end{flushleft}{\Large \par}
+
+\noindent \begin{flushleft}
+{\large{}Der Titel deiner Bachelorarbeit mit super tollem langem Text}
+\par\end{flushleft}{\large \par}
+
+\noindent \begin{flushleft}
+{\Large{}\vspace{1.5cm}
+}
+\par\end{flushleft}{\Large \par}
+
+\begin{tabular}{ll}
+eingereicht von:\hspace{1cm} & Max Mustermann\tabularnewline
+ & Matrikelnummer: 1234567\tabularnewline
+ & Studiengang: Allgemeine Informatik\tabularnewline
+ & OTH Regensburg\tabularnewline
+ & \tabularnewline
+betreut durch: & Prof. Dr. Maximilian Mustermann\tabularnewline
+ & OTH Regensburg\tabularnewline
+ & Prof. Dr. Hans Müller\tabularnewline
+ & OTH Regensburg\tabularnewline
+ & \tabularnewline
+\multicolumn{2}{l}{Regensburg, der \today}\tabularnewline
+\end{tabular}
+
+\noindent \begin{flushleft}
+\newpage{}
+\par\end{flushleft}
+
+~
+
+\vspace{17.1mm}
+
+
+\noindent \begin{flushleft}
+\textbf{\huge{}Ehrenwörtliche Erklärung}
+\par\end{flushleft}{\huge \par}
+
+Ich erkläre hiermit ehrenwörtlich, dass ich die vorliegende Arbeit
+selbstständig angefertigt habe. Die aus fremden Quellen direkt oder
+indirekt übernommenen Gedanken sind als solche kenntlich gemacht.
+Es wurden keine anderen als die angegebenen Quellen und Hinweise verwendet. 
+
+Die vorliegende Arbeit wurde bisher keiner anderen Prüfungsbehörde
+vorgelegt und auch noch nicht veröffentlicht.
+
+\vspace{2cm}
+
+
+\noindent \begin{center}
+\begin{tabular*}{15cm}{@{\extracolsep{\fill}}cl}
+Regensburg, der \today & {[}{[}UNTERSCHRIFT{]}{]}\tabularnewline
+ & Max Mustermann\tabularnewline
+\end{tabular*}
+\par\end{center}
+
+\newpage{}
+
+~
+
+\vspace{17.1mm}
+
+
+\noindent \begin{flushleft}
+\textbf{\huge{}Sperrvermerk}
+\par\end{flushleft}{\huge \par}
+
+Die vorliegende Bachelorarbeit enthält vertrauliche Informationen
+der Firma {[}{[}MUSTERFIRMA{]}{]}, die der Geheimhaltung unterliegen.
+Veröffentlichungen oder Vervielfältigungen der Bachelorarbeit - auch
+nur auszugsweise - sind ohne ausdrückliche Genehmigung der Firma {[}{[}MUSTERFIRMA{]}{]}
+nicht gestattet. Die Bachelorarbeit ist nur den Mitarbeitern des betreuenden
+Lehrstuhls sowie den Mitgliedern des Prüfungsausschusses zugänglich
+zu machen. Alle Rechte zum Erwerb und zur Anmeldung gewerblicher Schutzrechte,
+insbesondere zur Anmeldung von Patenten, Gebrauchsmustern und/oder
+Geschmacksmustern sind der Firma {[}{[}MUSTERFIRMA{]}{]} vorbehalten.
+
+\newpage{}
+
+~
+
+\vspace{17.1mm}
+
+
+\noindent \begin{flushleft}
+\textbf{\huge{}Kurzfassung}
+\par\end{flushleft}{\huge \par}
+
+Dieses Beispiel soll ein paar Tipps geben, wie man eine schöne Bachelorarbeit
+schreibt. Ich selbst habe mit dieser Vorlage bereits drei Arbeiten
+geschrieben und es gab keine Beanstandungen. Wichtigster Punkt aber
+zuvor: Fragt euren betreuenden Professor ob das Layout so passt. Dieser
+Entscheidet schlussendlich über eure Note und sollte auch mit dem
+Layout zufrieden sein.
+
+\newpage{}
+
+\tableofcontents{}
+
+\newpage{}
+
+
+
+\pagenumbering{roman}
+\setcounter{page}{7}
+
+\listoffigures
+
+
+\newpage{}
+
+\listoftables
+
+
+\newpage{}
+
+\pagenumbering{arabic}
+
+
+\chapter{Einführung}
+
+
+\section{Vorspann und alle Verzeichnisse}
+
+Im Vorspann könnt ihr verschiedene Listen sehen. In dieser Testarbeit
+sind mal alle nur erdenklichen Punkte vorhanden:
+\begin{itemize}
+\item Ehrenwörtliche Erklärung (nach Guttenberg wohl pflicht)
+\item Sperrvermerk: Eigentlich nur nötig wenn von der Firma verlangt wird.
+Dieser kann dann natürlich auch anders aussehen. Hier am besten mit
+der Firma sprechen
+\item Kurzfassung: Die Kurzfassung ist eigentlich Pflicht. Manche Betreuer
+möchten, dss die Kurzfassung auch in Englisch verfasst wird.
+\item Inhaltsverzeichnis: Ist Pflicht. Da dürfte es keine Diskussion geben.
+\item Abbildungsverzeichnis: War bisher bei all meine Arbeiten Pflicht
+\item Tabellenverzeichnis: War auch Pflicht bei allen Arbeiten
+\end{itemize}
+
+\section{Abschnitt}
+
+Einfach mal um zu zeigen, wie es im Inhaltsverzeichnis aussieht.
+
+
+\section{Weiterer Abschnitt}
+
+
+\subsection{Ein Beispiel für einen Unterabschnitt}
+
+
+\subsection{Und gleich nochmal ein Beispiel}
+
+
+\subsubsection{Ein Unterunterabschnitt}
+
+Wie ihr seht wird ein Unterunterabschnitt nicht mehr in die Auflistung
+aufgenommen. Dies kann unter ,,Dokument --> Einstellungen --> Nummerierung
+\& Inhaltsverzeichnis`` angepasst werden.
+
+
+\chapter{Beispiel für Bilder}
+
+Hier testen wir mal ein Bild und wie dieses Dargestellt wird
+
+
+\section{Bild mit Untertitel}
+
+\begin{figure}[h]
+\noindent \begin{centering}
+\includegraphics[width=15cm]{images/1799_Diplomarbeit_Schnitt}
+\par\end{centering}
+
+\protect\caption[Kurztitel der nur in Abb. Verzeichnis angezeigt wird]{Dies ist ein sehr langer Text. Hier sollte das Bild so beschrieben
+werden, dass man auch eine Ahnung vom Bild hat, wenn man nur den Bilduntertitel
+liest. \label{fig:Testbild}}
+\end{figure}
+
+
+In diesem Text verweise ich nun auf das eben genannte Bild (Vgl. Abbildung
+\vref{fig:Testbild}). Dazu muss im Bild eine sog. Marke eingefügt
+werden (in diesem Fall: fig:Testbild). Als Bildbreite ist in diesem
+Dokument 15cm gewählt. Dies sieht dann sehr passabel im Fließtext
+aus. Versucht bei den Breiten der Bilder einheitlich zu bleiben. Also
+15cm und 10cm zum Beispiel. Dies hilft dem Leser und unterbricht nicht
+dauernd im Lesefluss. Im Fließtext umschlossene Bilder sind weniger
+gern gesehen in Bachelorarbeiten, aber hier auch wieder den Prof.
+fragen.
+
+
+\subsection{Tabelle mit Untertitel}
+
+\begin{table}[h]
+\noindent \begin{centering}
+\begin{tabular}{|>{\centering}m{3cm}|>{\centering}p{2cm}|>{\raggedright}p{3cm}|>{\raggedright}p{3cm}|}
+\hline 
+titelzeile &  & \multicolumn{2}{c|}{Titel über zwei Spalten}\tabularnewline
+\hline 
+\hline 
+ &  &  & \tabularnewline
+\hline 
+ &  & Aufzählungen
+\begin{itemize}
+\item 1
+\item 2
+\item 3
+\item 4
+\end{itemize}
+gehen nur bei festgelegter Zeilenbreite & Auch Absätze gehen nur bei festgelegter Spaltenbreite.
+
+Wie man hier sieht!\tabularnewline
+\hline 
+\multirow{2}{3cm}{Zwei Zeilen zusammenfassen} &  &  & \tabularnewline
+\cline{2-4} 
+ &  &  & \tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+
+\protect\caption[Dies ist wieder der Kurztitel zur Tabelle]{Genau wie bei Bildern sollte auch der Tabellenuntertitel die Tabelle
+grob beschreiben }
+
+
+\end{table}
+
+
+
+\section{Programmcode schön darstellen}
+
+Hier ein Beispiel wie man Programmcode richtig darstellen könnte:
+
+\begin{figure}[h]
+\begin{lstlisting}[backgroundcolor={\color{lightgray}},basicstyle={\normalsize\sffamily},breaklines=true,frame={leftline,bottomline,rightline,topline},language=C,numbers=left,showstringspaces=false,xleftmargin=15pt]
+#include <stdio.h> 
+main() 
+	{
+        int i;
+        for (i = 0; i<=2; i++)
+        {
+        fork();
+        setvbuf(stdout, NULL, _IOLBF, 0); //(Stream, Pufferangabe, Puffertyp, Puffergroesse)
+        printf("PID=%6d, i=%d\n", getpid(), i);
+        }
+} 
+\end{lstlisting}
+
+
+\protect\caption{Modifiziertes Programm mit setvbuf()}
+\end{figure}
+
+
+Unter ,,Dokument --> Einstellungen --> Latexvorspann`` habe ich
+für die Hintergrundfarbe folgendes eingefügt:
+\begin{itemize}
+\item \textbackslash{}definecolor\{lightgray\}\{rgb\}\{0.8,0.8,0.8\}
+\end{itemize}
+Dies legt die Hintergrundfarbe fest. Sie kann natürlich nach belieben
+angepasst werden. Wenn ihr Rechtsklick auf das Programmlisting macht
+und dann unter ,,Einstellungen --> Erweitert`` geht, seht ihr einige
+Anpassungen die ich gemacht habe. Unter Anderem wird hier auch 15pt
+von links eingerückt, damit die Zeilennummern schön zum Fließtext
+passen. 
+
+
+\chapter{Das große Thema: Zitieren}
+
+
+\section{Zitieren nach DIN 1505-2}
+
+Ich versuche immer nach DIN zu zitieren, ist aber echt eine Sache
+für sich. Hier gebe ich keine Garantie auf Richtigkeit. Bitte vorher
+mit dem Betreuer abklären.
+
+Hier zitiere ich aus einem bestimmten Buch: Dieses Zitat ist aus einem
+speziellen Buch das ich am Ende angeben muss. Es sind sogar zwei Bücher,
+nur damit ihr das mal seht. \cite{Williams201205,Siegert200612}
+
+Es ist meist nicht gern gesehen wenn man aus dem Internet zitiert,
+aber wenn es doch mal nötig ist würde ich es so machen. \cite{wiki:42}
+Übrigens könnt ihr bei Wikipedia direkt an die Bibtex-Informationen
+kommen. Einfach Links im Menü unter ,,Werkzeuge --> Seite zitieren``
+
+Gesetztestexte müssen zum Beispiel nicht zitiert werden. Hier reicht
+ein Verweis in der Fußnote\footnote{Das hier ist die supertolle Fußnote, hier steht jetzt irgendwas von
+BGB §12 Abs. 3 Satz 4}.
+
+Zum Bearbeiten der Literatur-Datenbank verwende ich JabRef.
+
+
+\chapter{Abschluss}
+
+Dieses Dokument ist sicherlich nicht vollständig und gibt euch auch
+nur bedingt Hilfe dabei, welche Unterpunkte ihr in eurer Bachelorarbeit
+schreiben solltet. Das Dokument soll euch nur ein paar Tipps und Tricks
+geben wie ihr Anfangen könnt. Fragen und Anregungen könnt ihr mir
+gerne per Mail oder in meinem Blog schreiben.
+
+
+
+% Dieser Code ist noetig, da sonst die falsche Seitenzahl im Inhaltsverzeichnis angezeigt wird
+\clearpage
+\phantomsection
+% Die folgende Zeile sorgt dafuer, dass der Glossar im Inhaltsverzeichnis angezeigt wird.
+\addcontentsline{toc}{chapter}{Glossar}
+
+\nomenclature{APT}{Advanced Packaging Tool (kurz. APT) ist ein Paketverwaltungssystem das z.B. bei Debian und Ubuntu eingesetzt wird. Das Paketverwaltungssystem stellt einen Großteil der für das Betriebssystem verfügbaren Programme und Erweiterungen bereit. Diese können durch den Benutzer meist in der Befehlszeile oder über eine grafische Oberfläche installiert und konfiguriert werden. }\nomenclature{API}{Application Programming Interface (kurz API) ist eine Programmierschnittstelle die eine Anbindung von Außen an ein bestehendes System bietet. Die Schnittstelle wird vom Hersteller der Software zur Verfügung gestellt um Dritten die Möglichkeit eines Addons oder einer Erweiterung zu geben. Die Schnittstelle definiert dabei ein Standardformat und Standardbefehle.}
+
+\settowidth{\nomlabelwidth}{APT}
+\printnomenclature{}
+
+% Dieser Code ist noetig, da sonst die falsche Seitenzahl im Inhaltsverzeichnis angezeigt wird
+\clearpage
+\phantomsection
+
+
+
+\bibliographystyle{bibtex-daten/unsrtdin}
+\addcontentsline{toc}{chapter}{\bibname}\nocite{*}
+\bibliography{bibtex-daten/bachelorarbeit-info}
+
+\end{document}

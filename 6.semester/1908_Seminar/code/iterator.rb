@@ -1,0 +1,1 @@
+['a','b','c'].each {|b| puts b}
