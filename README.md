@@ -24,8 +24,13 @@ Submitted assignments, snippets and other stuff of my MSc. study on the Distance
 + 01744 - PC-Technologie (verworfen)
 
 ## 6.Semester
-+ Seminar
++ 01908 Seminar Programmiersysteme
+  + Thema: "Einführung in Ruby"
 
+
+## 7. Semester
+
+- 01870 - Informationsvisualisierung im Internet
 
 **zusatzlich ein Weiterbildungskurs**
 + 78036 - [Java-Webanwendungen](http://www.isdb.fernuni-hagen.de/weiterbildung/index.php/informatik-kurse/java-webanwendungen)
